@@ -7,6 +7,7 @@
   <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
   <link rel="stylesheet" href="../../assets/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="../docs.css" />
+  <script src="../docs-i18n.js"></script>
 </head>
 <body>
   <header class="doc-nav">
@@ -16,50 +17,60 @@
         <span class="doc-brand-name">SilentGameEngine<em>Engine</em></span>
       </a>
       <nav class="doc-nav-links">
-        <a href="../../index.html">首页</a>
-        <a href="guide/quickstart.html">快速开始</a>
+        <a href="../../index.html" data-i18n="nav_home">首页</a>
+        <a href="guide/quickstart.html" data-i18n="nav_quickstart">快速开始</a>
+
+        <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn" type="button" title="Language"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
+        <div class="lang-menu">
+        <div class="lang-search"><i class="fas fa-search"></i><input type="text" id="langSearch" placeholder="搜索语言…" autocomplete="off" /></div>
+        <div class="lang-list" id="langList"></div>
+        </div>
+        </div>
         <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
         <a class="btn-github" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
       </nav>
     </div>
   </header>
 
+  <div id="transBanner"></div>
+
   <main class="doc-wrap">
     <nav class="doc-crumbs">
-      <a href="../index.html">Docs</a><i class="fas fa-chevron-right"></i><span>SilentGameEngine</span>
+      <a href="../index.html" data-i18n="crumb_docs">Docs</a><i class="fas fa-chevron-right"></i><span>SilentGameEngine</span>
     </nav>
 
     <div class="doc-hero">
       <span class="doc-eyebrow">Engine</span>
       <h1 class="doc-title"><i class="fas fa-gamepad" style="color:#a78bfa;margin-right:10px;"></i>SilentGameEngine</h1>
-      <p class="doc-sub">自研跨语言游戏引擎。渲染、物理、音频、场景模块化架构，Rust 核心驱动性能。</p>
+      <p class="doc-sub" data-i18n="ge_sub">自研跨语言游戏引擎。渲染、物理、音频、场景模块化架构，Rust 核心驱动性能。</p>
     </div>
 
     <div class="doc-content">
-      <h2>功能特性</h2>
+      <h2 data-i18n="feat_h">功能特性</h2>
       <div class="landing-grid">
-          <div class="landing-card"><i class="fas fa-dice-d6"></i><h4>模块化架构</h4><p>渲染 / 物理 / 音频 / 场景独立模块，按需组合。</p></div>
-          <div class="landing-card"><i class="fas fa-rocket"></i><h4>Rust 核心</h4><p>引擎核心以 Rust 实现，性能与安全兼得。</p></div>
-          <div class="landing-card"><i class="fas fa-cubes"></i><h4>ECS 体系</h4><p>实体-组件-系统架构，构建复杂游戏逻辑。</p></div>
-          <div class="landing-card"><i class="fas fa-window-restore"></i><h4>编辑器集成</h4><p>配套 SgeEditor，可视化搭建场景与属性。</p></div>
+          <div class="landing-card"><i class="fas fa-dice-d6"></i><h4 data-i18n="ge_f1_t">模块化架构</h4><p data-i18n="ge_f1_d">渲染 / 物理 / 音频 / 场景独立模块，按需组合。</p></div>
+          <div class="landing-card"><i class="fas fa-rocket"></i><h4 data-i18n="ge_f2_t">Rust 核心</h4><p data-i18n="ge_f2_d">引擎核心以 Rust 实现，性能与安全兼得。</p></div>
+          <div class="landing-card"><i class="fas fa-cubes"></i><h4 data-i18n="ge_f3_t">ECS 体系</h4><p data-i18n="ge_f3_d">实体-组件-系统架构，构建复杂游戏逻辑。</p></div>
+          <div class="landing-card"><i class="fas fa-window-restore"></i><h4 data-i18n="ge_f4_t">编辑器集成</h4><p data-i18n="ge_f4_d">配套 SgeEditor，可视化搭建场景与属性。</p></div>
       </div>
 
       <div class="repo-banner">
-        <p>这是 <strong>SilentGameEngine</strong> 的文档首页。<br />前往 GitHub 仓库获取源码、Star 与最新发布。</p>
+        <p data-i18n="ge_banner">这是 <strong>SilentGameEngine</strong> 的文档首页。<br />前往 GitHub 仓库获取源码、Star 与最新发布。</p>
         <a class="btn-primary" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> 前往 GitHub 仓库</a>
       </div>
 
-      <h2>继续阅读</h2>
+      <h2 data-i18n="continue_reading">继续阅读</h2>
       <div class="landing-grid">
         <a class="landing-card" href="guide/quickstart.html" style="text-decoration:none;">
-          <i class="fas fa-rocket"></i><h4>快速开始</h4><p>几分钟内把 SilentGameEngine 跑起来。</p>
+          <i class="fas fa-rocket"></i><h4 data-i18n="read_quick_t">快速开始</h4><p>几分钟内把 SilentGameEngine 跑起来。</p>
         </a>
       </div>
     </div>
   </main>
 
   <footer class="doc-footer">
-    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · <span data-i18n="footer_page">文档页</span></p>
   </footer>
   <script>
     (function () {

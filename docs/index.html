@@ -7,6 +7,7 @@
   <link rel="icon" type="image/jpeg" href="../assets/logo.jpg" />
   <link rel="stylesheet" href="../assets/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="docs.css" />
+  <script src="docs-i18n.js"></script>
   <style>
     .search-hero { text-align: center; padding: 40px 0 12px; }
     .search-hero h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 800; letter-spacing: -0.02em; }
@@ -89,12 +90,22 @@
         <span class="doc-brand-name">文档搜索<em>Docs</em></span>
       </a>
       <nav class="doc-nav-links">
-        <a href="../index.html">首页</a>
+        <a href="../index.html" data-i18n="nav_home">首页</a>
+
+        <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn" type="button" title="Language"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
+        <div class="lang-menu">
+        <div class="lang-search"><i class="fas fa-search"></i><input type="text" id="langSearch" placeholder="搜索语言…" autocomplete="off" /></div>
+        <div class="lang-list" id="langList"></div>
+        </div>
+        </div>
         <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
         <a class="btn-github" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
       </nav>
     </div>
   </header>
+
+  <div id="transBanner"></div>
 
   <main class="doc-wrap">
     <div class="search-hero">
@@ -115,7 +126,7 @@
   </main>
 
   <footer class="doc-footer">
-    <p><a href="../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档搜索</p>
+    <p><a href="../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · <span data-i18n="footer_search">文档搜索</span></p>
   </footer>
 
   <script>

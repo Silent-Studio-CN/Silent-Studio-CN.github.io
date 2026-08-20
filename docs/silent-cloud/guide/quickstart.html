@@ -7,6 +7,7 @@
   <link rel="icon" type="image/jpeg" href="../../../assets/logo.jpg" />
   <link rel="stylesheet" href="../../../assets/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="../../docs.css" />
+  <script src="../../docs-i18n.js"></script>
   <script src="../../docs.js"></script>
 </head>
 <body>
@@ -17,39 +18,49 @@
         <span class="doc-brand-name">SilentCloud<em>Cloud</em></span>
       </a>
       <nav class="doc-nav-links">
-        <a href="../../../index.html">首页</a>
-        <a href="../index.html">文档首页</a>
+        <a href="../../../index.html" data-i18n="nav_home">首页</a>
+        <a href="../index.html" data-i18n="nav_docs_home">文档首页</a>
+
+        <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn" type="button" title="Language"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
+        <div class="lang-menu">
+        <div class="lang-search"><i class="fas fa-search"></i><input type="text" id="langSearch" placeholder="搜索语言…" autocomplete="off" /></div>
+        <div class="lang-list" id="langList"></div>
+        </div>
+        </div>
         <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
         <a class="btn-github" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
       </nav>
     </div>
   </header>
 
+  <div id="transBanner"></div>
+
   <main class="doc-wrap">
     <nav class="doc-crumbs">
-      <a href="../../index.html">Docs</a><i class="fas fa-chevron-right"></i>
+      <a href="../../index.html" data-i18n="crumb_docs">Docs</a><i class="fas fa-chevron-right"></i>
       <a href="../index.html">SilentCloud</a><i class="fas fa-chevron-right"></i>
-      <a href="quickstart.html">Guide</a><i class="fas fa-chevron-right"></i><span>Quickstart</span>
+      <a href="quickstart.html" data-i18n="crumb_guide">Guide</a><i class="fas fa-chevron-right"></i><span>Quickstart</span>
     </nav>
 
     <div class="doc-hero">
       <span class="doc-eyebrow">Guide</span>
-      <h1 class="doc-title">快速开始 · SilentCloud</h1>
+      <h1 class="doc-title"><span data-i18n="quick_title_suffix">快速开始</span> · SilentCloud</h1>
     </div>
 
     <div class="doc-content">
-      <h2>快速开始</h2>
+      <h2 data-i18n="h_quickstart">快速开始</h2>
       <p>SilentCloud 是 SilentStudio 的 Web 云服务，无需本地部署，访问官网注册账号即可开通使用。</p>
       <div class="repo-banner">
         <p>前往 <strong>SilentCloud</strong> 官网开始使用。</p>
-        <a class="btn-primary" href="https://xx.com" target="_blank" rel="noopener"><i class="fas fa-globe"></i> 前往官网</a>
+        <a class="btn-primary" href="https://xx.com" target="_blank" rel="noopener"><i class="fas fa-globe"></i> <span data-i18n="btn_website">前往官网</span></a>
       </div>
       <div class="callout callout-warn">更多使用指南即将上线，敬请期待。</div>
     </div>
   </main>
 
   <footer class="doc-footer">
-    <p><a href="../../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+    <p><a href="../../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · <span data-i18n="footer_page">文档页</span></p>
   </footer>
   <script>
     (function () {

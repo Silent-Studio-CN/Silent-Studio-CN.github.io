@@ -7,6 +7,7 @@
   <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
   <link rel="stylesheet" href="../../assets/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="../docs.css" />
+  <script src="../docs-i18n.js"></script>
 </head>
 <body>
   <header class="doc-nav">
@@ -16,51 +17,61 @@
         <span class="doc-brand-name">IntTest<em>Network</em></span>
       </a>
       <nav class="doc-nav-links">
-        <a href="../../index.html">首页</a>
-        <a href="guide/quickstart.html">快速开始</a>
+        <a href="../../index.html" data-i18n="nav_home">首页</a>
+        <a href="guide/quickstart.html" data-i18n="nav_quickstart">快速开始</a>
+
+        <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn" type="button" title="Language"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
+        <div class="lang-menu">
+        <div class="lang-search"><i class="fas fa-search"></i><input type="text" id="langSearch" placeholder="搜索语言…" autocomplete="off" /></div>
+        <div class="lang-list" id="langList"></div>
+        </div>
+        </div>
         <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
         <a class="btn-github" href="https://github.com/Silent-Studio-CN/IntTest" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
       </nav>
     </div>
   </header>
 
+  <div id="transBanner"></div>
+
   <main class="doc-wrap">
     <nav class="doc-crumbs">
-      <a href="../index.html">Docs</a><i class="fas fa-chevron-right"></i><span>IntTest</span>
+      <a href="../index.html" data-i18n="crumb_docs">Docs</a><i class="fas fa-chevron-right"></i><span>IntTest</span>
     </nav>
 
     <div class="doc-hero">
       <span class="doc-eyebrow">Network</span>
       <h1 class="doc-title"><i class="fas fa-network-wired" style="color:#60a5fa;margin-right:10px;"></i>IntTest</h1>
-      <p class="doc-sub">网络连通性与速度测试工具。测速、实时监控、Ping 与网络信息一站式搞定。</p>
+      <p class="doc-sub" data-i18n="it_sub">网络连通性与速度测试工具。测速、实时监控、Ping 与网络信息一站式搞定。</p>
     </div>
 
     <div class="doc-content">
-      <h2>功能特性</h2>
+      <h2 data-i18n="feat_h">功能特性</h2>
       <div class="landing-grid">
-          <div class="landing-card"><i class="fas fa-gauge-high"></i><h4>速度测试</h4><p>6 路 HTTP Range 并发下载 + 4 路并发上传，15 秒实时测速并绘制趋势图。</p></div>
-          <div class="landing-card"><i class="fas fa-chart-line"></i><h4>实时监控</h4><p>当前网络接口上下行速率折线图，记录过去 60 秒变化与开机以来总流量。</p></div>
-          <div class="landing-card"><i class="fas fa-signal"></i><h4>连通性测试</h4><p>对多目标 Ping，延迟颜色分级（&lt;100ms 优秀 / &lt;300ms 一般 / ≥300ms 差），支持自动刷新。</p></div>
-          <div class="landing-card"><i class="fas fa-earth-asia"></i><h4>网络信息</h4><p>公网 IPv4/IPv6、ISP、地理位置与 ASN，DNS 解析与 HTTP 连通性检测。</p></div>
+          <div class="landing-card"><i class="fas fa-gauge-high"></i><h4 data-i18n="it_f1_t">速度测试</h4><p data-i18n="it_f1_d">6 路 HTTP Range 并发下载 + 4 路并发上传，15 秒实时测速并绘制趋势图。</p></div>
+          <div class="landing-card"><i class="fas fa-chart-line"></i><h4 data-i18n="it_f2_t">实时监控</h4><p data-i18n="it_f2_d">当前网络接口上下行速率折线图，记录过去 60 秒变化与开机以来总流量。</p></div>
+          <div class="landing-card"><i class="fas fa-signal"></i><h4 data-i18n="it_f3_t">连通性测试</h4><p data-i18n="it_f3_d">对多目标 Ping，延迟颜色分级（&lt;100ms 优秀 / &lt;300ms 一般 / ≥300ms 差），支持自动刷新。</p></div>
+          <div class="landing-card"><i class="fas fa-earth-asia"></i><h4 data-i18n="it_f4_t">网络信息</h4><p data-i18n="it_f4_d">公网 IPv4/IPv6、ISP、地理位置与 ASN，DNS 解析与 HTTP 连通性检测。</p></div>
       </div>
 
       <div class="repo-banner">
-        <p>这是 <strong>IntTest</strong> 的文档首页。已发布 v2.2.0，选择对应架构的 exe 直接运行，无需安装 Python。</p>
+        <p data-i18n="it_banner">这是 <strong>IntTest</strong> 的文档首页。已发布 v2.2.0，选择对应架构的 exe 直接运行，无需安装 Python。</p>
         <a class="btn-primary" href="https://github.com/Silent-Studio-CN/IntTest/releases/latest" target="_blank" rel="noopener"><i class="fas fa-download"></i> 立即下载</a>
         <a class="btn-secondary" href="https://github.com/Silent-Studio-CN/IntTest" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub 仓库</a>
       </div>
 
-      <h2>继续阅读</h2>
+      <h2 data-i18n="continue_reading">继续阅读</h2>
       <div class="landing-grid">
         <a class="landing-card" href="guide/quickstart.html" style="text-decoration:none;">
-          <i class="fas fa-rocket"></i><h4>快速开始</h4><p>环境要求、安装依赖与启动应用。</p>
+          <i class="fas fa-rocket"></i><h4 data-i18n="read_quick_t">快速开始</h4><p>环境要求、安装依赖与启动应用。</p>
         </a>
       </div>
     </div>
   </main>
 
   <footer class="doc-footer">
-    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · <span data-i18n="footer_page">文档页</span></p>
   </footer>
   <script>
     (function () {

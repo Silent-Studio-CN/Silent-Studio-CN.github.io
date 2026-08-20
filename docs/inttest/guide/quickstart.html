@@ -7,6 +7,7 @@
   <link rel="icon" type="image/jpeg" href="../../../assets/logo.jpg" />
   <link rel="stylesheet" href="../../../assets/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="../../docs.css" />
+  <script src="../../docs-i18n.js"></script>
 </head>
 <body>
   <header class="doc-nav">
@@ -16,28 +17,38 @@
         <span class="doc-brand-name">IntTest<em>Network</em></span>
       </a>
       <nav class="doc-nav-links">
-        <a href="../../../index.html">首页</a>
-        <a href="../index.html">文档首页</a>
+        <a href="../../../index.html" data-i18n="nav_home">首页</a>
+        <a href="../index.html" data-i18n="nav_docs_home">文档首页</a>
+
+        <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn" type="button" title="Language"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
+        <div class="lang-menu">
+        <div class="lang-search"><i class="fas fa-search"></i><input type="text" id="langSearch" placeholder="搜索语言…" autocomplete="off" /></div>
+        <div class="lang-list" id="langList"></div>
+        </div>
+        </div>
         <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
         <a class="btn-github" href="https://github.com/Silent-Studio-CN/IntTest" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
       </nav>
     </div>
   </header>
 
+  <div id="transBanner"></div>
+
   <main class="doc-wrap">
     <nav class="doc-crumbs">
-      <a href="../../index.html">Docs</a><i class="fas fa-chevron-right"></i>
+      <a href="../../index.html" data-i18n="crumb_docs">Docs</a><i class="fas fa-chevron-right"></i>
       <a href="../index.html">IntTest</a><i class="fas fa-chevron-right"></i>
-      <a href="quickstart.html">Guide</a><i class="fas fa-chevron-right"></i><span>Quickstart</span>
+      <a href="quickstart.html" data-i18n="crumb_guide">Guide</a><i class="fas fa-chevron-right"></i><span>Quickstart</span>
     </nav>
 
     <div class="doc-hero">
       <span class="doc-eyebrow">Guide</span>
-      <h1 class="doc-title">快速开始 · IntTest</h1>
+      <h1 class="doc-title"><span data-i18n="quick_title_suffix">快速开始</span> · IntTest</h1>
     </div>
 
     <div class="doc-content">
-      <h2>下载</h2>
+      <h2 data-i18n="h_download">下载</h2>
       <p>IntTest 已发布 <strong>v2.2.0</strong>，选择对应架构的 exe 直接运行，无需安装 Python。</p>
 
       <div class="dl-item">
@@ -56,7 +67,7 @@
 
       <div class="callout callout-warn">中国用户下载慢或失败时，请使用<b>快速线路</b>（gh-proxy.com 加速代理）。所有历史版本见 <a href="https://github.com/Silent-Studio-CN/IntTest/releases/tag/v2.2.0" target="_blank" rel="noopener">Releases 页面</a>。</div>
 
-      <h2>使用</h2>
+      <h2 data-i18n="h_usage">使用</h2>
       <p>下载后双击 exe 即可启动。主窗口默认打开「速度测试」页，左侧导航共六个模块：</p>
       <ul>
         <li><strong>速度测试</strong> — 选择下载服务器（海外 / 国内线路），点击「开始测速」自动进行下载 &amp; 上传测试。下载 6 路 HTTP Range 并发，上传 4 路并发 POST，持续 15 秒，实时显示瞬时速率和趋势图；另有极限模式（12 路 / 8 路并发，30 秒）。</li>
@@ -77,7 +88,7 @@
   </main>
 
   <footer class="doc-footer">
-    <p><a href="../../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+    <p><a href="../../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · <span data-i18n="footer_page">文档页</span></p>
   </footer>
   <script>
     (function () {

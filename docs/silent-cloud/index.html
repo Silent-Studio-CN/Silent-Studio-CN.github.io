@@ -7,6 +7,7 @@
   <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
   <link rel="stylesheet" href="../../assets/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="../docs.css" />
+  <script src="../docs-i18n.js"></script>
 </head>
 <body>
   <header class="doc-nav">
@@ -16,50 +17,60 @@
         <span class="doc-brand-name">SilentCloud<em>Cloud</em></span>
       </a>
       <nav class="doc-nav-links">
-        <a href="../../index.html">首页</a>
-        <a href="guide/quickstart.html">快速开始</a>
+        <a href="../../index.html" data-i18n="nav_home">首页</a>
+        <a href="guide/quickstart.html" data-i18n="nav_quickstart">快速开始</a>
+
+        <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn" type="button" title="Language"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
+        <div class="lang-menu">
+        <div class="lang-search"><i class="fas fa-search"></i><input type="text" id="langSearch" placeholder="搜索语言…" autocomplete="off" /></div>
+        <div class="lang-list" id="langList"></div>
+        </div>
+        </div>
         <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
         <a class="btn-github" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
       </nav>
     </div>
   </header>
 
+  <div id="transBanner"></div>
+
   <main class="doc-wrap">
     <nav class="doc-crumbs">
-      <a href="../index.html">Docs</a><i class="fas fa-chevron-right"></i><span>SilentCloud</span>
+      <a href="../index.html" data-i18n="crumb_docs">Docs</a><i class="fas fa-chevron-right"></i><span>SilentCloud</span>
     </nav>
 
     <div class="doc-hero">
       <span class="doc-eyebrow">Cloud</span>
       <h1 class="doc-title"><i class="fas fa-cloud" style="color:#34d399;margin-right:10px;"></i>SilentCloud</h1>
-      <p class="doc-sub">基于 PostgreSQL 的轻量云平台。官网、服务托管、可视化工作流与 API 密钥管理，一站式的数字基础设施。</p>
+      <p class="doc-sub" data-i18n="sc_sub">基于 PostgreSQL 的轻量云平台。官网、服务托管、可视化工作流与 API 密钥管理，一站式的数字基础设施。</p>
     </div>
 
     <div class="doc-content">
-      <h2>功能特性</h2>
+      <h2 data-i18n="feat_h">功能特性</h2>
       <div class="landing-grid">
-          <div class="landing-card"><i class="fas fa-globe"></i><h4>多语言官网</h4><p>中 / 英 / 日三语站点，IP 自动识别语言。</p></div>
-          <div class="landing-card"><i class="fas fa-project-diagram"></i><h4>工作流编辑器</h4><p>可视化节点编辑 + 编程模式 + 3D 建模流。</p></div>
-          <div class="landing-card"><i class="fas fa-key"></i><h4>API 管理</h4><p>服务 API 密钥一键生成与轮换。</p></div>
-          <div class="landing-card"><i class="fas fa-server"></i><h4>服务托管</h4><p>API / WebSocket / Webhook 等十余种服务类型。</p></div>
+          <div class="landing-card"><i class="fas fa-globe"></i><h4 data-i18n="sc_f1_t">多语言官网</h4><p data-i18n="sc_f1_d">中 / 英 / 日三语站点，IP 自动识别语言。</p></div>
+          <div class="landing-card"><i class="fas fa-project-diagram"></i><h4 data-i18n="sc_f2_t">工作流编辑器</h4><p data-i18n="sc_f2_d">可视化节点编辑 + 编程模式 + 3D 建模流。</p></div>
+          <div class="landing-card"><i class="fas fa-key"></i><h4 data-i18n="sc_f3_t">API 管理</h4><p data-i18n="sc_f3_d">服务 API 密钥一键生成与轮换。</p></div>
+          <div class="landing-card"><i class="fas fa-server"></i><h4 data-i18n="sc_f4_t">服务托管</h4><p data-i18n="sc_f4_d">API / WebSocket / Webhook 等十余种服务类型。</p></div>
       </div>
 
       <div class="repo-banner">
-        <p>这是 <strong>SilentCloud</strong> 的文档首页。SilentCloud 是 Web 云服务，访问官网即可开通使用。</p>
+        <p data-i18n="sc_banner">这是 <strong>SilentCloud</strong> 的文档首页。SilentCloud 是 Web 云服务，访问官网即可开通使用。</p>
         <a class="btn-primary" href="https://xx.com" target="_blank" rel="noopener"><i class="fas fa-globe"></i> 前往官网</a>
       </div>
 
-      <h2>继续阅读</h2>
+      <h2 data-i18n="continue_reading">继续阅读</h2>
       <div class="landing-grid">
         <a class="landing-card" href="guide/quickstart.html" style="text-decoration:none;">
-          <i class="fas fa-rocket"></i><h4>快速开始</h4><p>注册账号，几分钟内用上 SilentCloud。</p>
+          <i class="fas fa-rocket"></i><h4 data-i18n="read_quick_t">快速开始</h4><p>注册账号，几分钟内用上 SilentCloud。</p>
         </a>
       </div>
     </div>
   </main>
 
   <footer class="doc-footer">
-    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · <span data-i18n="footer_page">文档页</span></p>
   </footer>
   <script>
     (function () {

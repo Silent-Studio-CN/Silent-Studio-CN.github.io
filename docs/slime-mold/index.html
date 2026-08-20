@@ -7,6 +7,7 @@
   <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
   <link rel="stylesheet" href="../../assets/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="../docs.css" />
+  <script src="../docs-i18n.js"></script>
 </head>
 <body>
   <header class="doc-nav">
@@ -16,50 +17,60 @@
         <span class="doc-brand-name">SlimeMold<em>Pathfinding</em></span>
       </a>
       <nav class="doc-nav-links">
-        <a href="../../index.html">首页</a>
-        <a href="guide/quickstart.html">快速开始</a>
+        <a href="../../index.html" data-i18n="nav_home">首页</a>
+        <a href="guide/quickstart.html" data-i18n="nav_quickstart">快速开始</a>
+
+        <div class="lang-select" id="langSelect">
+        <button class="lang-btn" id="langBtn" type="button" title="Language"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
+        <div class="lang-menu">
+        <div class="lang-search"><i class="fas fa-search"></i><input type="text" id="langSearch" placeholder="搜索语言…" autocomplete="off" /></div>
+        <div class="lang-list" id="langList"></div>
+        </div>
+        </div>
         <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
         <a class="btn-github" href="https://github.com/Silent-Studio-CN/SlimeMold" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
       </nav>
     </div>
   </header>
 
+  <div id="transBanner"></div>
+
   <main class="doc-wrap">
     <nav class="doc-crumbs">
-      <a href="../index.html">Docs</a><i class="fas fa-chevron-right"></i><span>SlimeMold</span>
+      <a href="../index.html" data-i18n="crumb_docs">Docs</a><i class="fas fa-chevron-right"></i><span>SlimeMold</span>
     </nav>
 
     <div class="doc-hero">
       <span class="doc-eyebrow">Pathfinding</span>
       <h1 class="doc-title"><i class="fas fa-disease" style="color:#c2a5ff;margin-right:10px;"></i>SlimeMold</h1>
-      <p class="doc-sub">黏菌启发的轻量级路径规划库。BFS 气味扩散 + 加权概率爬行，零依赖核心，Python 3.10+。</p>
+      <p class="doc-sub" data-i18n="sm_sub">黏菌启发的轻量级路径规划库。BFS 气味扩散 + 加权概率爬行，零依赖核心，Python 3.10+。</p>
     </div>
 
     <div class="doc-content">
-      <h2>功能特性</h2>
+      <h2 data-i18n="feat_h">功能特性</h2>
       <div class="landing-grid">
-          <div class="landing-card"><i class="fas fa-wind"></i><h4>气味场扩散</h4><p>从终点 BFS 扩散化学信号，给每格标上最短步数，并自动缓存复用。</p></div>
-          <div class="landing-card"><i class="fas fa-route"></i><h4>双策略爬行</h4><p><code>shortest</code> 严格最短；<code>optimal</code> 加权概率探索，路径更多样、更贴近真实黏菌。</p></div>
-          <div class="landing-card"><i class="fas fa-bug-slash"></i><h4>精确报错</h4><p>参数类型、越界、障碍物……每个错误都在算法执行前被精确拦截，信息可操作。</p></div>
-          <div class="landing-card"><i class="fas fa-window-restore"></i><h4>可视化窗口</h4><p>内置 Qt 动画窗口，步进展示爬行过程，支持自定义样式与配色。</p></div>
+          <div class="landing-card"><i class="fas fa-wind"></i><h4 data-i18n="sm_f1_t">气味场扩散</h4><p data-i18n="sm_f1_d">从终点 BFS 扩散化学信号，给每格标上最短步数，并自动缓存复用。</p></div>
+          <div class="landing-card"><i class="fas fa-route"></i><h4 data-i18n="sm_f2_t">双策略爬行</h4><p data-i18n="sm_f2_d"><code>shortest</code> 严格最短；<code>optimal</code> 加权概率探索，路径更多样、更贴近真实黏菌。</p></div>
+          <div class="landing-card"><i class="fas fa-bug-slash"></i><h4 data-i18n="sm_f3_t">精确报错</h4><p data-i18n="sm_f3_d">参数类型、越界、障碍物……每个错误都在算法执行前被精确拦截，信息可操作。</p></div>
+          <div class="landing-card"><i class="fas fa-window-restore"></i><h4 data-i18n="sm_f4_t">可视化窗口</h4><p data-i18n="sm_f4_d">内置 Qt 动画窗口，步进展示爬行过程，支持自定义样式与配色。</p></div>
       </div>
 
       <div class="repo-banner">
-        <p>这是 <strong>SlimeMold</strong> 的文档首页。<br />前往 GitHub 仓库获取源码、Star 与最新发布。</p>
+        <p data-i18n="sm_banner">这是 <strong>SlimeMold</strong> 的文档首页。<br />前往 GitHub 仓库获取源码、Star 与最新发布。</p>
         <a class="btn-primary" href="https://github.com/Silent-Studio-CN/SlimeMold" target="_blank" rel="noopener"><i class="fab fa-github"></i> 前往 GitHub 仓库</a>
       </div>
 
-      <h2>继续阅读</h2>
+      <h2 data-i18n="continue_reading">继续阅读</h2>
       <div class="landing-grid">
         <a class="landing-card" href="guide/quickstart.html" style="text-decoration:none;">
-          <i class="fas fa-rocket"></i><h4>快速开始</h4><p>安装、30 秒上手与策略调优。</p>
+          <i class="fas fa-rocket"></i><h4 data-i18n="read_quick_t">快速开始</h4><p>安装、30 秒上手与策略调优。</p>
         </a>
       </div>
     </div>
   </main>
 
   <footer class="doc-footer">
-    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · <span data-i18n="footer_page">文档页</span></p>
   </footer>
   <script>
     (function () {
