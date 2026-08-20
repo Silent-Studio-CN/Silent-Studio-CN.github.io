@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlimeMold · 快速开始</title>
+  <link rel="icon" type="image/jpeg" href="../../../assets/logo.jpg" />
+  <link rel="stylesheet" href="../../../assets/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" href="../../docs.css" />
+</head>
+<body>
+  <header class="doc-nav">
+    <div class="doc-nav-inner">
+      <a class="doc-brand" href="../../../index.html">
+        <img src="../../../assets/logo.jpg" alt="SilentStudio" />
+        <span class="doc-brand-name">SlimeMold<em>Pathfinding</em></span>
+      </a>
+      <nav class="doc-nav-links">
+        <a href="../../../index.html">首页</a>
+        <a href="../index.html">文档首页</a>
+        <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a class="btn-github" href="https://github.com/Silent-Studio-CN/SlimeMold" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-wrap">
+    <nav class="doc-crumbs">
+      <a href="../../index.html">Docs</a><i class="fas fa-chevron-right"></i>
+      <a href="../index.html">SlimeMold</a><i class="fas fa-chevron-right"></i>
+      <a href="quickstart.html">Guide</a><i class="fas fa-chevron-right"></i><span>Quickstart</span>
+    </nav>
+
+    <div class="doc-hero">
+      <span class="doc-eyebrow">Guide</span>
+      <h1 class="doc-title">快速开始 · SlimeMold</h1>
+    </div>
+
+    <div class="doc-content">
+      <h2>安装</h2>
+      <p>Python 3.10 ~ 3.14 全部支持。</p>
+      <pre><code># 核心库 — 零依赖
+pip install slimemold
+
+# 带可视化窗口
+pip install slimemold[view]
+
+# 大图加速（&gt; 500×500）
+pip install slimemold[numpy]
+
+# 全家桶
+pip install slimemold[view,numpy]</code></pre>
+
+      <h2>30 秒上手</h2>
+      <p>0 = 可通行，1 = 障碍物。把二维网格交给它，告诉它起点和终点，它返回一条路径。</p>
+      <pre><code>from slime_mold import SlimeMold
+
+grid = [
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0],
+    [0, 0, 0, 0, 0],
+]
+
+sm = SlimeMold(grid)
+
+# 默认 optimal — 加权概率探索
+path = sm.find_path((0, 0), (4, 4))
+print(path)  # [(0, 0), (1, 0), (2, 0), ...]
+
+# 严格最短
+path = sm.find_path((0, 0), (4, 4), strategy="shortest")</code></pre>
+
+      <h2>路径策略</h2>
+      <p>两种爬行策略可选。默认 <code>optimal</code>（加权概率探索），每一步按气味浓度加权随机选择方向；<code>shortest</code> 则严格选择气味最浓的邻居，在无权网格中保证全局最短。</p>
+      <table>
+        <thead><tr><th>exploration_rate</th><th>行为</th><th>适用场景</th></tr></thead>
+        <tbody>
+          <tr><td><code>0.0</code></td><td>等价 shortest</td><td>确定性需求</td></tr>
+          <tr><td><code>0.05</code></td><td>偶尔绕路</td><td>近乎最短，微多样性</td></tr>
+          <tr><td><code>0.15</code>（默认）</td><td>85% 走最短方向</td><td>通用场景</td></tr>
+          <tr><td><code>0.3</code></td><td>显著多样化</td><td>多代理分散流量</td></tr>
+          <tr><td><code>0.5</code></td><td>高度随机</td><td>探索性任务</td></tr>
+          <tr><td><code>1.0</code></td><td>几乎纯随机</td><td>混沌测试</td></tr>
+        </tbody>
+      </table>
+      <pre><code># 调整探索率
+sm.find_path((0, 0), (4, 4), exploration_rate=0.05)  # 接近最短
+sm.find_path((0, 0), (4, 4), exploration_rate=0.30)  # 强探索</code></pre>
+
+      <h2>可视化</h2>
+      <p>打开 Qt 动画窗口，步进展示黏菌爬行过程。PySide6 只在首次调用时才加载。</p>
+      <pre><code># 简单调用
+sm.window(start=(0, 0), goal=(9, 9))
+
+# 自定义样式
+sm.window(
+    start=(0, 0), goal=(4, 4),
+    style={
+        "floor": "#1e1e2e",
+        "wall": "#45475a",
+        "path": "#f5c2e7",
+        "start_label": "起",
+        "goal_label": "终",
+    }
+)</code></pre>
+
+      <div class="callout callout-info">想要完整中间数据（气味场、路径步数等）自行渲染？用 <code>get_path_data()</code>，SlimeMold 只负责算，不绑定渲染。</div>
+
+      <div class="repo-banner">
+        <p>遇到问题？前往 <strong>SlimeMold</strong> 的 GitHub 仓库查看完整文档、Issues 与最新发布。</p>
+        <a class="btn-primary" href="https://github.com/Silent-Studio-CN/SlimeMold" target="_blank" rel="noopener"><i class="fab fa-github"></i> 前往 GitHub 仓库</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="doc-footer">
+    <p><a href="../../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+  </footer>
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var theme = 'dark';
+      try { theme = localStorage.getItem('ss_theme') || 'dark'; } catch (e) {}
+      html.setAttribute('data-theme', theme);
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var btn = document.getElementById('themeBtn');
+      var icon = document.getElementById('themeIcon');
+      function sync() { if (icon) icon.className = html.getAttribute('data-theme') === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
+      sync();
+      if (btn) btn.addEventListener('click', function () {
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        try { localStorage.setItem('ss_theme', html.getAttribute('data-theme')); } catch (e) {}
+        sync();
+      });
+    })();
+  </script>
+
+</body>
+</html>

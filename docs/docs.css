@@ -192,6 +192,25 @@ pre code {
   padding: 0;
 }
 
+/* 表格 */
+.doc-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0 22px;
+  font-size: 0.86rem;
+}
+.doc-content th, .doc-content td {
+  border: 1px solid var(--card-border);
+  padding: 9px 14px;
+  text-align: left;
+  color: var(--text-dim);
+}
+.doc-content th {
+  background: var(--code-bg);
+  color: var(--text);
+  font-weight: 700;
+}
+
 /* 主题切换按钮 */
 .btn-theme {
   width: 34px; height: 34px;

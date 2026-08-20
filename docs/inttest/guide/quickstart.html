@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IntTest · 快速开始</title>
+  <link rel="icon" type="image/jpeg" href="../../../assets/logo.jpg" />
+  <link rel="stylesheet" href="../../../assets/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" href="../../docs.css" />
+</head>
+<body>
+  <header class="doc-nav">
+    <div class="doc-nav-inner">
+      <a class="doc-brand" href="../../../index.html">
+        <img src="../../../assets/logo.jpg" alt="SilentStudio" />
+        <span class="doc-brand-name">IntTest<em>Network</em></span>
+      </a>
+      <nav class="doc-nav-links">
+        <a href="../../../index.html">首页</a>
+        <a href="../index.html">文档首页</a>
+        <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a class="btn-github" href="https://github.com/Silent-Studio-CN/IntTest" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-wrap">
+    <nav class="doc-crumbs">
+      <a href="../../index.html">Docs</a><i class="fas fa-chevron-right"></i>
+      <a href="../index.html">IntTest</a><i class="fas fa-chevron-right"></i>
+      <a href="quickstart.html">Guide</a><i class="fas fa-chevron-right"></i><span>Quickstart</span>
+    </nav>
+
+    <div class="doc-hero">
+      <span class="doc-eyebrow">Guide</span>
+      <h1 class="doc-title">快速开始 · IntTest</h1>
+    </div>
+
+    <div class="doc-content">
+      <h2>环境要求</h2>
+      <ul>
+        <li>Windows 10/11（64 位）</li>
+        <li>Python 3.10+</li>
+      </ul>
+
+      <h2>安装依赖</h2>
+      <pre><code>pip install -r requirements.txt</code></pre>
+      <p>核心依赖：<code>PySide6</code>（界面）、<code>qfluentwidgets</code>（Fluent 风格控件）、<code>psutil</code>（网络监控）、<code>requests</code>（HTTP 请求）。</p>
+
+      <h2>启动</h2>
+      <pre><code>python main.py</code></pre>
+      <p>启动后进入主窗口，默认打开「速度测试」页。左侧导航共六个模块：</p>
+      <ul>
+        <li><strong>速度测试</strong> — 选择下载服务器（海外 / 国内线路），点击「开始测速」自动进行下载 &amp; 上传测试。下载 6 路 HTTP Range 并发，上传 4 路并发 POST，持续 15 秒，实时显示瞬时速率和趋势图。</li>
+        <li><strong>实时监控</strong> — 监控当前网络接口实时上下行速率，折线图记录过去 60 秒变化，底部显示开机以来总流量。</li>
+        <li><strong>连通性测试</strong> — 对百度、腾讯、阿里、GitHub、谷歌进行 Ping，延迟颜色分级（绿色 &lt;100ms、橙色 &lt;300ms、红色 ≥300ms），支持每 5 秒自动刷新。</li>
+        <li><strong>网络信息</strong> — 本地接口详情、公网 IPv4/IPv6、运营商 ISP、地理位置与 ASN、DNS 解析与 HTTP 连通性、IPv4/IPv6 延迟对比。</li>
+        <li><strong>设置</strong> — 切换请求 User-Agent（Chrome / Firefox / Edge / Safari 预设）。</li>
+        <li><strong>帮助</strong> — 内置使用帮助。</li>
+      </ul>
+
+      <div class="callout callout-info">测速时请关闭其他占用带宽的应用（视频、下载等）。国内用户建议选择「腾讯云」或「浙江大学」线路，海外用户建议选择「Tele2」或「OVH」线路；多次测试取平均值结果更准确。</div>
+
+      <div class="repo-banner">
+        <p>遇到问题？前往 <strong>IntTest</strong> 的 GitHub 仓库查看完整文档、Issues 与最新发布。</p>
+        <a class="btn-primary" href="https://github.com/Silent-Studio-CN/IntTest" target="_blank" rel="noopener"><i class="fab fa-github"></i> 前往 GitHub 仓库</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="doc-footer">
+    <p><a href="../../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+  </footer>
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var theme = 'dark';
+      try { theme = localStorage.getItem('ss_theme') || 'dark'; } catch (e) {}
+      html.setAttribute('data-theme', theme);
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var btn = document.getElementById('themeBtn');
+      var icon = document.getElementById('themeIcon');
+      function sync() { if (icon) icon.className = html.getAttribute('data-theme') === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
+      sync();
+      if (btn) btn.addEventListener('click', function () {
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        try { localStorage.setItem('ss_theme', html.getAttribute('data-theme')); } catch (e) {}
+        sync();
+      });
+    })();
+  </script>
+
+</body>
+</html>

@@ -182,13 +182,13 @@
 
     footer_slogan: ['把复杂藏起来，把结果交给你。', '把複雜藏起來，把結果交給你。', 'Hide the complexity, hand you the result.', '複雑さを隠し、結果をあなたに。', 'Verberge die Komplexität, gib dir das Ergebnis.', 'Скрыть сложность, отдать результат.', 'Esconde la complejidad, dale el resultado.'],
     footer_docs: [
-      '产品文档：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>',
-      '產品文件：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>',
-      'Docs: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>',
-      'ドキュメント：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>',
-      'Dokumente: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>',
-      'Документация: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>',
-      'Docs: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>'
+      '产品文档：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a> · <a href="docs/slime-mold/">SlimeMold</a> · <a href="docs/inttest/">IntTest</a>',
+      '產品文件：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a> · <a href="docs/slime-mold/">SlimeMold</a> · <a href="docs/inttest/">IntTest</a>',
+      'Docs: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a> · <a href="docs/slime-mold/">SlimeMold</a> · <a href="docs/inttest/">IntTest</a>',
+      'ドキュメント：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a> · <a href="docs/slime-mold/">SlimeMold</a> · <a href="docs/inttest/">IntTest</a>',
+      'Dokumente: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a> · <a href="docs/slime-mold/">SlimeMold</a> · <a href="docs/inttest/">IntTest</a>',
+      'Документация: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a> · <a href="docs/slime-mold/">SlimeMold</a> · <a href="docs/inttest/">IntTest</a>',
+      'Docs: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a> · <a href="docs/slime-mold/">SlimeMold</a> · <a href="docs/inttest/">IntTest</a>'
     ],
     footer_rights: ['保留所有权利', '保留所有權利', 'All rights reserved', 'All rights reserved', 'Alle Rechte vorbehalten', 'Все права защищены', 'Todos los derechos reservados'],
     footer_search: ['文档搜索', '文件搜尋', 'Docs search', 'ドキュメント検索', 'Dokumentsuche', 'Поиск документов', 'Buscar documentos']

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SlimeMold · 文档</title>
+  <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
+  <link rel="stylesheet" href="../../assets/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" href="../docs.css" />
+</head>
+<body>
+  <header class="doc-nav">
+    <div class="doc-nav-inner">
+      <a class="doc-brand" href="../../index.html">
+        <img src="../../assets/logo.jpg" alt="SilentStudio" />
+        <span class="doc-brand-name">SlimeMold<em>Pathfinding</em></span>
+      </a>
+      <nav class="doc-nav-links">
+        <a href="../../index.html">首页</a>
+        <a href="guide/quickstart.html">快速开始</a>
+        <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a class="btn-github" href="https://github.com/Silent-Studio-CN/SlimeMold" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-wrap">
+    <nav class="doc-crumbs">
+      <a href="../index.html">Docs</a><i class="fas fa-chevron-right"></i><span>SlimeMold</span>
+    </nav>
+
+    <div class="doc-hero">
+      <span class="doc-eyebrow">Pathfinding</span>
+      <h1 class="doc-title"><i class="fas fa-disease" style="color:#c2a5ff;margin-right:10px;"></i>SlimeMold</h1>
+      <p class="doc-sub">黏菌启发的轻量级路径规划库。BFS 气味扩散 + 加权概率爬行，零依赖核心，Python 3.10+。</p>
+    </div>
+
+    <div class="doc-content">
+      <h2>功能特性</h2>
+      <div class="landing-grid">
+          <div class="landing-card"><i class="fas fa-wind"></i><h4>气味场扩散</h4><p>从终点 BFS 扩散化学信号，给每格标上最短步数，并自动缓存复用。</p></div>
+          <div class="landing-card"><i class="fas fa-route"></i><h4>双策略爬行</h4><p><code>shortest</code> 严格最短；<code>optimal</code> 加权概率探索，路径更多样、更贴近真实黏菌。</p></div>
+          <div class="landing-card"><i class="fas fa-bug-slash"></i><h4>精确报错</h4><p>参数类型、越界、障碍物……每个错误都在算法执行前被精确拦截，信息可操作。</p></div>
+          <div class="landing-card"><i class="fas fa-window-restore"></i><h4>可视化窗口</h4><p>内置 Qt 动画窗口，步进展示爬行过程，支持自定义样式与配色。</p></div>
+      </div>
+
+      <div class="repo-banner">
+        <p>这是 <strong>SlimeMold</strong> 的文档首页。<br />前往 GitHub 仓库获取源码、Star 与最新发布。</p>
+        <a class="btn-primary" href="https://github.com/Silent-Studio-CN/SlimeMold" target="_blank" rel="noopener"><i class="fab fa-github"></i> 前往 GitHub 仓库</a>
+      </div>
+
+      <h2>继续阅读</h2>
+      <div class="landing-grid">
+        <a class="landing-card" href="guide/quickstart.html" style="text-decoration:none;">
+          <i class="fas fa-rocket"></i><h4>快速开始</h4><p>安装、30 秒上手与策略调优。</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="doc-footer">
+    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+  </footer>
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var theme = 'dark';
+      try { theme = localStorage.getItem('ss_theme') || 'dark'; } catch (e) {}
+      html.setAttribute('data-theme', theme);
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var btn = document.getElementById('themeBtn');
+      var icon = document.getElementById('themeIcon');
+      function sync() { if (icon) icon.className = html.getAttribute('data-theme') === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
+      sync();
+      if (btn) btn.addEventListener('click', function () {
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        try { localStorage.setItem('ss_theme', html.getAttribute('data-theme')); } catch (e) {}
+        sync();
+      });
+    })();
+  </script>
+
+</body>
+</html>
