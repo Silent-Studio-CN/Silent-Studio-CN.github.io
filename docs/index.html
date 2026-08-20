@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>文档搜索 · SilentStudio</title>
+  <link rel="icon" type="image/jpeg" href="../assets/logo.jpg" />
+  <link rel="stylesheet" href="../assets/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" href="docs.css" />
+  <style>
+    .search-hero { text-align: center; padding: 40px 0 12px; }
+    .search-hero h1 { font-size: clamp(1.6rem, 4vw, 2.3rem); font-weight: 800; letter-spacing: -0.02em; }
+    .search-hero p { margin-top: 10px; color: var(--text-dim); font-size: 0.95rem; }
+    .search-box {
+      max-width: 640px;
+      margin: 30px auto 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 6px 8px 6px 18px;
+      transition: border-color 0.25s, box-shadow 0.25s;
+    }
+    .search-box:focus-within {
+      border-color: rgba(124, 140, 255, 0.6);
+      box-shadow: 0 0 0 3px rgba(124, 140, 255, 0.15);
+    }
+    .search-box i { color: var(--text-faint); font-size: 1rem; }
+    .search-box input {
+      flex: 1;
+      background: none;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 1rem;
+      font-family: inherit;
+      padding: 10px 0;
+    }
+    .search-box input::placeholder { color: var(--text-faint); }
+    .search-box .clear-btn {
+      background: none; border: none;
+      color: var(--text-faint);
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .search-box .clear-btn:hover { color: var(--text); }
+    .search-meta { max-width: 860px; margin: 26px auto 0; font-size: 0.8rem; color: var(--text-faint); }
+    .search-results { max-width: 860px; margin: 14px auto 60px; display: flex; flex-direction: column; gap: 12px; }
+    .result-card {
+      display: block;
+      background: var(--card);
+      border: 1px solid var(--card-border);
+      border-radius: 14px;
+      padding: 18px 22px;
+      transition: border-color 0.25s, transform 0.25s, background 0.25s;
+    }
+    .result-card:hover {
+      border-color: rgba(124, 140, 255, 0.45);
+      transform: translateX(4px);
+      background: rgba(124, 140, 255, 0.05);
+    }
+    .result-crumb { font-family: var(--mono); font-size: 0.7rem; color: var(--accent-2); margin-bottom: 6px; }
+    .result-title { font-size: 1.02rem; font-weight: 700; }
+    .result-title i { font-size: 0.78rem; color: var(--text-faint); margin-left: 6px; }
+    .result-desc { margin-top: 6px; font-size: 0.86rem; color: var(--text-dim); }
+    .result-tags { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 10px; }
+    .result-tags span {
+      font-family: var(--mono);
+      font-size: 0.64rem;
+      color: var(--text-faint);
+      border: 1px solid var(--card-border);
+      border-radius: 6px;
+      padding: 2px 8px;
+    }
+    .no-result { text-align: center; color: var(--text-faint); padding: 40px 0; }
+    .repo-line { text-align: center; margin: 10px 0 60px; }
+    .repo-line a { color: var(--accent-2); font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header class="doc-nav">
+    <div class="doc-nav-inner">
+      <a class="doc-brand" href="../index.html">
+        <img src="../assets/logo.jpg" alt="SilentStudio" />
+        <span class="doc-brand-name">文档搜索<em>Docs</em></span>
+      </a>
+      <nav class="doc-nav-links">
+        <a href="../index.html">首页</a>
+        <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a class="btn-github" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-wrap">
+    <div class="search-hero">
+      <h1>文档搜索</h1>
+      <p>搜索 SilentStudio 产品文档与快速开始指南</p>
+    </div>
+
+    <div class="search-box">
+      <i class="fas fa-search"></i>
+      <input type="text" id="searchInput" placeholder="输入关键词，如：SilentSafe / 快速开始 / 部署…" autocomplete="off" />
+      <button class="clear-btn" id="clearBtn" type="button" title="清空"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="search-meta" id="searchMeta"></div>
+    <div class="search-results" id="searchResults"></div>
+
+    <p class="repo-line"><a href="https://github.com/Silent-Studio-CN/Silent-Studio-CN.github.io" target="_blank" rel="noopener">本项目仓库 ›</a></p>
+  </main>
+
+  <footer class="doc-footer">
+    <p><a href="../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档搜索</p>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var html = document.documentElement;
+      var theme = 'dark';
+      try { theme = localStorage.getItem('ss_theme') || 'dark'; } catch (e) {}
+      html.setAttribute('data-theme', theme);
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var btn = document.getElementById('themeBtn');
+      var icon = document.getElementById('themeIcon');
+      function sync() { if (icon) icon.className = html.getAttribute('data-theme') === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
+      sync();
+      if (btn) btn.addEventListener('click', function () {
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        try { localStorage.setItem('ss_theme', html.getAttribute('data-theme')); } catch (e) {}
+        sync();
+      });
+
+      var INDEX = [
+        { crumb: 'SilentSafe · Docs', title: 'SilentSafe 文档', desc: '智能安全防护工具：威胁扫描、行为监控、启发式分析与隔离区。', link: 'silent-safe/', tags: ['Security', '防护'] },
+        { crumb: 'SilentSafe · Guide', title: 'SilentSafe 快速开始', desc: '环境要求、安装依赖与启动扫描，几分钟跑起来。', link: 'silent-safe/guide/quickstart.html', tags: ['Guide', '安装'] },
+        { crumb: 'SilentHoneypot · Docs', title: 'SilentHoneypot 文档', desc: 'Rust 蜜罐诱捕系统：SSH / FTP / HTTP 诱饵与攻击分析。', link: 'silent-honeypot/', tags: ['Deception', '蜜罐'] },
+        { crumb: 'SilentHoneypot · Guide', title: 'SilentHoneypot 快速开始', desc: '构建 sensor 与 analyzer，配置诱饵并运行。', link: 'silent-honeypot/guide/quickstart.html', tags: ['Guide', 'Rust'] },
+        { crumb: 'SilentGameEngine · Docs', title: 'SilentGameEngine 文档', desc: '跨语言游戏引擎：渲染、物理、音频与场景模块。', link: 'silent-game-engine/', tags: ['Engine', '渲染'] },
+        { crumb: 'SilentGameEngine · Guide', title: 'SilentGameEngine 快速开始', desc: '创建引擎实例、添加场景并启动主循环。', link: 'silent-game-engine/guide/quickstart.html', tags: ['Guide', 'OpenGL'] },
+        { crumb: 'SilentCloud · Docs', title: 'SilentCloud 文档', desc: '基于 PostgreSQL 的轻量云平台：官网、服务与工作流。', link: 'silent-cloud/', tags: ['Cloud', 'FastAPI'] },
+        { crumb: 'SilentCloud · Guide', title: 'SilentCloud 快速开始', desc: '配置数据库并启动本地服务。', link: 'silent-cloud/guide/quickstart.html', tags: ['Guide', 'PostgreSQL'] },
+        { crumb: 'ssdbs · Docs', title: 'SilentSafeDateBaseServer 文档', desc: '威胁情报数据库服务：情报查询、节点同步与策略下发。', link: 'ssdbs/', tags: ['Intelligence', '情报'] },
+        { crumb: 'ssdbs · Guide', title: 'ssdbs 快速开始', desc: '初始化数据库、启动服务并查询情报。', link: 'ssdbs/guide/quickstart.html', tags: ['Guide', 'API'] },
+        { crumb: 'SilentStudioWebSite · Docs', title: 'SilentStudioWebSite 文档', desc: '多语言官网 + 可视化工作流编辑器 + 3D 建模流。', link: 'silentstudio-website/', tags: ['Website', '工作流'] },
+        { crumb: 'SilentStudioWebSite · Guide', title: 'SilentStudioWebSite 快速开始', desc: '启动后端并打开编辑器体验 3D 建模流。', link: 'silentstudio-website/guide/quickstart.html', tags: ['Guide', '3D'] }
+      ];
+
+      var input = document.getElementById('searchInput');
+      var clearBtn = document.getElementById('clearBtn');
+      var meta = document.getElementById('searchMeta');
+      var results = document.getElementById('searchResults');
+
+      function esc(s) {
+        return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+          return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+        });
+      }
+
+      function render(q) {
+        q = (q || '').trim().toLowerCase();
+        var list = INDEX.filter(function (it) {
+          if (!q) return true;
+          var hay = (it.title + ' ' + it.desc + ' ' + it.tags.join(' ') + ' ' + it.crumb).toLowerCase();
+          return q.split(/\s+/).every(function (w) { return hay.indexOf(w) >= 0; });
+        });
+        meta.textContent = q
+          ? '找到 ' + list.length + ' 条与 "' + input.value.trim() + '" 相关的结果'
+          : '共 ' + INDEX.length + ' 篇文档';
+        if (list.length === 0) {
+          results.innerHTML = '<div class="no-result"><i class="fas fa-search" style="font-size:1.6rem;display:block;margin-bottom:12px;opacity:.5"></i>没有找到相关文档，换个关键词试试</div>';
+          return;
+        }
+        results.innerHTML = list.map(function (it) {
+          var tags = it.tags.map(function (x) { return '<span>' + esc(x) + '</span>'; }).join('');
+          return '<a class="result-card" href="' + it.link + '">' +
+            '<div class="result-crumb">' + esc(it.crumb) + '</div>' +
+            '<div class="result-title">' + esc(it.title) + ' <i class="fas fa-arrow-right"></i></div>' +
+            '<div class="result-desc">' + esc(it.desc) + '</div>' +
+            '<div class="result-tags">' + tags + '</div>' +
+          '</a>';
+        }).join('');
+      }
+
+      input.addEventListener('input', function () { render(input.value); });
+      clearBtn.addEventListener('click', function () {
+        input.value = '';
+        render('');
+        input.focus();
+      });
+      render('');
+    })();
+  </script>
+</body>
+</html>

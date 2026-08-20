@@ -26,7 +26,7 @@
       </a>
       <nav class="nav-links">
         <a href="#about" data-i18n="nav_about">关于</a>
-        <a href="#projects" data-i18n="nav_projects">项目</a>
+        <a href="#updates" data-i18n="nav_updates">近期更新</a>
         <a href="#philosophy" data-i18n="nav_philosophy">理念</a>
         <a href="#latest" data-i18n="nav_latest">最新项目</a>
       </nav>
@@ -71,7 +71,7 @@
           我们相信：最好的工具，是把复杂藏起来，把结果交给你。
         </p>
         <div class="hero-cta">
-          <a class="btn-primary" href="#projects"><i class="fas fa-cube"></i><span data-i18n="hero_btn1">探索项目</span></a>
+          <a class="btn-primary" href="#updates"><i class="fas fa-cube"></i><span data-i18n="hero_btn1">近期更新</span></a>
           <a class="btn-secondary" href="#about"><i class="fas fa-play"></i><span data-i18n="hero_btn2">认识我们</span></a>
         </div>
         <div class="hero-scroll" aria-hidden="true"><span></span></div>
@@ -111,66 +111,22 @@
       </div>
     </section>
 
-    <!-- ===== 项目（组织仓库真实项目） ===== -->
-    <section class="section section-alt" id="projects">
+    <!-- ===== 近期更新（数据来自 GitHub io.json，实时拉取） ===== -->
+    <section class="section section-alt" id="updates">
       <div class="section-inner">
         <div class="section-head reveal">
-          <span class="section-eyebrow">Projects</span>
-          <h2 class="section-title" data-i18n="projects_title">精选项目</h2>
-          <p class="section-desc" data-i18n="projects_desc">点击卡片，前往对应仓库了解详情。</p>
+          <span class="section-eyebrow">Updates</span>
+          <h2 class="section-title" data-i18n="updates_title">近期更新</h2>
+          <p class="section-desc" data-i18n="updates_desc">来自项目仓库的最新动态，实时同步于 GitHub 数据源。</p>
         </div>
 
-        <div class="project-grid">
-          <!-- SilentSafe -->
-          <a class="project-card reveal" data-tilt href="https://github.com/Silent-Studio-CN/SilentSafe" target="_blank" rel="noopener">
-            <div class="project-glow" style="--c:#22d3ee;"></div>
-            <div class="project-top">
-              <i class="fas fa-shield-halved project-ico" style="--c:#22d3ee;"></i>
-              <span class="project-tag" data-i18n="proj1_tag">Security</span>
-            </div>
-            <h3>SilentSafe</h3>
-            <p data-i18n="proj1_desc">智能安全防护工具。防护默认全开，隐藏技术细节，只展示结果。已发布版本将打包为可执行程序交付，仓库提供项目概览与问题跟踪。</p>
-            <div class="project-tech"><span>Python</span><span>C++</span><span>Rust</span></div>
-            <span class="go-link" data-i18n="proj_go">前往仓库 →</span>
-          </a>
+        <div class="updates-list" id="updatesList">
+          <div class="updates-loading" data-i18n="updates_loading">正在同步更新…</div>
+        </div>
 
-          <!-- SlimeMold -->
-          <a class="project-card reveal" data-tilt href="https://github.com/Silent-Studio-CN/SlimeMold" target="_blank" rel="noopener">
-            <div class="project-glow" style="--c:#a78bfa;"></div>
-            <div class="project-top">
-              <i class="fas fa-dice-d6 project-ico" style="--c:#a78bfa;"></i>
-              <span class="project-tag" data-i18n="proj2_tag">Algorithm</span>
-            </div>
-            <h3>SlimeMold</h3>
-            <p data-i18n="proj2_desc">受黏菌启发的轻量级路径规划库。BFS 与加权概率爬行的结合，为寻路与探索问题提供简洁的 Python 实现。</p>
-            <div class="project-tech"><span>Python</span></div>
-            <span class="go-link" data-i18n="proj_go">前往仓库 →</span>
-          </a>
-
-          <!-- SilentStudio-ProjectList -->
-          <a class="project-card reveal" data-tilt href="https://github.com/Silent-Studio-CN/SilentStudio-ProjectList" target="_blank" rel="noopener">
-            <div class="project-glow" style="--c:#fbbf24;"></div>
-            <div class="project-top">
-              <i class="fas fa-list-ul project-ico" style="--c:#fbbf24;"></i>
-              <span class="project-tag" data-i18n="proj3_tag">Index</span>
-            </div>
-            <h3>SilentStudio-ProjectList</h3>
-            <p data-i18n="proj3_desc">SilentStudio 的公开项目列表：简介、索引与最新动态。想了解我们正在做什么，从这里开始。</p>
-            <div class="project-tech"><span>Markdown</span></div>
-            <span class="go-link" data-i18n="proj_go">前往仓库 →</span>
-          </a>
-
-          <!-- 本网站 -->
-          <a class="project-card reveal" data-tilt href="https://github.com/Silent-Studio-CN/Silent-Studio-CN.github.io" target="_blank" rel="noopener">
-            <div class="project-glow" style="--c:#60a5fa;"></div>
-            <div class="project-top">
-              <i class="fas fa-globe project-ico" style="--c:#60a5fa;"></i>
-              <span class="project-tag" data-i18n="proj4_tag">Website</span>
-            </div>
-            <h3>SilentStudioWebSite</h3>
-            <p data-i18n="proj4_desc">本站点：静态介绍官网，支持七种语言与明暗主题。同时是 SilentStudio 全系列产品与工作流编辑器的展示门户。</p>
-            <div class="project-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
-            <span class="go-link" data-i18n="proj_go">前往仓库 →</span>
+        <div class="updates-foot reveal">
+          <a class="btn-secondary" href="https://github.com/orgs/Silent-Studio-CN/repositories" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i><span data-i18n="latest_btn1">查看最新项目列表</span>
           </a>
         </div>
       </div>
@@ -209,10 +165,23 @@
 
         <div class="stack reveal">
           <span class="stack-label" data-i18n="stack_label">技术栈</span>
-          <div class="stack-tags">
-            <span>Python</span><span>Rust</span><span>FastAPI</span><span>PostgreSQL</span>
-            <span>React</span><span>Three.js</span><span>React Flow</span><span>C++</span>
-            <span>C</span><span>YARA</span><span>Docker</span><span>OpenGL</span>
+          <div class="tech-strip">
+            <div class="tech-track" id="techTrack">
+              <span class="tech-item"><img src="assets/tech/vulkan.svg" alt="Vulkan" />Vulkan</span>
+              <span class="tech-item"><img src="assets/tech/directx.svg" alt="DirectX" />DirectX</span>
+              <span class="tech-item">Python</span>
+              <span class="tech-item">Rust</span>
+              <span class="tech-item">FastAPI</span>
+              <span class="tech-item">PostgreSQL</span>
+              <span class="tech-item">React</span>
+              <span class="tech-item">Three.js</span>
+              <span class="tech-item">React Flow</span>
+              <span class="tech-item">C++</span>
+              <span class="tech-item">C</span>
+              <span class="tech-item">YARA</span>
+              <span class="tech-item">Docker</span>
+              <span class="tech-item">OpenGL</span>
+            </div>
           </div>
         </div>
       </div>
@@ -248,7 +217,7 @@
         <span>SilentStudio</span>
       </div>
       <p class="footer-slogan" data-i18n="footer_slogan">把复杂藏起来，把结果交给你。</p>
-      <p class="footer-docs" data-i18n="footer_docs">产品文档：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a></p>
+      <p class="footer-docs"><span data-i18n="footer_docs">产品文档：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a></span> · <a href="docs/" data-i18n="footer_search">文档搜索</a></p>
       <div class="footer-links">
         <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
         <a href="#top" aria-label="top"><i class="fas fa-arrow-up"></i></a>

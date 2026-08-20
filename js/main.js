@@ -1,8 +1,9 @@
 /* ============================================================
    SilentStudio · 静态介绍站交互
-   - 7 语言 i18n（简中/繁中/英/日/德/俄/西）+ localStorage 记忆
+   - 7 语言 i18n + localStorage 记忆
    - 明暗主题切换 + localStorage 记忆
-   - 滚动渐入 / 卡片 3D 倾斜 / 移动端菜单
+   - 近期更新：拉取 GitHub io.json 实时渲染（多源回退 + 容错降级）
+   - 技术栈横向滚动 / 滚动渐入 / 卡片 3D 倾斜 / 移动端菜单
    ============================================================ */
 (function () {
   'use strict';
@@ -17,127 +18,98 @@
   };
 
   /* ============================================================
-     i18n 字典
+     i18n 字典（简中 / 繁中 / 英 / 日 / 德 / 俄 / 西）
      ============================================================ */
   var I18N = {
     nav_about:        ['关于', '關於', 'About', '概要', 'Über', 'О нас', 'Acerca de'],
-    nav_projects:     ['项目', '項目', 'Projects', 'プロジェクト', 'Projekte', 'Проекты', 'Proyectos'],
+    nav_updates:      ['近期更新', '近期更新', 'Updates', '更新情報', 'Updates', 'Обновления', 'Novedades'],
     nav_philosophy:   ['理念', '理念', 'Philosophy', '理念', 'Philosophie', 'Философия', 'Filosofía'],
-    nav_latest:       ['最新项目', '最新項目', 'Latest', '最新', 'Neueste', 'Последнее', 'Novedades'],
+    nav_latest:       ['最新项目', '最新項目', 'Projects', 'プロジェクト', 'Projekte', 'Проекты', 'Proyectos'],
 
     hero_sub: [
-      '静默工作室 · 一个自用起步的软件家园',
-      '靜默工作室 · 一個自用起步的軟體家園',
-      'A quiet studio · a software home that started for ourselves',
-      '静かなスタジオ · 自分用から始まったソフトウェアの家',
-      'Ein leises Studio · eine Software-Heimat, die für uns selbst begann',
-      'Тихая студия · программный дом, начавшийся для себя',
-      'Un estudio silencioso · un hogar de software que empezó para nosotros'
+      'SilentStudio · 专注于工程品质的软件工作室',
+      'SilentStudio · 專注於工程品質的軟體工作室',
+      'SilentStudio · a software studio devoted to engineering quality',
+      'SilentStudio · エンジニアリング品質にこだわるソフトウェアスタジオ',
+      'SilentStudio · ein Software-Studio für höchste Ingenieursqualität',
+      'SilentStudio · студия программного обеспечения, верная инженерному качеству',
+      'SilentStudio · un estudio de software dedicado a la calidad de ingeniería'
     ],
     hero_desc: [
-      '从安全防护到路径算法，从云平台到游戏引擎——<br class="hide-mobile" />我们相信：最好的工具，是把复杂藏起来，把结果交给你。',
-      '從安全防護到路徑演算法，從雲平台到遊戲引擎——<br class="hide-mobile" />我們相信：最好的工具，是把複雜藏起來，把結果交給你。',
-      'From security to pathfinding, from cloud to game engines —<br class="hide-mobile" />we believe the best tools hide the complexity and hand you the result.',
-      'セキュリティから経路探索、クラウドからゲームエンジンまで——<br class="hide-mobile" />最高のツールは複雑さを隠し、結果をあなたに渡すものです。',
-      'Von Sicherheit bis Pfadfindung, von Cloud bis Game-Engines —<br class="hide-mobile" />wir glauben: Die besten Werkzeuge verbergen die Komplexität und geben dir das Ergebnis.',
-      'От безопасности до алгоритмов пути, от облака до игровых движков —<br class="hide-mobile" />лучшие инструменты скрывают сложность и отдают результат вам.',
-      'De la seguridad a los algoritmos de ruta, de la nube a los motores de juego —<br class="hide-mobile" />los mejores programas esconden la complejidad y te dan el resultado.'
+      '从安全防护到路径算法，从云平台到图形引擎——<br class="hide-mobile" />复杂留给内部，结果交付于用户。',
+      '從安全防護到路徑演算法，從雲平台到圖形引擎——<br class="hide-mobile" />複雜留給內部，結果交付於使用者。',
+      'From security to pathfinding, from cloud to graphics engines —<br class="hide-mobile" />complexity stays inside; results are delivered.',
+      'セキュリティから経路探索、クラウドからグラフィックスエンジンまで——<br class="hide-mobile" />複雑さは内側に、結果だけを届けます。',
+      'Von Sicherheit bis Pfadfindung, von Cloud bis Grafik-Engines —<br class="hide-mobile" />Komplexität bleibt innen, Ergebnisse kommen zu dir.',
+      'От безопасности до алгоритмов пути, от облака до графических движков —<br class="hide-mobile" />сложность остаётся внутри, результат приходит к вам.',
+      'De la seguridad a los algoritmos de ruta, de la nube a los motores gráficos —<br class="hide-mobile" />la complejidad queda dentro; el resultado llega a ti.'
     ],
-    hero_btn1: ['探索项目', '探索項目', 'Explore', 'プロジェクト', 'Projekte', 'Проекты', 'Explorar'],
+    hero_btn1: ['近期更新', '近期更新', 'Updates', '更新情報', 'Updates', 'Обновления', 'Novedades'],
     hero_btn2: ['认识我们', '認識我們', 'About us', '私たちについて', 'Über uns', 'О нас', 'Sobre nosotros'],
 
     about_title: ['关于 SilentStudio', '關於 SilentStudio', 'About SilentStudio', 'SilentStudio について', 'Über SilentStudio', 'О SilentStudio', 'Acerca de SilentStudio'],
     about_desc: [
-      'SilentStudio 起源于一个朴素的想法：工具应该安静地工作，而不是制造噪音。我们从自用项目出发，逐渐生长出一个横跨安全、算法、云与引擎的软件生态，并在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我们的成果。',
-      'SilentStudio 起源於一個樸素的想法：工具應該安靜地工作，而不是製造噪音。我們從自用專案出發，逐漸生長出一個橫跨安全、演算法、雲與引擎的軟體生態，並在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我們的成果。',
-      'SilentStudio began with a simple idea: tools should work quietly instead of making noise. Starting from projects we made for ourselves, we grew an ecosystem spanning security, algorithms, cloud and engines — shared under <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
-      'SilentStudio は「ツールは静かに働き、騒音を立てない」という素朴な考えから始まりました。自分用のプロジェクトから、セキュリティ・アルゴリズム・クラウド・エンジンを横断するエコシステムへと成長し、<a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> で成果を共有しています。',
-      'SilentStudio begann mit einer einfachen Idee: Werkzeuge sollen leise arbeiten statt Lärm zu machen. Aus Projekten für uns selbst wuchs ein Ökosystem aus Sicherheit, Algorithmen, Cloud und Engines — geteilt unter <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
-      'SilentStudio начался с простой идеи: инструменты должны работать тихо, а не создавать шум. Из проектов для себя мы выросли в экосистему, охватывающую безопасность, алгоритмы, облако и движки — и делимся результатами на <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
-      'SilentStudio comenzó con una idea sencilla: las herramientas deben trabajar en silencio, no hacer ruido. Desde proyectos hechos para nosotros, crecimos hasta un ecosistema de seguridad, algoritmos, nube y motores — compartido en <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.'
+      'SilentStudio 起源于一个朴素的想法：工具应该安静地工作，而不是制造噪音。我们从自用项目出发，逐渐生长出一个横跨安全、算法、云与图形引擎的软件生态，并在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我们的成果。',
+      'SilentStudio 起源於一個樸素的想法：工具應該安靜地工作，而不是製造噪音。我們從自用專案出發，逐漸生長出一個橫跨安全、演算法、雲與圖形引擎的軟體生態，並在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我們的成果。',
+      'SilentStudio began with a simple idea: tools should work quietly instead of making noise. Starting from projects we made for ourselves, we grew an ecosystem spanning security, algorithms, cloud and graphics — shared under <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
+      'SilentStudio は「ツールは静かに働き、騒音を立てない」という素朴な考えから始まりました。自分用のプロジェクトから、セキュリティ・アルゴリズム・クラウド・グラフィックスを横断するエコシステムへと成長し、<a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> で成果を共有しています。',
+      'SilentStudio begann mit einer einfachen Idee: Werkzeuge sollen leise arbeiten statt Lärm zu machen. Aus eigenen Projekten wuchs ein Ökosystem aus Sicherheit, Algorithmen, Cloud und Grafik — geteilt unter <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
+      'SilentStudio начался с простой идеи: инструменты должны работать тихо, а не создавать шум. Из собственных проектов мы выросли в экосистему: безопасность, алгоритмы, облако и графика — и делимся результатами на <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
+      'SilentStudio comenzó con una idea sencilla: las herramientas deben trabajar en silencio. Desde proyectos propios crecimos hasta un ecosistema de seguridad, algoritmos, nube y gráficos — compartido en <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.'
     ],
-    about_c1t: ['从自用起步', '從自用起步', 'Made for ourselves', '自分用から', 'Für uns selbst', 'Для себя', 'Hecho para nosotros'],
+    about_c1t: ['需求驱动', '需求驅動', 'Need-driven', 'ニーズ起点', 'Bedürfnisorientiert', 'От потребностей', 'Impulsado por necesidades'],
     about_c1d: [
-      '每个项目都先解决自己的真实问题，打磨好用之后，再分享给同样需要它的人。',
-      '每個專案都先解決自己的真實問題，打磨好用之後，再分享給同樣需要它的人。',
-      'Every project first solves a real problem of our own; once polished, it is shared with those who need it too.',
-      'すべてのプロジェクトはまず自分たちの実問題を解決します。磨き上げた後、同じように必要とする人へ共有します。',
-      'Jedes Projekt löst zuerst ein echtes eigenes Problem; sobald es ausgereift ist, teilen wir es mit allen, die es brauchen.',
-      'Каждый проект сначала решает нашу реальную проблему, а после доводки — делится с теми, кому он нужен.',
-      'Cada proyecto resuelve primero un problema real nuestro; una vez pulido, se comparte con quienes lo necesitan.'
+      '每一个项目都源于真实问题：先解决自己的需求，再分享给同样需要它的人。',
+      '每一個專案都源於真實問題：先解決自己的需求，再分享給同樣需要它的人。',
+      'Every project starts from a real need: solve it for ourselves first, then share it with those who need it too.',
+      'すべてのプロジェクトは実ニーズから始まります：まず自分の課題を解決し、同じように必要とする人へ共有します。',
+      'Jedes Projekt entspringt einem echten Bedarf: erst für uns lösen, dann mit anderen teilen.',
+      'Каждый проект рождается из реальной потребности: сначала решаем её для себя, затем делимся.',
+      'Cada proyecto nace de una necesidad real: primero la resolvemos para nosotros, luego la compartimos.'
     ],
-    about_c2t: ['跨领域深耕', '跨領域深耕', 'Depth across domains', '領域横断', 'Tiefe über Bereiche', 'Глубина в разных областях', 'Profundidad en varios ámbitos'],
+    about_c2t: ['跨域工程', '跨域工程', 'Cross-domain engineering', '領域横断エンジニアリング', 'Domainübergreifend', 'Междисциплинарная разработка', 'Ingeniería multidisciplinar'],
     about_c2d: [
-      '安全、算法、云服务、游戏引擎——看似分散，内核一致：认真对待每一行代码与每一个细节。',
-      '安全、演算法、雲服務、遊戲引擎——看似分散，內核一致：認真對待每一行程式碼與每一個細節。',
-      'Security, algorithms, cloud and game engines — seemingly scattered, but with one core: taking every line of code and every detail seriously.',
-      'セキュリティ、アルゴリズム、クラウド、ゲームエンジン——一見バラバラでも、核は同じ：一行一行的確に、細部まで真剣に。',
-      'Sicherheit, Algorithmen, Cloud und Game-Engines — scheinbar verstreut, doch mit einem Kern: jede Zeile Code und jedes Detail ernst nehmen.',
-      'Безопасность, алгоритмы, облако и игровые движки — на первый взгляд разные, но ядро одно: серьёзно относиться к каждой строке кода и каждой детали.',
-      'Seguridad, algoritmos, nube y motores — aparentemente dispersos, con un mismo núcleo: tomarse en serio cada línea y cada detalle.'
+      '安全、算法、云服务、图形引擎——领域不同，工程标准一致。',
+      '安全、演算法、雲服務、圖形引擎——領域不同，工程標準一致。',
+      'Security, algorithms, cloud and graphics — different domains, one engineering standard.',
+      'セキュリティ、アルゴリズム、クラウド、グラフィックス——領域は違えど、エンジニアリングの基準は同じ。',
+      'Sicherheit, Algorithmen, Cloud und Grafik — verschiedene Domänen, ein Standard.',
+      'Безопасность, алгоритмы, облако и графика — разные области, единый инженерный стандарт.',
+      'Seguridad, algoritmos, nube y gráficos — distintos ámbitos, un mismo estándar.'
     ],
-    about_c3t: ['作品而非玩具', '作品而非玩具', 'Crafted, not toys', '作品であり玩具でない', 'Werke, kein Spielzeug', 'Работы, а не игрушки', 'Obras, no juguetes'],
+    about_c3t: ['工程标准', '工程標準', 'Engineering standards', 'エンジニアリング基準', 'Ingenieursstandard', 'Инженерный стандарт', 'Estándar de ingeniería'],
     about_c3d: [
-      '每一个项目都以"交付作品"的标准要求自己：稳定、精致、经得起长期使用。',
-      '每一個專案都以「交付作品」的標準要求自己：穩定、精緻、經得起長期使用。',
-      'Every project holds itself to the standard of a finished work: stable, refined, and built to last.',
-      'すべてのプロジェクトは「作品を納品する」基準で自分を律します：安定、精巧、長期使用に耐える。',
-      'Jedes Projekt hält sich an den Anspruch eines fertigen Werks: stabil, verfeinert, langlebig.',
-      'Каждый проект держит планку «готовой работы»: стабильно, отточено, рассчитано на долгую жизнь.',
-      'Cada proyecto se exige el nivel de una obra terminada: estable, refinada y duradera.'
+      '以交付标准要求每一个项目：稳定、可维护、经得起长期使用。',
+      '以交付標準要求每一個專案：穩定、可維護、經得起長期使用。',
+      'Every project is held to delivery standards: stable, maintainable, built to last.',
+      'すべてのプロジェクトを納品基準で律します：安定、保守可能、長く使える。',
+      'Jedes Projekt folgt Abgabestandards: stabil, wartbar, langlebig.',
+      'Каждый проект держится стандартов релиза: стабильно, поддерживаемо, рассчитано на годы.',
+      'Cada proyecto sigue estándares de entrega: estable, mantenible y duradero.'
     ],
 
-    projects_title: ['精选项目', '精選專案', 'Featured projects', '代表プロジェクト', 'Ausgewählte Projekte', 'Избранные проекты', 'Proyectos destacados'],
-    projects_desc: [
-      '点击卡片，前往对应仓库了解详情。',
-      '點擊卡片，前往對應倉庫了解詳情。',
-      'Click a card to visit its repository.',
-      'カードをクリックしてリポジトリへ。',
-      'Klicke auf eine Karte, um das Repository zu besuchen.',
-      'Нажмите на карточку, чтобы открыть репозиторий.',
-      'Haz clic en una tarjeta para visitar su repositorio.'
+    updates_title: ['近期更新', '近期更新', 'Recent updates', '最新情報', 'Aktuelle Updates', 'Последние обновления', 'Últimas novedades'],
+    updates_desc: [
+      '来自项目仓库的最新动态，实时同步于 GitHub 数据源。',
+      '來自專案倉庫的最新動態，即時同步於 GitHub 資料來源。',
+      'Latest activity from our repositories, synced live from the GitHub data source.',
+      'プロジェクトリポジトリの最新情報を GitHub データソースからリアルタイム同期。',
+      'Neueste Aktivitäten unserer Repositories, live von der GitHub-Datenquelle.',
+      'Последние новости из репозиториев, синхронизировано с GitHub в реальном времени.',
+      'Última actividad de nuestros repositorios, sincronizada en vivo desde GitHub.'
     ],
-    proj1_tag: ['Security', 'Security', 'Security', 'セキュリティ', 'Sicherheit', 'Безопасность', 'Seguridad'],
-    proj1_desc: [
-      '智能安全防护工具。防护默认全开，隐藏技术细节，只展示结果。已发布版本将打包为可执行程序交付，仓库提供项目概览与问题跟踪。',
-      '智慧安全防護工具。防護預設全開，隱藏技術細節，只展示結果。已發布版本將打包為可執行程式交付，倉庫提供專案概覽與問題追蹤。',
-      'A smart security protection tool. Protections are on by default; technical details stay hidden; only results are shown. Released builds ship as packaged executables; the repository hosts the overview and issue tracker.',
-      'スマートなセキュリティ保護ツール。防御はデフォルトで全開、技術詳細は隠し、結果だけを表示。リリース版は実行ファイルとして配布され、リポジトリは概要と Issue 管理を提供します。',
-      'Ein intelligentes Sicherheitstool. Schutz ist standardmäßig aktiv; technische Details bleiben verborgen; nur Ergebnisse werden gezeigt. Veröffentlichungen werden als ausführbare Programme geliefert; das Repository bietet Übersicht und Issue-Tracking.',
-      'Умный инструмент защиты. Защита включена по умолчанию, технические детали скрыты, показываются только результаты. Релизы поставляются как исполняемые файлы; в репозитории — обзор и трекер проблем.',
-      'Una herramienta de protección inteligente. Protección activada por defecto; los detalles técnicos quedan ocultos; solo se muestran resultados. Las versiones se entregan como ejecutables; el repositorio aloja la descripción y el seguimiento de incidencias.'
-    ],
-    proj2_tag: ['Algorithm', 'Algorithm', 'Algorithm', 'アルゴリズム', 'Algorithmus', 'Алгоритм', 'Algoritmo'],
-    proj2_desc: [
-      '受黏菌启发的轻量级路径规划库。BFS 与加权概率爬行的结合，为寻路与探索问题提供简洁的 Python 实现。',
-      '受黏菌啟發的輕量級路徑規劃函式庫。BFS 與加權機率爬行的結合，為尋路與探索問題提供簡潔的 Python 實作。',
-      'A lightweight pathfinding library inspired by slime mold — combining BFS with weighted probabilistic crawl in a clean Python implementation.',
-      '粘菌に着想を得た軽量パスファインディングライブラリ。BFS と重み付き確率クロールを組み合わせた、簡潔な Python 実装。',
-      'Eine schlanke Pathfinding-Bibliothek, inspiriert von Schleimpilzen — BFS kombiniert mit gewichtetem probabilistischem Kriechen in sauberem Python.',
-      'Лёгкая библиотека поиска пути, вдохновлённая слизевиками — сочетание BFS и взвешенного вероятностного поиска в чистом Python.',
-      'Una librería ligera de búsqueda de caminos inspirada en el moho — BFS combinado con rastreo probabilístico ponderado en Python.'
-    ],
-    proj3_tag: ['Index', 'Index', 'Index', 'インデックス', 'Index', 'Индекс', 'Índice'],
-    proj3_desc: [
-      'SilentStudio 的公开项目列表：简介、索引与最新动态。想了解我们正在做什么，从这里开始。',
-      'SilentStudio 的公開專案列表：簡介、索引與最新動態。想了解我們正在做什麼，從這裡開始。',
-      'The public project list of SilentStudio: briefs, index and the latest updates. Start here to see what we are working on.',
-      'SilentStudio の公開プロジェクト一覧：紹介・索引・最新情報。私たちが何をしているか知りたければ、ここから。',
-      'Die öffentliche Projektliste von SilentStudio: Kurzvorstellungen, Index und die neuesten Updates. Hier erfährst du, woran wir arbeiten.',
-      'Публичный список проектов SilentStudio: описания, индекс и последние обновления. Начните здесь, чтобы узнать, над чем мы работаем.',
-      'La lista pública de proyectos de SilentStudio: resúmenes, índice y novedades. Empieza aquí para ver en qué trabajamos.'
-    ],
-    proj4_tag: ['Website', 'Website', 'Website', 'ウェブサイト', 'Website', 'Сайт', 'Sitio web'],
-    proj4_desc: [
-      '本站点：静态介绍官网，支持七种语言与明暗主题。同时是 SilentStudio 全系列产品与工作流编辑器的展示门户。',
-      '本站點：靜態介紹官網，支援七種語言與明暗主題。同時是 SilentStudio 全系列產品與工作流編輯器的展示入口。',
-      'This site: a static intro website with seven languages and light/dark themes, and the showcase portal for the whole SilentStudio family.',
-      '本サイト：7言語とライト/ダークテーマを備えた静的紹介サイト。SilentStudio ファミリー全体のショーケースポータルでもあります。',
-      'Diese Seite: eine statische Vorstellungsseite mit sieben Sprachen und Hell/Dunkel-Design, zugleich das Schaufenster für die ganze SilentStudio-Familie.',
-      'Этот сайт: статичная витрина с семью языками и светлой/тёмной темами, а также портал для всей семьи SilentStudio.',
-      'Este sitio: web introductoria estática con siete idiomas y temas claro/oscuro, y el escaparate de toda la familia SilentStudio.'
-    ],
-    proj_go: ['前往仓库 →', '前往倉庫 →', 'Visit repo →', 'リポジトリへ →', 'Zum Repo →', 'В репозиторий →', 'Ver repositorio →'],
+    updates_loading: ['正在同步更新…', '正在同步更新…', 'Syncing updates…', '更新を同期中…', 'Synchronisiere Updates…', 'Синхронизация…', 'Sincronizando…'],
+    updates_empty:   ['暂无更新', '暫無更新', 'No updates yet', '更新はまだありません', 'Noch keine Updates', 'Пока нет обновлений', 'Aún sin novedades'],
+    updates_fail:    ['更新同步失败，以下为默认内容', '更新同步失敗，以下為預設內容', 'Sync failed — showing defaults', '同期に失敗しました（既定表示）', 'Sync fehlgeschlagen — Standard', 'Ошибка синхронизации — по умолчанию', 'Error al sincronizar — contenido por defecto'],
+    updates_more:    ['查看更多 ›', '查看更多 ›', 'View more ›', 'もっと見る ›', 'Mehr ›', 'Подробнее ›', 'Ver más ›'],
+    fallback_0t: ['SilentSafe 公开仓库建立', 'SilentSafe 公開倉庫建立', 'SilentSafe public repo opened', 'SilentSafe 公開リポジトリ開設', 'SilentSafe öffentliches Repo eröffnet', 'Открыт публичный репозиторий SilentSafe', 'Repositorio público de SilentSafe abierto'],
+    fallback_0d: ['项目概览与问题跟踪正式上线，即将发布可执行程序版本。', '專案概覽與問題追蹤正式上線，即將發布可執行程式版本。', 'Project overview and issue tracker launched; executable release coming soon.', '概要と Issue トラッカーを開設。実行ファイル版も近日公開。', 'Übersicht und Issue-Tracker gestartet; ausführbare Version folgt.', 'Запущены обзор и трекер проблем; скоро выйдет исполняемая версия.', 'Lanzados la descripción y el seguimiento; pronto versión ejecutable.'],
+    fallback_1t: ['SlimeMold 更新', 'SlimeMold 更新', 'SlimeMold updated', 'SlimeMold 更新', 'SlimeMold aktualisiert', 'SlimeMold обновлён', 'SlimeMold actualizado'],
+    fallback_1d: ['黏菌启发路径规划库保持活跃迭代，欢迎试用与反馈。', '黏菌啟發路徑規劃函式庫保持活躍迭代，歡迎試用與回饋。', 'The slime-mold pathfinding library is under active iteration — try it and share feedback.', '粘菌由来の経路探索ライブラリを継続改善中。お試しとフィードバックを歓迎します。', 'Die Pathfinding-Bibliothek wird aktiv weiterentwickelt — ausprobieren und Feedback geben.', 'Библиотека поиска пути активно развивается — пробуйте и делитесь отзывами.', 'La librería de rutas se desarrolla activamente: pruébala y comparte tu opinión.'],
+    fallback_2t: ['项目列表索引更新', '專案列表索引更新', 'Project index updated', 'プロジェクト索引を更新', 'Projektindex aktualisiert', 'Индекс проектов обновлён', 'Índice de proyectos actualizado'],
+    fallback_2d: ['公开项目列表、简介与索引持续维护，覆盖全部产品线。', '公開專案列表、簡介與索引持續維護，覆蓋全部產品線。', 'The public project index keeps covering every product line with briefs and updates.', '全プロダクトを網羅する公開索引を継続的に更新しています。', 'Der öffentliche Projektindex wird stetig über alle Produktlinien gepflegt.', 'Публичный индекс проектов постоянно пополняется по всем продуктовым линиям.', 'El índice público de proyectos se mantiene actualizado en todas las líneas.'],
+    fallback_3t: ['本网站上线', '本網站上線', 'Website launched', 'ウェブサイト公開', 'Website gestartet', 'Сайт запущен', 'Sitio web lanzado'],
+    fallback_3d: ['七语言支持与明暗主题，欢迎访问本仓库提出建议。', '七語言支援與明暗主題，歡迎造訪本倉庫提出建議。', 'Seven languages and light/dark themes — visit the repo and suggest improvements.', '7言語対応・明暗テーマ対応。リポジトリで改善提案をお待ちしています。', 'Sieben Sprachen und Hell/Dunkel-Design — besuche das Repo und schlage Verbesserungen vor.', 'Семь языков и темы оформления — загляните в репозиторий и предложите улучшения.', 'Siete idiomas y temas claro/oscuro: visita el repositorio y sugiere mejoras.'],
 
     philo_title: ['设计理念', '設計理念', 'Philosophy', '設計理念', 'Philosophie', 'Философия', 'Filosofía'],
     philo_desc: [
@@ -165,7 +137,7 @@
       '每一個像素、每一幀動畫都值得被認真對待。精緻不是裝飾，是尊重使用者的時間。',
       'Every pixel and every frame of animation deserves care. Refinement is not decoration — it is respect for your time.',
       'すべてのピクセル、すべてのアニメーションに敬意を。精緻さは飾りではなく、ユーザーの時間への敬意です。',
-      'Jedes Pixel und jede Animationssequenz verdient Sorgfalt. Verfeinerung ist keine Deko — sie ist Respekt vor deiner Zeit.',
+      'Jedes Pixel und jede Animation verdient Sorgfalt. Verfeinerung ist keine Deko — sie ist Respekt vor deiner Zeit.',
       'Каждый пиксель и каждый кадр анимации заслуживают внимания. Отточенность — это не украшение, а уважение к вашему времени.',
       'Cada píxel y cada fotograma merecen cuidado. El refinamiento no es decoración: es respeto por tu tiempo.'
     ],
@@ -177,7 +149,7 @@
       'Windows ユーザー向けツールは実行ファイルとして開封即使用。開発者向けライブラリは簡潔な API として提供します。',
       'Windows-Werkzeuge werden als fertige Programme ausgeliefert; Bibliotheken für Entwickler kommen als saubere APIs.',
       'Инструменты для Windows поставляются как готовые программы; библиотеки для разработчиков — как чистые API.',
-      'Las herramientas para Windows se entregan como ejecutivos listos para usar; las librerías para desarrolladores, como APIs limpias.'
+      'Las herramientas para Windows se entregan como ejecutables listos para usar; las librerías para desarrolladores, como APIs limpias.'
     ],
     stack_label: ['技术栈', '技術棧', 'Tech stack', '技術スタック', 'Tech-Stack', 'Технологии', 'Stack técnico'],
 
@@ -189,7 +161,7 @@
       'Visit our GitHub organization to see the newest public projects, updates and progress.',
       'GitHub 組織を訪れて、最新の公開プロジェクトや進捗をご覧ください。',
       'Besuche unsere GitHub-Organisation für die neuesten öffentlichen Projekte, Updates und Fortschritte.',
-      'Посетите наш GitHub-организацию, чтобы увидеть новые проекты, обновления и прогресс.',
+      'Посетите нашу GitHub-организацию, чтобы увидеть новые проекты, обновления и прогресс.',
       'Visita nuestra organización de GitHub para ver los proyectos públicos, novedades y progresos.'
     ],
     latest_btn1: ['查看最新项目列表', '查看最新專案列表', 'View latest projects', '最新プロジェクトを見る', 'Neueste Projekte ansehen', 'Смотреть проекты', 'Ver proyectos'],
@@ -214,11 +186,12 @@
       'Документация: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>',
       'Docs: <a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a>'
     ],
-    footer_rights: ['保留所有权利', '保留所有權利', 'All rights reserved', 'All rights reserved', 'Alle Rechte vorbehalten', 'Все права защищены', 'Todos los derechos reservados']
+    footer_rights: ['保留所有权利', '保留所有權利', 'All rights reserved', 'All rights reserved', 'Alle Rechte vorbehalten', 'Все права защищены', 'Todos los derechos reservados'],
+    footer_search: ['文档搜索', '文件搜尋', 'Docs search', 'ドキュメント検索', 'Dokumentsuche', 'Поиск документов', 'Buscar documentos']
   };
 
   /* ============================================================
-     语言初始化与切换
+     语言
      ============================================================ */
   var currentLang = localStorage.getItem('ss_lang') || detectLang();
 
@@ -257,10 +230,11 @@
     var html = document.documentElement;
     html.lang = currentLang === 'zh-Hans' ? 'zh-CN' : currentLang === 'zh-Hant' ? 'zh-TW' : currentLang;
     try { localStorage.setItem('ss_lang', currentLang); } catch (e) {}
+    renderUpdatesIfReady();
   }
 
   /* ============================================================
-     主题切换
+     主题
      ============================================================ */
   var themeBtn = $('#themeBtn');
   var themeIcon = $('#themeIcon');
@@ -269,9 +243,7 @@
   function applyTheme() {
     var html = document.documentElement;
     html.setAttribute('data-theme', currentTheme);
-    if (themeIcon) {
-      themeIcon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
-    }
+    if (themeIcon) themeIcon.className = currentTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
     try { localStorage.setItem('ss_theme', currentTheme); } catch (e) {}
   }
   if (themeBtn) {
@@ -282,13 +254,134 @@
   }
 
   /* ============================================================
+     近期更新：拉取 GitHub io.json
+     数据源（按顺序尝试）：
+       1) https://cdn.jsdelivr.net/gh/Silent-Studio-CN/index@main/WebSite/io.json
+       2) https://raw.githubusercontent.com/Silent-Studio-CN/index/main/WebSite/io.json
+     io.json 格式约定（宽松解析）：
+       [ { "date":"2026-08-20", "title":"...", "desc":"...", "link":"...", "tags":["..."] }, ... ]
+       或 { "updates": [...] } / { "items": [...] }
+       字段：title 必填；desc/date/link/tags 可选；link 缺省时按标题匹配本地文档页，否则指向组织页。
+     ============================================================ */
+  var UPDATES_SOURCES = [
+    'https://cdn.jsdelivr.net/gh/Silent-Studio-CN/index@main/WebSite/io.json',
+    'https://raw.githubusercontent.com/Silent-Studio-CN/index/main/WebSite/io.json'
+  ];
+  var DOC_MAP = {
+    silent_safe: { re: /silentsafe/i, link: 'docs/silent-safe/' },
+    slime_mold: { re: /slime.?mold/i, link: 'docs/slime-mold/' },
+    project_list: { re: /project.?list/i, link: 'https://github.com/Silent-Studio-CN/SilentStudio-ProjectList' },
+    website: { re: /website|官网|web/i, link: 'docs/silentstudio-website/' }
+  };
+  var updatesCache = null;   // 拉取到的原始条目
+  var updatesFailed = false; // 是否已降级
+
+  function fallbackUpdates() {
+    return [
+      { date: '2026-08', title: t('fallback_0t'), desc: t('fallback_0d'), link: 'https://github.com/Silent-Studio-CN/SilentSafe', tags: ['SilentSafe'] },
+      { date: '2026-07', title: t('fallback_1t'), desc: t('fallback_1d'), link: 'https://github.com/Silent-Studio-CN/SlimeMold', tags: ['SlimeMold'] },
+      { date: '2026-07', title: t('fallback_2t'), desc: t('fallback_2d'), link: 'https://github.com/Silent-Studio-CN/SilentStudio-ProjectList', tags: ['Index'] },
+      { date: '2026-08', title: t('fallback_3t'), desc: t('fallback_3d'), link: 'docs/silentstudio-website/', tags: ['Website'] }
+    ];
+  }
+
+  function guessLink(title) {
+    for (var k in DOC_MAP) {
+      if (DOC_MAP[k].re.test(title || '')) return DOC_MAP[k].link;
+    }
+    return 'https://github.com/orgs/Silent-Studio-CN/repositories';
+  }
+
+  function normalize(data) {
+    var arr = Array.isArray(data) ? data : (data && (data.updates || data.items));
+    if (!Array.isArray(arr)) return [];
+    return arr.map(function (it) {
+      if (!it || typeof it !== 'object') return null;
+      return {
+        date: it.date || it.time || '',
+        title: it.title || it.name || '',
+        desc: it.desc || it.description || '',
+        link: it.link || it.url || '',
+        tags: it.tags || (it.tag ? [it.tag] : [])
+      };
+    }).filter(function (it) { return it && it.title; });
+  }
+
+  function renderUpdatesList() {
+    var box = $('#updatesList');
+    if (!box) return;
+    var items = updatesCache ? normalize(updatesCache) : [];
+    var useFallback = updatesFailed || items.length === 0;
+
+    if (items.length === 0 && !useFallback) {
+      box.innerHTML = '<div class="updates-empty" data-i18n="updates_empty">暂无更新</div>';
+      var e = box.querySelector('[data-i18n]');
+      if (e) e.textContent = t('updates_empty');
+      return;
+    }
+    if (useFallback) {
+      if (updatesFailed) {
+        box.innerHTML = '<div class="updates-fail">' + escapeHtml(t('updates_fail')) + '</div>';
+      }
+      items = fallbackUpdates();
+    }
+    var html = items.map(function (it) {
+      var link = it.link || guessLink(it.title);
+      var tags = (it.tags || []).map(function (x) { return '<span>' + escapeHtml(String(x)) + '</span>'; }).join('');
+      return '<a class="update-item" href="' + escapeHtml(link) + '"' + (link.indexOf('http') === 0 ? ' target="_blank" rel="noopener"' : '') + '>' +
+        '<span class="update-date">' + escapeHtml(it.date || '') + '</span>' +
+        '<span class="update-main">' +
+          '<span class="update-title">' + escapeHtml(it.title) + ' <i class="fas fa-arrow-right"></i></span>' +
+          (it.desc ? '<span class="update-desc">' + escapeHtml(it.desc) + '</span>' : '') +
+          (tags ? '<span class="update-tags">' + tags + '</span>' : '') +
+        '</span>' +
+      '</a>';
+    }).join('');
+    box.innerHTML = html;
+  }
+
+  function escapeHtml(s) {
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+
+  var updatesReady = false;
+  function renderUpdatesIfReady() {
+    if (updatesReady) renderUpdatesList();
+  }
+
+  function loadUpdates() {
+    var box = $('#updatesList');
+    var tryNext = function (i) {
+      if (i >= UPDATES_SOURCES.length) {
+        updatesFailed = true;
+        updatesReady = true;
+        renderUpdatesList();
+        return;
+      }
+      fetch(UPDATES_SOURCES[i], { cache: 'no-store' })
+        .then(function (r) {
+          if (!r.ok) throw new Error('http ' + r.status);
+          return r.json();
+        })
+        .then(function (data) {
+          updatesCache = data;
+          updatesFailed = false;
+          updatesReady = true;
+          renderUpdatesList();
+        })
+        .catch(function () { tryNext(i + 1); });
+    };
+    tryNext(0);
+  }
+
+  /* ============================================================
      其余交互
      ============================================================ */
-  // 年份
   var yearEl = $('#year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
-  // 导航滚动态
   var nav = $('#nav');
   var onScroll = function () {
     if (window.scrollY > 24) nav.classList.add('scrolled');
@@ -297,7 +390,6 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // 语言菜单
   var langSel = $('#langSelect');
   var langBtn = $('#langBtn');
   if (langBtn) {
@@ -315,7 +407,6 @@
     document.addEventListener('click', function () { langSel.classList.remove('open'); });
   }
 
-  // 移动端菜单
   var burger = $('#burger');
   var links = $('.nav-links');
   if (burger) {
@@ -330,6 +421,13 @@
         burger.innerHTML = '<i class="fas fa-bars"></i>';
       });
     });
+  }
+
+  // 技术栈横向滚动：克隆一份内容实现无缝循环
+  var techTrack = $('#techTrack');
+  if (techTrack) {
+    var clone = techTrack.cloneNode(true);
+    techTrack.appendChild(clone);
   }
 
   // 滚动渐入
@@ -351,22 +449,8 @@
     revealEls.forEach(function (el) { el.classList.add('in'); });
   }
 
-  // 卡片 3D 倾斜
-  if (window.matchMedia('(hover: hover)').matches && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    $$('[data-tilt]').forEach(function (card) {
-      card.addEventListener('mousemove', function (e) {
-        var r = card.getBoundingClientRect();
-        var px = (e.clientX - r.left) / r.width;
-        var py = (e.clientY - r.top) / r.height;
-        card.style.transform = 'perspective(900px) rotateX(' + ((0.5 - py) * 10) + 'deg) rotateY(' + ((px - 0.5) * 10) + 'deg) translateY(-4px)';
-      });
-      card.addEventListener('mouseleave', function () {
-        card.style.transform = '';
-      });
-    });
-  }
-
   // 启动
   applyTheme();
   applyLang();
+  loadUpdates();
 })();
