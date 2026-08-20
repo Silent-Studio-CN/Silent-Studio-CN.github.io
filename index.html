@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SilentStudio · 静默工作室</title>
-  <meta name="description" content="SilentStudio —— 一个自用起步的开源软件工作室。从安全到引擎、从云到数据库，把复杂藏起来，把结果交给你。" />
+  <meta name="description" content="SilentStudio —— 一个自用起步的软件工作室。从安全到算法、从云到引擎，把复杂藏起来，把结果交给你。" />
   <link rel="icon" type="image/jpeg" href="assets/logo.jpg" />
   <link rel="stylesheet" href="assets/font-awesome/css/all.min.css" />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
-  <!-- ===== 背景光斑 ===== -->
   <div class="bg-aurora" aria-hidden="true">
     <div class="blob blob-1"></div>
     <div class="blob blob-2"></div>
@@ -26,16 +25,33 @@
         <span class="nav-name">SilentStudio</span>
       </a>
       <nav class="nav-links">
-        <a href="#about">关于</a>
-        <a href="#products">产品</a>
-        <a href="#philosophy">理念</a>
-        <a href="#open">开源</a>
+        <a href="#about" data-i18n="nav_about">关于</a>
+        <a href="#projects" data-i18n="nav_projects">项目</a>
+        <a href="#philosophy" data-i18n="nav_philosophy">理念</a>
+        <a href="#latest" data-i18n="nav_latest">最新项目</a>
       </nav>
       <div class="nav-actions">
+        <!-- 语言选择 -->
+        <div class="lang-select" id="langSelect">
+          <button class="lang-btn" id="langBtn" type="button"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
+          <div class="lang-menu">
+            <button type="button" data-lang="zh-Hans">简体中文</button>
+            <button type="button" data-lang="zh-Hant">繁體中文</button>
+            <button type="button" data-lang="en">English</button>
+            <button type="button" data-lang="ja">日本語</button>
+            <button type="button" data-lang="de">Deutsch</button>
+            <button type="button" data-lang="ru">Русский</button>
+            <button type="button" data-lang="es">Español</button>
+          </div>
+        </div>
+        <!-- 主题切换 -->
+        <button class="btn-theme" id="themeBtn" type="button" title="切换主题">
+          <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
         <a class="btn-ghost" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">
           <i class="fab fa-github"></i><span>GitHub</span>
         </a>
-        <button class="nav-burger" id="burger" aria-label="菜单"><i class="fas fa-bars"></i></button>
+        <button class="nav-burger" id="burger" aria-label="menu"><i class="fas fa-bars"></i></button>
       </div>
     </div>
   </header>
@@ -49,14 +65,14 @@
           <img class="hero-logo" src="assets/logo.jpg" alt="SilentStudio" />
         </div>
         <h1 class="hero-title">Silent<span>Studio</span></h1>
-        <p class="hero-sub">静默工作室 · 一个自用起步的开源软件家园</p>
-        <p class="hero-desc">
-          从安全防护到游戏引擎，从云平台到威胁情报数据库——<br class="hide-mobile" />
+        <p class="hero-sub" data-i18n="hero_sub">静默工作室 · 一个自用起步的软件家园</p>
+        <p class="hero-desc" data-i18n="hero_desc">
+          从安全防护到路径算法，从云平台到游戏引擎——<br class="hide-mobile" />
           我们相信：最好的工具，是把复杂藏起来，把结果交给你。
         </p>
         <div class="hero-cta">
-          <a class="btn-primary" href="#products"><i class="fas fa-cube"></i> 探索产品</a>
-          <a class="btn-secondary" href="#about"><i class="fas fa-play"></i> 认识我们</a>
+          <a class="btn-primary" href="#projects"><i class="fas fa-cube"></i><span data-i18n="hero_btn1">探索项目</span></a>
+          <a class="btn-secondary" href="#about"><i class="fas fa-play"></i><span data-i18n="hero_btn2">认识我们</span></a>
         </div>
         <div class="hero-scroll" aria-hidden="true"><span></span></div>
       </div>
@@ -67,109 +83,95 @@
       <div class="section-inner">
         <div class="section-head reveal">
           <span class="section-eyebrow">About</span>
-          <h2 class="section-title">关于 SilentStudio</h2>
-          <p class="section-desc">
+          <h2 class="section-title" data-i18n="about_title">关于 SilentStudio</h2>
+          <p class="section-desc" data-i18n="about_desc">
             SilentStudio 起源于一个朴素的想法：工具应该安静地工作，而不是制造噪音。
-            我们从一个自用的项目出发，逐渐生长出一个横跨安全、引擎、云与数据的软件生态，
-            并在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 开源回馈社区。
+            我们从自用项目出发，逐渐生长出一个横跨安全、算法、云与引擎的软件生态，
+            并在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我们的成果。
           </p>
         </div>
 
         <div class="about-grid">
           <div class="about-card reveal">
             <i class="fas fa-feather-alt about-icon"></i>
-            <h3>从自用起步</h3>
-            <p>每个项目都先解决自己的真实问题，好用之后再打磨、开源，分享给同样需要它的人。</p>
+            <h3 data-i18n="about_c1t">从自用起步</h3>
+            <p data-i18n="about_c1d">每个项目都先解决自己的真实问题，打磨好用之后，再分享给同样需要它的人。</p>
           </div>
           <div class="about-card reveal">
             <i class="fas fa-layer-group about-icon"></i>
-            <h3>跨领域深耕</h3>
-            <p>安全、游戏引擎、云服务、数据库——看似分散，内核一致：认真对待每一行代码与每一个细节。</p>
+            <h3 data-i18n="about_c2t">跨领域深耕</h3>
+            <p data-i18n="about_c2d">安全、算法、云服务、游戏引擎——看似分散，内核一致：认真对待每一行代码与每一个细节。</p>
           </div>
           <div class="about-card reveal">
-            <i class="fas fa-code-branch about-icon"></i>
-            <h3>开源共生</h3>
-            <p>开源不是结果，是方式。我们与社区共享工具与经验，让软件因交流而变得更好。</p>
+            <i class="fas fa-gem about-icon"></i>
+            <h3 data-i18n="about_c3t">作品而非玩具</h3>
+            <p data-i18n="about_c3d">每一个项目都以"交付作品"的标准要求自己：稳定、精致、经得起长期使用。</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- ===== 产品 ===== -->
-    <section class="section section-alt" id="products">
+    <!-- ===== 项目（组织仓库真实项目） ===== -->
+    <section class="section section-alt" id="projects">
       <div class="section-inner">
         <div class="section-head reveal">
-          <span class="section-eyebrow">Products</span>
-          <h2 class="section-title">产品矩阵</h2>
-          <p class="section-desc">六条产品线，一个共同目标：让技术安静地为你工作。</p>
+          <span class="section-eyebrow">Projects</span>
+          <h2 class="section-title" data-i18n="projects_title">精选项目</h2>
+          <p class="section-desc" data-i18n="projects_desc">点击卡片，前往对应仓库了解详情。</p>
         </div>
 
-        <div class="product-grid">
-          <article class="product-card reveal" data-tilt>
-            <div class="product-glow" style="--c:#22d3ee;"></div>
-            <div class="product-top">
-              <i class="fas fa-shield-halved product-ico" style="--c:#22d3ee;"></i>
-              <span class="product-tag">Security</span>
+        <div class="project-grid">
+          <!-- SilentSafe -->
+          <a class="project-card reveal" data-tilt href="https://github.com/Silent-Studio-CN/SilentSafe" target="_blank" rel="noopener">
+            <div class="project-glow" style="--c:#22d3ee;"></div>
+            <div class="project-top">
+              <i class="fas fa-shield-halved project-ico" style="--c:#22d3ee;"></i>
+              <span class="project-tag" data-i18n="proj1_tag">Security</span>
             </div>
             <h3>SilentSafe</h3>
-            <p>安全防护软件。防护默认全开，隐藏技术细节，只展示结果。威胁扫描、行为监控、启发式分析与隔离区联动。</p>
-            <div class="product-tech"><span>Python</span><span>C++</span><span>Rust</span></div>
-          </article>
+            <p data-i18n="proj1_desc">智能安全防护工具。防护默认全开，隐藏技术细节，只展示结果。已发布版本将打包为可执行程序交付，仓库提供项目概览与问题跟踪。</p>
+            <div class="project-tech"><span>Python</span><span>C++</span><span>Rust</span></div>
+            <span class="go-link" data-i18n="proj_go">前往仓库 →</span>
+          </a>
 
-          <article class="product-card reveal" data-tilt>
-            <div class="product-glow" style="--c:#f472b6;"></div>
-            <div class="product-top">
-              <i class="fas fa-bug-slash product-ico" style="--c:#f472b6;"></i>
-              <span class="product-tag">Deception</span>
+          <!-- SlimeMold -->
+          <a class="project-card reveal" data-tilt href="https://github.com/Silent-Studio-CN/SlimeMold" target="_blank" rel="noopener">
+            <div class="project-glow" style="--c:#a78bfa;"></div>
+            <div class="project-top">
+              <i class="fas fa-dice-d6 project-ico" style="--c:#a78bfa;"></i>
+              <span class="project-tag" data-i18n="proj2_tag">Algorithm</span>
             </div>
-            <h3>SilentHoneypot</h3>
-            <p>用 Rust 打造的蜜罐诱捕系统。模拟 SSH / FTP / HTTP 诱饵，自动采集攻击行为，为威胁情报提供一手数据。</p>
-            <div class="product-tech"><span>Rust</span><span>C</span><span>YARA</span></div>
-          </article>
+            <h3>SlimeMold</h3>
+            <p data-i18n="proj2_desc">受黏菌启发的轻量级路径规划库。BFS 与加权概率爬行的结合，为寻路与探索问题提供简洁的 Python 实现。</p>
+            <div class="project-tech"><span>Python</span></div>
+            <span class="go-link" data-i18n="proj_go">前往仓库 →</span>
+          </a>
 
-          <article class="product-card reveal" data-tilt>
-            <div class="product-glow" style="--c:#a78bfa;"></div>
-            <div class="product-top">
-              <i class="fas fa-gamepad product-ico" style="--c:#a78bfa;"></i>
-              <span class="product-tag">Engine</span>
+          <!-- SilentStudio-ProjectList -->
+          <a class="project-card reveal" data-tilt href="https://github.com/Silent-Studio-CN/SilentStudio-ProjectList" target="_blank" rel="noopener">
+            <div class="project-glow" style="--c:#fbbf24;"></div>
+            <div class="project-top">
+              <i class="fas fa-list-ul project-ico" style="--c:#fbbf24;"></i>
+              <span class="project-tag" data-i18n="proj3_tag">Index</span>
             </div>
-            <h3>SilentGameEngine</h3>
-            <p>自研跨语言游戏引擎。渲染、物理、音频、场景模块化架构，Rust 核心驱动性能，面向桌面与创意工坊。</p>
-            <div class="product-tech"><span>Rust</span><span>Python</span><span>OpenGL</span></div>
-          </article>
+            <h3>SilentStudio-ProjectList</h3>
+            <p data-i18n="proj3_desc">SilentStudio 的公开项目列表：简介、索引与最新动态。想了解我们正在做什么，从这里开始。</p>
+            <div class="project-tech"><span>Markdown</span></div>
+            <span class="go-link" data-i18n="proj_go">前往仓库 →</span>
+          </a>
 
-          <article class="product-card reveal" data-tilt>
-            <div class="product-glow" style="--c:#34d399;"></div>
-            <div class="product-top">
-              <i class="fas fa-cloud product-ico" style="--c:#34d399;"></i>
-              <span class="product-tag">Cloud</span>
-            </div>
-            <h3>SilentCloud</h3>
-            <p>基于 PostgreSQL 的轻量云平台。官网、服务托管、可视化工作流与 API 密钥管理，一站式的数字基础设施。</p>
-            <div class="product-tech"><span>Python</span><span>FastAPI</span><span>PostgreSQL</span></div>
-          </article>
-
-          <article class="product-card reveal" data-tilt>
-            <div class="product-glow" style="--c:#fbbf24;"></div>
-            <div class="product-top">
-              <i class="fas fa-database product-ico" style="--c:#fbbf24;"></i>
-              <span class="product-tag">Intelligence</span>
-            </div>
-            <h3>SilentSafeDateBaseServer</h3>
-            <p>威胁情报数据库服务（ssdbs）。为安全产品提供实时情报查询、节点同步与策略下发，Rust 原生扩展加持。</p>
-            <div class="product-tech"><span>Python</span><span>Rust</span><span>FastAPI</span></div>
-          </article>
-
-          <article class="product-card reveal" data-tilt>
-            <div class="product-glow" style="--c:#60a5fa;"></div>
-            <div class="product-top">
-              <i class="fas fa-project-diagram product-ico" style="--c:#60a5fa;"></i>
-              <span class="product-tag">Studio</span>
+          <!-- 本网站 -->
+          <a class="project-card reveal" data-tilt href="https://github.com/Silent-Studio-CN/Silent-Studio-CN.github.io" target="_blank" rel="noopener">
+            <div class="project-glow" style="--c:#60a5fa;"></div>
+            <div class="project-top">
+              <i class="fas fa-globe project-ico" style="--c:#60a5fa;"></i>
+              <span class="project-tag" data-i18n="proj4_tag">Website</span>
             </div>
             <h3>SilentStudioWebSite</h3>
-            <p>SilentStudio 的核心产品。多语言官网 + 可视化工作流编辑器 + 3D 建模流，让"工作流"不止工作，也成为创作的画布。</p>
-            <div class="product-tech"><span>React</span><span>Three.js</span><span>FastAPI</span></div>
-          </article>
+            <p data-i18n="proj4_desc">本站点：静态介绍官网，支持七种语言与明暗主题。同时是 SilentStudio 全系列产品与工作流编辑器的展示门户。</p>
+            <div class="project-tech"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <span class="go-link" data-i18n="proj_go">前往仓库 →</span>
+          </a>
         </div>
       </div>
     </section>
@@ -179,34 +181,34 @@
       <div class="section-inner">
         <div class="section-head reveal">
           <span class="section-eyebrow">Philosophy</span>
-          <h2 class="section-title">设计理念</h2>
-          <p class="section-desc">我们不追求功能的堆砌，只在意工具与人的关系。</p>
+          <h2 class="section-title" data-i18n="philo_title">设计理念</h2>
+          <p class="section-desc" data-i18n="philo_desc">我们不追求功能的堆砌，只在意工具与人的关系。</p>
         </div>
 
         <div class="philo-row">
           <div class="philo-num reveal"><span>01</span></div>
           <div class="philo-body reveal">
-            <h3>静默设计 <em>Silence</em></h3>
-            <p>防护默认全开，细节自动处理。用户不需要知道背后发生了什么，只需要知道一切安好。</p>
+            <h3 data-i18n="philo1_t">静默设计 <em>Silence</em></h3>
+            <p data-i18n="philo1_d">防护默认全开，细节自动处理。用户不需要知道背后发生了什么，只需要知道一切安好。</p>
           </div>
         </div>
         <div class="philo-row">
           <div class="philo-num reveal"><span>02</span></div>
           <div class="philo-body reveal">
-            <h3>原生质感 <em>Craft</em></h3>
-            <p>每一个像素、每一帧动画都值得被认真对待。精致不是装饰，是尊重用户的时间。</p>
+            <h3 data-i18n="philo2_t">原生质感 <em>Craft</em></h3>
+            <p data-i18n="philo2_d">每一个像素、每一帧动画都值得被认真对待。精致不是装饰，是尊重用户的时间。</p>
           </div>
         </div>
         <div class="philo-row">
           <div class="philo-num reveal"><span>03</span></div>
           <div class="philo-body reveal">
-            <h3>开源共生 <em>Open</em></h3>
-            <p>从自用出发，以开源回馈。工具因交流而进化，社区因共享而繁荣。</p>
+            <h3 data-i18n="philo3_t">成品交付 <em>Deliverables</em></h3>
+            <p data-i18n="philo3_d">面向 Windows 用户的工具以可执行程序交付，开箱即用；面向开发者的库则以简洁 API 呈现。</p>
           </div>
         </div>
 
         <div class="stack reveal">
-          <span class="stack-label">技术栈</span>
+          <span class="stack-label" data-i18n="stack_label">技术栈</span>
           <div class="stack-tags">
             <span>Python</span><span>Rust</span><span>FastAPI</span><span>PostgreSQL</span>
             <span>React</span><span>Three.js</span><span>React Flow</span><span>C++</span>
@@ -216,22 +218,23 @@
       </div>
     </section>
 
-    <!-- ===== 开源 ===== -->
-    <section class="section section-alt" id="open">
+    <!-- ===== 最新项目 ===== -->
+    <section class="section section-alt" id="latest">
       <div class="section-inner section-center">
         <div class="section-head reveal">
-          <span class="section-eyebrow">Open Source</span>
-          <h2 class="section-title">加入 SilentStudio</h2>
-          <p class="section-desc">所有项目都公开在 GitHub 上。欢迎 Star、Issues 与 Pull Requests，一起让软件更安静、更强大。</p>
+          <span class="section-eyebrow" data-i18n="latest_eyebrow">Projects</span>
+          <h2 class="section-title" data-i18n="latest_title">最新项目列表</h2>
+          <p class="section-desc" data-i18n="latest_desc">访问我们的 GitHub 组织，查看最新公开项目、更新与进展。</p>
         </div>
-        <div class="open-cta reveal">
-          <a class="btn-primary btn-lg" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">
-            <i class="fab fa-github"></i> 访问 GitHub 组织
+        <div class="latest-cta reveal">
+          <a class="btn-primary btn-lg" href="https://github.com/orgs/Silent-Studio-CN/repositories" target="_blank" rel="noopener">
+            <i class="fab fa-github"></i><span data-i18n="latest_btn1">查看最新项目列表</span>
           </a>
-          <a class="btn-secondary btn-lg" href="https://github.com/Silent-Studio-CN/Silent-Studio-CN.github.io" target="_blank" rel="noopener">
-            <i class="fas fa-star"></i> 浏览本网站源码
+          <a class="btn-secondary btn-lg" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">
+            <i class="fas fa-users"></i><span data-i18n="latest_btn2">访问组织主页</span>
           </a>
         </div>
+        <p class="latest-note reveal" data-i18n="latest_note">组织下所有公开仓库均可在 repositories 页面一览。</p>
       </div>
     </section>
 
@@ -244,13 +247,13 @@
         <img class="footer-logo" src="assets/logo.jpg" alt="SilentStudio" />
         <span>SilentStudio</span>
       </div>
-      <p class="footer-slogan">把复杂藏起来，把结果交给你。</p>
+      <p class="footer-slogan" data-i18n="footer_slogan">把复杂藏起来，把结果交给你。</p>
+      <p class="footer-docs" data-i18n="footer_docs">产品文档：<a href="docs/silent-safe/">SilentSafe</a> · <a href="docs/silentstudio-website/">SilentStudioWebSite</a></p>
       <div class="footer-links">
-        <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-        <a href="mailto:hello@silentstudio.cn" aria-label="邮箱"><i class="fas fa-envelope"></i></a>
-        <a href="#top" aria-label="返回顶部"><i class="fas fa-arrow-up"></i></a>
+        <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#top" aria-label="top"><i class="fas fa-arrow-up"></i></a>
       </div>
-      <p class="footer-copy">© <span id="year"></span> SilentStudio · Silent-Studio-CN · 保留所有权利</p>
+      <p class="footer-copy">© <span id="year"></span> SilentStudio · Silent-Studio-CN · <span data-i18n="footer_rights">保留所有权利</span></p>
     </div>
   </footer>
 

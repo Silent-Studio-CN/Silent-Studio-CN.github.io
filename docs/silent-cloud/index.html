@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SilentCloud · 文档</title>
+  <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
+  <link rel="stylesheet" href="../../assets/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" href="../docs.css" />
+</head>
+<body>
+  <header class="doc-nav">
+    <div class="doc-nav-inner">
+      <a class="doc-brand" href="../../index.html">
+        <img src="../../assets/logo.jpg" alt="SilentStudio" />
+        <span class="doc-brand-name">SilentCloud<em>Cloud</em></span>
+      </a>
+      <nav class="doc-nav-links">
+        <a href="../../index.html">首页</a>
+        <a href="guide/quickstart.html">快速开始</a>
+        <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a class="btn-github" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-wrap">
+    <nav class="doc-crumbs">
+      <a href="../../index.html">SilentStudio</a><i class="fas fa-chevron-right"></i><span>SilentCloud</span>
+    </nav>
+
+    <div class="doc-hero">
+      <span class="doc-eyebrow">Cloud</span>
+      <h1 class="doc-title"><i class="fas fa-cloud" style="color:#34d399;margin-right:10px;"></i>SilentCloud</h1>
+      <p class="doc-sub">基于 PostgreSQL 的轻量云平台。官网、服务托管、可视化工作流与 API 密钥管理，一站式的数字基础设施。</p>
+    </div>
+
+    <div class="doc-content">
+      <h2>功能特性</h2>
+      <div class="landing-grid">
+          <div class="landing-card"><i class="fas fa-globe"></i><h4>多语言官网</h4><p>中 / 英 / 日三语站点，IP 自动识别语言。</p></div>
+          <div class="landing-card"><i class="fas fa-project-diagram"></i><h4>工作流编辑器</h4><p>可视化节点编辑 + 编程模式 + 3D 建模流。</p></div>
+          <div class="landing-card"><i class="fas fa-key"></i><h4>API 管理</h4><p>服务 API 密钥一键生成与轮换。</p></div>
+          <div class="landing-card"><i class="fas fa-server"></i><h4>服务托管</h4><p>API / WebSocket / Webhook 等十余种服务类型。</p></div>
+      </div>
+
+      <div class="repo-banner">
+        <p>这是 <strong>SilentCloud</strong> 的文档首页。<br />前往 GitHub 仓库获取源码、Star 与最新发布。</p>
+        <a class="btn-primary" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> 前往 GitHub 仓库</a>
+      </div>
+
+      <h2>继续阅读</h2>
+      <div class="landing-grid">
+        <a class="landing-card" href="guide/quickstart.html" style="text-decoration:none;">
+          <i class="fas fa-rocket"></i><h4>快速开始</h4><p>几分钟内把 SilentCloud 跑起来。</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="doc-footer">
+    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+  </footer>
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var theme = 'dark';
+      try { theme = localStorage.getItem('ss_theme') || 'dark'; } catch (e) {}
+      html.setAttribute('data-theme', theme);
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var btn = document.getElementById('themeBtn');
+      var icon = document.getElementById('themeIcon');
+      function sync() { if (icon) icon.className = html.getAttribute('data-theme') === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
+      sync();
+      if (btn) btn.addEventListener('click', function () {
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        try { localStorage.setItem('ss_theme', html.getAttribute('data-theme')); } catch (e) {}
+        sync();
+      });
+    })();
+  </script>
+
+</body>
+</html>
