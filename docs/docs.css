@@ -236,6 +236,54 @@ pre code {
   border-color: rgba(74, 222, 128, 0.5);
 }
 
+/* 下载条目（IntTest 等发布物） */
+.dl-item {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  background: var(--code-bg);
+}
+.dl-tag {
+  font-family: var(--mono);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--text);
+  min-width: 52px;
+}
+.btn-dl {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-dl:hover {
+  border-color: rgba(124, 140, 255, 0.5);
+  background: rgba(124, 140, 255, 0.08);
+}
+.btn-dl-fast {
+  border-color: rgba(34, 211, 238, 0.4);
+  color: #67e8f9;
+}
+.btn-dl-fast:hover {
+  background: rgba(34, 211, 238, 0.1);
+}
+.dl-sha {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  word-break: break-all;
+}
+
 /* 主题切换按钮 */
 .btn-theme {
   width: 34px; height: 34px;
