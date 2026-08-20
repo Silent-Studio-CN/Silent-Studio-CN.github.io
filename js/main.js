@@ -276,7 +276,8 @@
   ];
   var DOC_MAP = {
     silent_safe: { re: /silentsafe|安全/i, link: 'docs/silent-safe/' },
-    slime_mold: { re: /slime.?mold/i, link: 'docs/' },
+    silent_cloud: { re: /silent.?cloud|云/i, link: 'docs/silent-cloud/' },
+    slime_mold: { re: /slime.?mold/i, link: 'docs/slime-mold/' },
     project_list: { re: /project.?list/i, link: 'docs/' },
     website: { re: /website|官网|web|网站/i, link: 'docs/silentstudio-website/' }
   };
