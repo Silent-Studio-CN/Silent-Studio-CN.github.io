@@ -35,13 +35,8 @@
         <div class="lang-select" id="langSelect">
           <button class="lang-btn" id="langBtn" type="button"><i class="fas fa-globe"></i><span id="langCurrent">简中</span><i class="fas fa-chevron-down"></i></button>
           <div class="lang-menu">
-            <button type="button" data-lang="zh-Hans">简体中文</button>
-            <button type="button" data-lang="zh-Hant">繁體中文</button>
-            <button type="button" data-lang="en">English</button>
-            <button type="button" data-lang="ja">日本語</button>
-            <button type="button" data-lang="de">Deutsch</button>
-            <button type="button" data-lang="ru">Русский</button>
-            <button type="button" data-lang="es">Español</button>
+            <div class="lang-search"><i class="fas fa-search"></i><input type="text" id="langSearch" placeholder="搜索语言 / Search language…" autocomplete="off" /></div>
+            <div class="lang-list" id="langList"></div>
           </div>
         </div>
         <!-- 主题切换 -->
@@ -167,20 +162,22 @@
           <span class="stack-label" data-i18n="stack_label">技术栈</span>
           <div class="tech-strip">
             <div class="tech-track" id="techTrack">
-              <span class="tech-item"><img src="assets/tech/vulkan.svg" alt="Vulkan" />Vulkan</span>
-              <span class="tech-item"><img src="assets/tech/directx.svg" alt="DirectX" />DirectX</span>
-              <span class="tech-item">Python</span>
-              <span class="tech-item">Rust</span>
-              <span class="tech-item">FastAPI</span>
-              <span class="tech-item">PostgreSQL</span>
-              <span class="tech-item">React</span>
-              <span class="tech-item">Three.js</span>
-              <span class="tech-item">React Flow</span>
-              <span class="tech-item">C++</span>
-              <span class="tech-item">C</span>
-              <span class="tech-item">YARA</span>
-              <span class="tech-item">Docker</span>
-              <span class="tech-item">OpenGL</span>
+              <div class="tech-group">
+                <a class="tech-item" href="https://www.vulkan.org/" target="_blank" rel="noopener" title="Vulkan"><img src="assets/tech/vulkan.svg" alt="Vulkan" /></a>
+                <a class="tech-item" href="https://learn.microsoft.com/windows/win32/direct3d" target="_blank" rel="noopener" title="DirectX"><img src="assets/tech/directx.svg" alt="DirectX" /></a>
+                <a class="tech-item" href="https://www.python.org/" target="_blank" rel="noopener" title="Python">Python</a>
+                <a class="tech-item" href="https://www.rust-lang.org/" target="_blank" rel="noopener" title="Rust">Rust</a>
+                <a class="tech-item" href="https://fastapi.tiangolo.com/" target="_blank" rel="noopener" title="FastAPI">FastAPI</a>
+                <a class="tech-item" href="https://www.postgresql.org/" target="_blank" rel="noopener" title="PostgreSQL">PostgreSQL</a>
+                <a class="tech-item" href="https://react.dev/" target="_blank" rel="noopener" title="React">React</a>
+                <a class="tech-item" href="https://threejs.org/" target="_blank" rel="noopener" title="Three.js">Three.js</a>
+                <a class="tech-item" href="https://reactflow.dev/" target="_blank" rel="noopener" title="React Flow">React Flow</a>
+                <a class="tech-item" href="https://isocpp.org/" target="_blank" rel="noopener" title="C++">C++</a>
+                <a class="tech-item" href="https://en.cppreference.com/w/c" target="_blank" rel="noopener" title="C">C</a>
+                <a class="tech-item" href="https://virustotal.github.io/yara/" target="_blank" rel="noopener" title="YARA">YARA</a>
+                <a class="tech-item" href="https://www.docker.com/" target="_blank" rel="noopener" title="Docker">Docker</a>
+                <a class="tech-item" href="https://www.opengl.org/" target="_blank" rel="noopener" title="OpenGL">OpenGL</a>
+              </div>
             </div>
           </div>
         </div>

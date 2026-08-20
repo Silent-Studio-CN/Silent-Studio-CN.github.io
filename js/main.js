@@ -16,6 +16,10 @@
     'zh-Hans': '简中', 'zh-Hant': '繁中', en: 'EN',
     ja: '日本語', de: 'DE', ru: 'RU', es: 'ES'
   };
+  var LANG_NAME = {
+    'zh-Hans': '简体中文', 'zh-Hant': '繁體中文', en: 'English',
+    ja: '日本語', de: 'Deutsch', ru: 'Русский', es: 'Español'
+  };
 
   /* ============================================================
      i18n 字典（简中 / 繁中 / 英 / 日 / 德 / 俄 / 西）
@@ -224,9 +228,12 @@
     });
     var cur = $('#langCurrent');
     if (cur) cur.textContent = LANG_LABEL[currentLang] || currentLang;
-    $$('.lang-menu button').forEach(function (b) {
-      b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
-    });
+    var langList = $('#langList');
+    if (langList) {
+      $$('button[data-lang]', langList).forEach(function (b) {
+        b.classList.toggle('active', b.getAttribute('data-lang') === currentLang);
+      });
+    }
     var html = document.documentElement;
     html.lang = currentLang === 'zh-Hans' ? 'zh-CN' : currentLang === 'zh-Hant' ? 'zh-TW' : currentLang;
     try { localStorage.setItem('ss_lang', currentLang); } catch (e) {}
@@ -268,28 +275,29 @@
     'https://raw.githubusercontent.com/Silent-Studio-CN/index/main/WebSite/io.json'
   ];
   var DOC_MAP = {
-    silent_safe: { re: /silentsafe/i, link: 'docs/silent-safe/' },
-    slime_mold: { re: /slime.?mold/i, link: 'docs/slime-mold/' },
-    project_list: { re: /project.?list/i, link: 'https://github.com/Silent-Studio-CN/SilentStudio-ProjectList' },
-    website: { re: /website|官网|web/i, link: 'docs/silentstudio-website/' }
+    silent_safe: { re: /silentsafe|安全/i, link: 'docs/silent-safe/' },
+    slime_mold: { re: /slime.?mold/i, link: 'docs/' },
+    project_list: { re: /project.?list/i, link: 'docs/' },
+    website: { re: /website|官网|web|网站/i, link: 'docs/silentstudio-website/' }
   };
   var updatesCache = null;   // 拉取到的原始条目
   var updatesFailed = false; // 是否已降级
 
   function fallbackUpdates() {
     return [
-      { date: '2026-08', title: t('fallback_0t'), desc: t('fallback_0d'), link: 'https://github.com/Silent-Studio-CN/SilentSafe', tags: ['SilentSafe'] },
-      { date: '2026-07', title: t('fallback_1t'), desc: t('fallback_1d'), link: 'https://github.com/Silent-Studio-CN/SlimeMold', tags: ['SlimeMold'] },
-      { date: '2026-07', title: t('fallback_2t'), desc: t('fallback_2d'), link: 'https://github.com/Silent-Studio-CN/SilentStudio-ProjectList', tags: ['Index'] },
-      { date: '2026-08', title: t('fallback_3t'), desc: t('fallback_3d'), link: 'docs/silentstudio-website/', tags: ['Website'] }
+      { date: '2026-08', title: t('fallback_0t'), desc: t('fallback_0d'), tags: ['SilentSafe'] },
+      { date: '2026-07', title: t('fallback_1t'), desc: t('fallback_1d'), tags: ['SlimeMold'] },
+      { date: '2026-07', title: t('fallback_2t'), desc: t('fallback_2d'), tags: ['Index'] },
+      { date: '2026-08', title: t('fallback_3t'), desc: t('fallback_3d'), tags: ['Website'] }
     ];
   }
 
+  // 点击统一进入文档（无显式 link 时按标题匹配本地文档页，兜底到文档搜索页）
   function guessLink(title) {
     for (var k in DOC_MAP) {
       if (DOC_MAP[k].re.test(title || '')) return DOC_MAP[k].link;
     }
-    return 'https://github.com/orgs/Silent-Studio-CN/repositories';
+    return 'docs/';
   }
 
   function normalize(data) {
@@ -390,21 +398,84 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  // ===== 语言菜单：动态构建 + 搜索过滤 + 远程语言包 =====
   var langSel = $('#langSelect');
   var langBtn = $('#langBtn');
+  var langList = $('#langList');
+  var langSearch = $('#langSearch');
+
+  function buildLangMenu() {
+    if (!langList) return;
+    var q = langSearch ? (langSearch.value || '').trim().toLowerCase() : '';
+    var codes = LANGS.filter(function (code) {
+      if (!q) return true;
+      var name = (LANG_NAME[code] || code).toLowerCase();
+      return name.indexOf(q) >= 0 || code.toLowerCase().indexOf(q) >= 0;
+    });
+    langList.innerHTML = codes.map(function (code) {
+      return '<button type="button" data-lang="' + code + '">' +
+        '<span class="lang-name">' + escapeHtml(LANG_NAME[code] || code) + '</span>' +
+        '<span class="lang-code">' + escapeHtml(code) + '</span>' +
+      '</button>';
+    }).join('');
+    applyLang();
+  }
+
   if (langBtn) {
     langBtn.addEventListener('click', function (e) {
       e.stopPropagation();
       langSel.classList.toggle('open');
+      if (langSearch) { langSearch.value = ''; buildLangMenu(); }
     });
-    $$('.lang-menu button').forEach(function (b) {
-      b.addEventListener('click', function () {
+  }
+  if (langSearch) {
+    langSearch.addEventListener('input', buildLangMenu);
+  }
+  if (langList) {
+    langList.addEventListener('click', function (e) {
+      var b = e.target.closest ? e.target.closest('button[data-lang]') : null;
+      if (b) {
         currentLang = b.getAttribute('data-lang');
         applyLang();
         langSel.classList.remove('open');
-      });
+      }
     });
-    document.addEventListener('click', function () { langSel.classList.remove('open'); });
+  }
+  document.addEventListener('click', function () { langSel.classList.remove('open'); });
+
+  // 远程语言包：用户后续把翻译提交到 index 仓库 WebSite/lang.json 即自动生效
+  var LANG_SOURCES = [
+    'https://cdn.jsdelivr.net/gh/Silent-Studio-CN/index@main/WebSite/lang.json',
+    'https://raw.githubusercontent.com/Silent-Studio-CN/index/main/WebSite/lang.json'
+  ];
+  function loadRemoteLangs() {
+    var tryNext = function (i) {
+      if (i >= LANG_SOURCES.length) { buildLangMenu(); return; }
+      fetch(LANG_SOURCES[i], { cache: 'no-store' })
+        .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+        .then(function (data) {
+          if (data && typeof data === 'object') {
+            Object.keys(data).forEach(function (code) {
+              var pack = data[code];
+              if (!pack || typeof pack !== 'object') return;
+              if (LANGS.indexOf(code) < 0) LANGS.push(code);
+              if (pack.short) LANG_LABEL[code] = pack.short;
+              if (pack.name) LANG_NAME[code] = pack.name;
+              Object.keys(pack).forEach(function (k) {
+                if (k === 'name' || k === 'short') return;
+                if (!I18N[k]) I18N[k] = [];
+                var arr = I18N[k];
+                var idx = LANGS.indexOf(code);
+                while (arr.length <= idx) arr.push(arr[0] || '');
+                arr[idx] = pack[k];
+              });
+            });
+          }
+          buildLangMenu();
+        })
+        .catch(function () { tryNext(i + 1); });
+    };
+    tryNext(0);
   }
 
   var burger = $('#burger');
@@ -452,5 +523,6 @@
   // 启动
   applyTheme();
   applyLang();
+  loadRemoteLangs();
   loadUpdates();
 })();

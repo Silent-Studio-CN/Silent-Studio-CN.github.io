@@ -139,17 +139,47 @@
       var INDEX = [
         { crumb: 'SilentSafe · Docs', title: 'SilentSafe 文档', desc: '智能安全防护工具：威胁扫描、行为监控、启发式分析与隔离区。', link: 'silent-safe/', tags: ['Security', '防护'] },
         { crumb: 'SilentSafe · Guide', title: 'SilentSafe 快速开始', desc: '环境要求、安装依赖与启动扫描，几分钟跑起来。', link: 'silent-safe/guide/quickstart.html', tags: ['Guide', '安装'] },
-        { crumb: 'SilentHoneypot · Docs', title: 'SilentHoneypot 文档', desc: 'Rust 蜜罐诱捕系统：SSH / FTP / HTTP 诱饵与攻击分析。', link: 'silent-honeypot/', tags: ['Deception', '蜜罐'] },
-        { crumb: 'SilentHoneypot · Guide', title: 'SilentHoneypot 快速开始', desc: '构建 sensor 与 analyzer，配置诱饵并运行。', link: 'silent-honeypot/guide/quickstart.html', tags: ['Guide', 'Rust'] },
         { crumb: 'SilentGameEngine · Docs', title: 'SilentGameEngine 文档', desc: '跨语言游戏引擎：渲染、物理、音频与场景模块。', link: 'silent-game-engine/', tags: ['Engine', '渲染'] },
         { crumb: 'SilentGameEngine · Guide', title: 'SilentGameEngine 快速开始', desc: '创建引擎实例、添加场景并启动主循环。', link: 'silent-game-engine/guide/quickstart.html', tags: ['Guide', 'OpenGL'] },
         { crumb: 'SilentCloud · Docs', title: 'SilentCloud 文档', desc: '基于 PostgreSQL 的轻量云平台：官网、服务与工作流。', link: 'silent-cloud/', tags: ['Cloud', 'FastAPI'] },
         { crumb: 'SilentCloud · Guide', title: 'SilentCloud 快速开始', desc: '配置数据库并启动本地服务。', link: 'silent-cloud/guide/quickstart.html', tags: ['Guide', 'PostgreSQL'] },
-        { crumb: 'ssdbs · Docs', title: 'SilentSafeDateBaseServer 文档', desc: '威胁情报数据库服务：情报查询、节点同步与策略下发。', link: 'ssdbs/', tags: ['Intelligence', '情报'] },
-        { crumb: 'ssdbs · Guide', title: 'ssdbs 快速开始', desc: '初始化数据库、启动服务并查询情报。', link: 'ssdbs/guide/quickstart.html', tags: ['Guide', 'API'] },
         { crumb: 'SilentStudioWebSite · Docs', title: 'SilentStudioWebSite 文档', desc: '多语言官网 + 可视化工作流编辑器 + 3D 建模流。', link: 'silentstudio-website/', tags: ['Website', '工作流'] },
         { crumb: 'SilentStudioWebSite · Guide', title: 'SilentStudioWebSite 快速开始', desc: '启动后端并打开编辑器体验 3D 建模流。', link: 'silentstudio-website/guide/quickstart.html', tags: ['Guide', '3D'] }
       ];
+
+      // 远程补充索引：index 仓库 WebSite/docs.jsonl（每行一条 JSON），失败忽略
+      function loadJsonl() {
+        var sources = [
+          'https://cdn.jsdelivr.net/gh/Silent-Studio-CN/index@main/WebSite/docs.jsonl',
+          'https://raw.githubusercontent.com/Silent-Studio-CN/index/main/WebSite/docs.jsonl'
+        ];
+        var tryNext = function (i) {
+          if (i >= sources.length) { render(input.value); return; }
+          fetch(sources[i], { cache: 'no-store' })
+            .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.text(); })
+            .then(function (text) {
+              text.split('\n').forEach(function (line) {
+                line = line.trim();
+                if (!line) return;
+                try {
+                  var it = JSON.parse(line);
+                  if (it && it.title) {
+                    INDEX.push({
+                      crumb: it.crumb || (it.tags ? (it.tags[0] || 'Docs') + ' · Docs' : 'Docs · Docs'),
+                      title: it.title,
+                      desc: it.desc || it.description || '',
+                      link: it.link || it.url || '',
+                      tags: it.tags || []
+                    });
+                  }
+                } catch (e) {}
+              });
+              render(input.value);
+            })
+            .catch(function () { tryNext(i + 1); });
+        };
+        tryNext(0);
+      }
 
       var input = document.getElementById('searchInput');
       var clearBtn = document.getElementById('clearBtn');
@@ -194,6 +224,7 @@
         input.focus();
       });
       render('');
+      loadJsonl();
     })();
   </script>
 </body>
