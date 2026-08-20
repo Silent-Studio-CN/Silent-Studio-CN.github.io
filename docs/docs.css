@@ -176,6 +176,7 @@ img { display: block; max-width: 100%; }
 
 /* 代码块 */
 pre {
+  position: relative;
   background: var(--code-bg);
   border: 1px solid var(--card-border);
   border-radius: 12px;
@@ -209,6 +210,30 @@ pre code {
   background: var(--code-bg);
   color: var(--text);
   font-weight: 700;
+}
+
+/* 代码块复制按钮 */
+.copy-btn {
+  position: absolute;
+  top: 10px; right: 10px;
+  width: 30px; height: 30px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: rgba(255, 255, 255, 0.04);
+  color: var(--text-faint);
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.copy-btn:hover {
+  color: var(--text);
+  border-color: rgba(124, 140, 255, 0.5);
+  background: rgba(124, 140, 255, 0.08);
+}
+.copy-btn.copied {
+  color: #4ade80;
+  border-color: rgba(74, 222, 128, 0.5);
 }
 
 /* 主题切换按钮 */
