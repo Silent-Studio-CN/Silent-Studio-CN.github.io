@@ -37,21 +37,18 @@
     </div>
 
     <div class="doc-content">
-      <h2>环境要求</h2>
+      <h2>下载</h2>
+      <p>IntTest 已发布 <strong>v2.2.0</strong>，选择对应架构的 exe 直接运行即可，无需安装 Python。</p>
       <ul>
-        <li>Windows 10/11（64 位）</li>
-        <li>Python 3.10+</li>
+        <li><i class="fab fa-windows" style="color:#60a5fa;margin-right:6px;"></i><strong>Windows x64</strong>（绝大多数电脑）→ <a href="https://github.com/Silent-Studio-CN/IntTest/releases/download/v2.2.0/IntTest_x64.exe" target="_blank" rel="noopener">下载 IntTest_x64.exe</a></li>
+        <li><i class="fab fa-windows" style="color:#60a5fa;margin-right:6px;"></i><strong>Windows ARM64</strong>（骁龙/麒麟等 ARM 设备）→ <a href="https://github.com/Silent-Studio-CN/IntTest/releases/download/v2.2.0/IntTest_arm64.exe" target="_blank" rel="noopener">下载 IntTest_arm64.exe</a></li>
       </ul>
+      <p>拿不准选哪个？看系统「设置 → 系统 → 关于」里的系统类型。所有历史版本见 <a href="https://github.com/Silent-Studio-CN/IntTest/releases" target="_blank" rel="noopener">Releases 页面</a>。</p>
 
-      <h2>安装依赖</h2>
-      <pre><code>pip install -r requirements.txt</code></pre>
-      <p>核心依赖：<code>PySide6</code>（界面）、<code>qfluentwidgets</code>（Fluent 风格控件）、<code>psutil</code>（网络监控）、<code>requests</code>（HTTP 请求）。</p>
-
-      <h2>启动</h2>
-      <pre><code>python main.py</code></pre>
-      <p>启动后进入主窗口，默认打开「速度测试」页。左侧导航共六个模块：</p>
+      <h2>使用</h2>
+      <p>下载后双击 exe 即可启动。主窗口默认打开「速度测试」页，左侧导航共六个模块：</p>
       <ul>
-        <li><strong>速度测试</strong> — 选择下载服务器（海外 / 国内线路），点击「开始测速」自动进行下载 &amp; 上传测试。下载 6 路 HTTP Range 并发，上传 4 路并发 POST，持续 15 秒，实时显示瞬时速率和趋势图。</li>
+        <li><strong>速度测试</strong> — 选择下载服务器（海外 / 国内线路），点击「开始测速」自动进行下载 &amp; 上传测试。下载 6 路 HTTP Range 并发，上传 4 路并发 POST，持续 15 秒，实时显示瞬时速率和趋势图；另有极限模式（12 路 / 8 路并发，30 秒）。</li>
         <li><strong>实时监控</strong> — 监控当前网络接口实时上下行速率，折线图记录过去 60 秒变化，底部显示开机以来总流量。</li>
         <li><strong>连通性测试</strong> — 对百度、腾讯、阿里、GitHub、谷歌进行 Ping，延迟颜色分级（绿色 &lt;100ms、橙色 &lt;300ms、红色 ≥300ms），支持每 5 秒自动刷新。</li>
         <li><strong>网络信息</strong> — 本地接口详情、公网 IPv4/IPv6、运营商 ISP、地理位置与 ASN、DNS 解析与 HTTP 连通性、IPv4/IPv6 延迟对比。</li>
