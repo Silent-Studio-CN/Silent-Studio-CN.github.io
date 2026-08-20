@@ -429,6 +429,8 @@
     });
   }
   if (langSearch) {
+    // 阻止点击搜索框冒泡到 document，避免菜单被当成“点击外部”关闭
+    langSearch.addEventListener('click', function (e) { e.stopPropagation(); });
     langSearch.addEventListener('input', buildLangMenu);
   }
   if (langList) {
@@ -494,11 +496,11 @@
     });
   }
 
-  // 技术栈横向滚动：克隆一份内容实现无缝循环
+  // 技术栈横向滚动：克隆一份 group 实现无缝循环（克隆整个 track 会嵌套导致重叠）
   var techTrack = $('#techTrack');
   if (techTrack) {
-    var clone = techTrack.cloneNode(true);
-    techTrack.appendChild(clone);
+    var group = techTrack.querySelector('.tech-group');
+    if (group) techTrack.appendChild(group.cloneNode(true));
   }
 
   // 滚动渐入

@@ -224,6 +224,11 @@ pre code {
   background: rgba(251, 191, 36, 0.06);
   color: #f5d78c;
 }
+.callout-wip {
+  border-color: rgba(251, 191, 36, 0.35);
+  background: rgba(251, 191, 36, 0.07);
+  color: #f5d78c;
+}
 
 /* 文档首页（landing）卡片 */
 .landing-grid {
