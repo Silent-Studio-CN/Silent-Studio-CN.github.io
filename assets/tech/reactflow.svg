@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 150 48" width="150" height="48">
+  <rect width="150" height="48" rx="10" fill="#151a2c"/>
+  <!-- React Flow 风格：两节点 + 连接线（官方主色 #ff0071） -->
+  <path d="M27 24 C 38 24, 50 24, 61 24" stroke="#ff0071" stroke-width="2.5" fill="none"/>
+  <circle cx="22" cy="24" r="11" fill="#ff0071"/>
+  <circle cx="22" cy="24" r="4" fill="#ffffff"/>
+  <circle cx="66" cy="24" r="11" fill="#ff0071"/>
+  <circle cx="66" cy="24" r="4" fill="#ffffff"/>
+  <text x="86" y="29" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" fill="#e6e9f5">React Flow</text>
+</svg>

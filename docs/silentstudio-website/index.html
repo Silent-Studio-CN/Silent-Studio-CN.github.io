@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SilentStudioWebSite · 文档</title>
+  <link rel="icon" type="image/jpeg" href="../../assets/logo.jpg" />
+  <link rel="stylesheet" href="../../assets/font-awesome/css/all.min.css" />
+  <link rel="stylesheet" href="../docs.css" />
+</head>
+<body>
+  <header class="doc-nav">
+    <div class="doc-nav-inner">
+      <a class="doc-brand" href="../../index.html">
+        <img src="../../assets/logo.jpg" alt="SilentStudio" />
+        <span class="doc-brand-name">SilentStudioWebSite<em>Studio</em></span>
+      </a>
+      <nav class="doc-nav-links">
+        <a href="../../index.html">首页</a>
+        <a href="guide/quickstart.html">快速开始</a>
+        <button class="btn-theme" id="themeBtn" type="button" title="切换主题"><i class="fas fa-moon" id="themeIcon"></i></button>
+        <a class="btn-github" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="doc-wrap">
+    <nav class="doc-crumbs">
+      <a href="../../index.html">SilentStudio</a><i class="fas fa-chevron-right"></i><span>SilentStudioWebSite</span>
+    </nav>
+
+    <div class="doc-hero">
+      <span class="doc-eyebrow">Studio</span>
+      <h1 class="doc-title"><i class="fas fa-project-diagram" style="color:#60a5fa;margin-right:10px;"></i>SilentStudioWebSite</h1>
+      <p class="doc-sub">SilentStudio 的核心产品。多语言官网 + 可视化工作流编辑器 + 3D 建模流，让「工作流」不止工作，也成为创作的画布。</p>
+    </div>
+
+    <div class="doc-content">
+      <h2>功能特性</h2>
+      <div class="landing-grid">
+          <div class="landing-card"><i class="fas fa-language"></i><h4>多语言</h4><p>中 / 英 / 日三语，自动语言识别。</p></div>
+          <div class="landing-card"><i class="fas fa-edit"></i><h4>工作流编辑器</h4><p>节点式可视化编程，支持代码节点。</p></div>
+          <div class="landing-card"><i class="fas fa-cube"></i><h4>3D 建模流</h4><p>三参数节点连接同一 3D 视窗，实时控制模型。</p></div>
+          <div class="landing-card"><i class="fas fa-file-upload"></i><h4>文件节点</h4><p>上传 Word / PPT / Excel / 音视频 / 3D 模型，随工作流保存。</p></div>
+      </div>
+
+      <div class="repo-banner">
+        <p>这是 <strong>SilentStudioWebSite</strong> 的文档首页。<br />前往 GitHub 仓库获取源码、Star 与最新发布。</p>
+        <a class="btn-primary" href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener"><i class="fab fa-github"></i> 前往 GitHub 仓库</a>
+      </div>
+
+      <h2>继续阅读</h2>
+      <div class="landing-grid">
+        <a class="landing-card" href="guide/quickstart.html" style="text-decoration:none;">
+          <i class="fas fa-rocket"></i><h4>快速开始</h4><p>几分钟内把 SilentStudioWebSite 跑起来。</p>
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="doc-footer">
+    <p><a href="../../index.html">SilentStudio</a> · © <span id="year"></span> Silent-Studio-CN · 文档页</p>
+  </footer>
+  <script>
+    (function () {
+      var html = document.documentElement;
+      var theme = 'dark';
+      try { theme = localStorage.getItem('ss_theme') || 'dark'; } catch (e) {}
+      html.setAttribute('data-theme', theme);
+      document.getElementById('year').textContent = new Date().getFullYear();
+      var btn = document.getElementById('themeBtn');
+      var icon = document.getElementById('themeIcon');
+      function sync() { if (icon) icon.className = html.getAttribute('data-theme') === 'dark' ? 'fas fa-sun' : 'fas fa-moon'; }
+      sync();
+      if (btn) btn.addEventListener('click', function () {
+        html.setAttribute('data-theme', html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
+        try { localStorage.setItem('ss_theme', html.getAttribute('data-theme')); } catch (e) {}
+        sync();
+      });
+    })();
+  </script>
+
+</body>
+</html>
