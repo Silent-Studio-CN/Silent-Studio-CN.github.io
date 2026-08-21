@@ -141,6 +141,32 @@ img { display: block; max-width: 100%; }
 }
 .btn-ghost:hover { color: var(--text); border-color: var(--glow-border); transform: translateY(-1px); }
 
+/* Star 按钮 */
+.btn-star {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 0.85rem; font-weight: 600;
+  color: var(--text-dim);
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--card-border);
+  background: var(--card);
+  transition: all 0.25s;
+}
+.btn-star i { color: #f5b342; transition: transform 0.25s; }
+.btn-star em {
+  font-style: normal;
+  font-family: "SF Mono", "Cascadia Code", Consolas, monospace;
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  padding-left: 3px;
+}
+.btn-star:hover {
+  color: var(--text);
+  border-color: rgba(245, 179, 66, 0.55);
+  transform: translateY(-1px);
+}
+.btn-star:hover i { transform: scale(1.18) rotate(-8deg); }
+
 /* 语言选择 */
 .lang-select {
   position: relative;
@@ -718,6 +744,55 @@ html[data-theme="light"] .project-card {
   .philo-row { flex-direction: column; gap: 16px; }
   .section { padding: 84px 20px; }
   .hide-mobile { display: none; }
+}
+
+/* ===== 手机端精调 ===== */
+@media (max-width: 920px) {
+  .nav-actions { gap: 8px; }
+}
+@media (max-width: 620px) {
+  .nav-inner { padding: 0 14px; height: 56px; gap: 10px; }
+  .nav-logo { width: 26px; height: 26px; }
+  .nav-name { font-size: 0.9rem; }
+  .nav-actions { gap: 7px; }
+  .btn-theme { width: 36px; height: 36px; }
+  .btn-ghost, .btn-star { width: 36px; height: 36px; padding: 0; justify-content: center; border-radius: 50%; }
+  .btn-ghost span, .btn-star span { display: none; }
+  .btn-star em { font-size: 0.72rem; padding-left: 0; }
+  .lang-btn { padding: 7px 9px; }
+  .lang-btn .fa-chevron-down { display: none; }
+  .lang-menu {
+    position: fixed;
+    top: 64px; right: 12px; left: 12px;
+    width: auto;
+  }
+
+  .hero { min-height: 92vh; padding: 104px 20px 70px; }
+  .hero-inner { max-width: 100%; }
+  .hero-logo-wrap { margin-bottom: 24px; }
+  .hero-logo { width: 84px; height: 84px; border-radius: 22px; }
+  .hero-cta { flex-direction: column; align-items: center; width: 100%; }
+  .btn-primary, .btn-secondary { width: min(320px, 100%); justify-content: center; }
+  .btn-lg { width: min(340px, 100%) !important; }
+  .hero-scroll { margin-top: 48px; }
+
+  .section { padding: 72px 18px; }
+  .section-head { margin-bottom: 42px; }
+  .section-desc { font-size: 0.96rem; }
+  .about-card { padding: 28px 22px; }
+
+  .philo-row { padding: 26px 0; }
+  .philo-body h3 { font-size: 1.2rem; }
+  .update-item { flex-direction: column; gap: 10px; padding: 16px 18px; }
+  .update-date { align-self: flex-start; margin-top: 0; }
+  .stack { margin-top: 54px; }
+
+  .tech-item { padding: 6px 14px; }
+  .tech-item img { height: 24px; }
+  .blob { width: 72vw; height: 72vw; }
+
+  .footer { padding: 50px 18px 32px; }
+  .footer-docs { line-height: 1.9; }
 }
 
 @media (prefers-reduced-motion: reduce) {

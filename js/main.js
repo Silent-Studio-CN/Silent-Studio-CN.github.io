@@ -29,37 +29,38 @@
     nav_updates:      ['近期更新', '近期更新', 'Updates', '更新情報', 'Updates', 'Обновления', 'Novedades'],
     nav_philosophy:   ['理念', '理念', 'Philosophy', '理念', 'Philosophie', 'Философия', 'Filosofía'],
     nav_latest:       ['最新项目', '最新項目', 'Projects', 'プロジェクト', 'Projekte', 'Проекты', 'Proyectos'],
+    nav_star:         ['Star', 'Star', 'Star', 'Star', 'Star', 'Star', 'Star'],
 
     hero_sub: [
-      'SilentStudio · 专注于工程品质的软件工作室',
-      'SilentStudio · 專注於工程品質的軟體工作室',
-      'SilentStudio · a software studio devoted to engineering quality',
-      'SilentStudio · エンジニアリング品質にこだわるソフトウェアスタジオ',
-      'SilentStudio · ein Software-Studio für höchste Ingenieursqualität',
-      'SilentStudio · студия программного обеспечения, верная инженерному качеству',
-      'SilentStudio · un estudio de software dedicado a la calidad de ingeniería'
+      '程序员与用户，都值得被好好对待',
+      '程式設計師與使用者，都值得被好好對待',
+      'Both programmers and users deserve to be treated well',
+      'プログラマーもユーザーも、大切にされる価値がある',
+      'Programmierer und Nutzer verdienen eine faire Behandlung',
+      'И разработчики, и пользователи достойны хорошего отношения',
+      'Tanto los programadores como los usuarios merecen un buen trato'
     ],
     hero_desc: [
-      '从安全防护到路径算法，从云平台到图形引擎——<br class="hide-mobile" />复杂留给内部，结果交付于用户。',
-      '從安全防護到路徑演算法，從雲平台到圖形引擎——<br class="hide-mobile" />複雜留給內部，結果交付於使用者。',
-      'From security to pathfinding, from cloud to graphics engines —<br class="hide-mobile" />complexity stays inside; results are delivered.',
-      'セキュリティから経路探索、クラウドからグラフィックスエンジンまで——<br class="hide-mobile" />複雑さは内側に、結果だけを届けます。',
-      'Von Sicherheit bis Pfadfindung, von Cloud bis Grafik-Engines —<br class="hide-mobile" />Komplexität bleibt innen, Ergebnisse kommen zu dir.',
-      'От безопасности до алгоритмов пути, от облака до графических движков —<br class="hide-mobile" />сложность остаётся внутри, результат приходит к вам.',
-      'De la seguridad a los algoritmos de ruta, de la nube a los motores gráficos —<br class="hide-mobile" />la complejidad queda dentro; el resultado llega a ti.'
+      '从安全防护到路径算法，从云平台到图形引擎——<br class="hide-mobile" />不敷衍技术，不辜负用户，认真交付每一件工具。',
+      '從安全防護到路徑演算法，從雲平台到圖形引擎——<br class="hide-mobile" />不敷衍技術，不辜負使用者，認真交付每一件工具。',
+      'From security to pathfinding, from cloud to graphics engines —<br class="hide-mobile" />no shortcuts, no letting users down: every tool is delivered with care.',
+      'セキュリティから経路探索、クラウドからグラフィックスエンジンまで——<br class="hide-mobile" />技術に手を抜かず、ユーザーを裏切らず、一つひとつ丁寧に届けます。',
+      'Von Sicherheit bis Pfadfindung, von Cloud bis Grafik-Engines —<br class="hide-mobile" />keine Abkürzungen, keine Enttäuschungen: jedes Werkzeug entsteht mit Sorgfalt.',
+      'От безопасности до алгоритмов пути, от облака до графических движков —<br class="hide-mobile" />без халтуры и без обмана пользователя: каждый инструмент сделан с заботой.',
+      'De la seguridad a los algoritmos de ruta, de la nube a los motores gráficos —<br class="hide-mobile" />sin atajos ni decepciones: cada herramienta se entrega con esmero.'
     ],
     hero_btn1: ['近期更新', '近期更新', 'Updates', '更新情報', 'Updates', 'Обновления', 'Novedades'],
     hero_btn2: ['认识我们', '認識我們', 'About us', '私たちについて', 'Über uns', 'О нас', 'Sobre nosotros'],
 
     about_title: ['关于 SilentStudio', '關於 SilentStudio', 'About SilentStudio', 'SilentStudio について', 'Über SilentStudio', 'О SilentStudio', 'Acerca de SilentStudio'],
     about_desc: [
-      'SilentStudio 起源于一个朴素的想法：工具应该安静地工作，而不是制造噪音。我们从自用项目出发，逐渐生长出一个横跨安全、算法、云与图形引擎的软件生态，并在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我们的成果。',
-      'SilentStudio 起源於一個樸素的想法：工具應該安靜地工作，而不是製造噪音。我們從自用專案出發，逐漸生長出一個橫跨安全、演算法、雲與圖形引擎的軟體生態，並在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我們的成果。',
-      'SilentStudio began with a simple idea: tools should work quietly instead of making noise. Starting from projects we made for ourselves, we grew an ecosystem spanning security, algorithms, cloud and graphics — shared under <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
-      'SilentStudio は「ツールは静かに働き、騒音を立てない」という素朴な考えから始まりました。自分用のプロジェクトから、セキュリティ・アルゴリズム・クラウド・グラフィックスを横断するエコシステムへと成長し、<a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> で成果を共有しています。',
-      'SilentStudio begann mit einer einfachen Idee: Werkzeuge sollen leise arbeiten statt Lärm zu machen. Aus eigenen Projekten wuchs ein Ökosystem aus Sicherheit, Algorithmen, Cloud und Grafik — geteilt unter <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
-      'SilentStudio начался с простой идеи: инструменты должны работать тихо, а не создавать шум. Из собственных проектов мы выросли в экосистему: безопасность, алгоритмы, облако и графика — и делимся результатами на <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
-      'SilentStudio comenzó con una idea sencilla: las herramientas deben trabajar en silencio. Desde proyectos propios crecimos hasta un ecosistema de seguridad, algoritmos, nube y gráficos — compartido en <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.'
+      'SilentStudio 坚持：工具应当为人们提供便利、高效的解决方案，而不是为了盈利而粗制滥造的"产品"。我们从自用项目出发，逐渐生长出一个横跨安全、算法、云与图形引擎的软件生态，并在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我们的成果。',
+      'SilentStudio 堅持：工具應為人們提供便利、高效的解決方案，而不是為了盈利而粗製濫造的「產品」。我們從自用專案出發，逐漸生長出一個橫跨安全、演算法、雲與圖形引擎的軟體生態，並在 <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> 分享我們的成果。',
+      'SilentStudio insists that tools should deliver convenient, efficient solutions — not shoddy "products" rushed out for profit. Starting from projects we made for ourselves, we grew an ecosystem spanning security, algorithms, cloud and graphics — shared under <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
+      'SilentStudio は「ツールとは、便利で効率的な解決策を人に届けるものであり、利益のために作られた粗悪品であってはならない」と考えています。自分用のプロジェクトから、セキュリティ・アルゴリズム・クラウド・グラフィックスを横断するエコシステムへと成長し、<a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a> で成果を共有しています。',
+      'SilentStudio steht für Werkzeuge, die bequeme und effiziente Lösungen liefern — kein schlampiges "Produkt" nur für Profit. Aus eigenen Projekten wuchs ein Ökosystem aus Sicherheit, Algorithmen, Cloud und Grafik — geteilt unter <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
+      'SilentStudio придерживается принципа: инструменты должны давать удобные и эффективные решения, а не быть небрежным «продуктом» ради прибыли. Из собственных проектов мы выросли в экосистему: безопасность, алгоритмы, облако и графика — и делимся результатами на <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.',
+      'SilentStudio insiste en que las herramientas deben ofrecer soluciones cómodas y eficientes — no «productos» chapuceros hechos solo para lucrar. Desde proyectos propios crecimos hasta un ecosistema de seguridad, algoritmos, nube y gráficos — compartido en <a href="https://github.com/Silent-Studio-CN" target="_blank" rel="noopener">GitHub · Silent-Studio-CN</a>.'
     ],
     about_c1t: ['需求驱动', '需求驅動', 'Need-driven', 'ニーズ起点', 'Bedürfnisorientiert', 'От потребностей', 'Impulsado por necesidades'],
     about_c1d: [
@@ -386,8 +387,25 @@
   }
 
   /* ============================================================
-     其余交互
+     GitHub Star 数：拉取仓库 Star 数，并绑定点击直达仓库（便于用户顺手点亮 Star）
      ============================================================ */
+  var STAR_REPO = 'Silent-Studio-CN/Silent-Studio-CN.github.io';
+  var starCountEl = $('#starCount');
+  function fmtStars(n) {
+    if (n >= 1000) return (n / 1000).toFixed(n >= 10000 ? 0 : 1) + 'k';
+    return String(n);
+  }
+  function loadStars() {
+    if (!starCountEl) return;
+    fetch('https://api.github.com/repos/' + STAR_REPO, { cache: 'no-store' })
+      .then(function (r) { if (!r.ok) throw new Error('http ' + r.status); return r.json(); })
+      .then(function (d) {
+        var n = d && typeof d.stargazers_count === 'number' ? d.stargazers_count : null;
+        if (n !== null) starCountEl.textContent = fmtStars(n);
+      })
+      .catch(function () { /* 静默降级，保留占位符 */ });
+  }
+
   var yearEl = $('#year');
   if (yearEl) yearEl.textContent = String(new Date().getFullYear());
 
