@@ -42,55 +42,55 @@
       '这是 <strong>SilentSafe</strong> 的文档首页。前往 GitHub 仓库获取源码、Star 与最新发布。',
       '這是 <strong>SilentSafe</strong> 的文件首頁。前往 GitHub 倉庫取得原始碼、Star 與最新發佈。',
       'This is the <strong>SilentSafe</strong> docs home. Visit the GitHub repo for source, stars and releases.',
-      'これは <strong>SilentSafe</strong> のドキュメントトップです。',
-      'Dies ist die <strong>SilentSafe</strong>-Dokumentationsseite.',
-      'Это главная страница документации <strong>SilentSafe</strong>.',
-      'Esta es la página de documentación de <strong>SilentSafe</strong>.'
+      'これは <strong>SilentSafe</strong> のドキュメントトップです。GitHub リポジトリでソースコード、Star、最新リリースをご確認いただけます。',
+      'Dies ist die <strong>SilentSafe</strong>-Dokumentationsseite. Im GitHub-Repository finden Sie Quellcode, Stars und die neuesten Releases.',
+      'Это главная страница документации <strong>SilentSafe</strong>. В репозитории GitHub вы найдёте исходный код, звёзды и последние релизы.',
+      'Esta es la página de documentación de <strong>SilentSafe</strong>. Visite el repositorio de GitHub para ver el código fuente, las estrellas y los últimos lanzamientos.'
     ],
     sm_banner: [
       '这是 <strong>SlimeMold</strong> 的文档首页。前往 GitHub 仓库获取源码、Star 与最新发布。',
       '這是 <strong>SlimeMold</strong> 的文件首頁。前往 GitHub 倉庫取得原始碼、Star 與最新發佈。',
       'This is the <strong>SlimeMold</strong> docs home. Visit the GitHub repo for source, stars and releases.',
-      'これは <strong>SlimeMold</strong> のドキュメントトップです。',
-      'Dies ist die <strong>SlimeMold</strong>-Dokumentationsseite.',
-      'Это главная страница документации <strong>SlimeMold</strong>.',
-      'Esta es la página de documentación de <strong>SlimeMold</strong>.'
+      'これは <strong>SlimeMold</strong> のドキュメントトップです。GitHub リポジトリでソースコード、Star、最新リリースをご確認いただけます。',
+      'Dies ist die <strong>SlimeMold</strong>-Dokumentationsseite. Im GitHub-Repository finden Sie Quellcode, Stars und die neuesten Releases.',
+      'Это главная страница документации <strong>SlimeMold</strong>. В репозитории GitHub вы найдёте исходный код, звёзды и последние релизы.',
+      'Esta es la página de documentación de <strong>SlimeMold</strong>. Visite el repositorio de GitHub para ver el código fuente, las estrellas y los últimos lanzamientos.'
     ],
     it_banner: [
       '这是 <strong>IntTest</strong> 的文档首页。已发布 v2.2.0，选择对应架构的 exe 直接运行，无需安装 Python。',
       '這是 <strong>IntTest</strong> 的文件首頁。已發佈 v2.2.0，選擇對應架構的 exe 直接執行，無需安裝 Python。',
       'This is the <strong>IntTest</strong> docs home. v2.2.0 is released — pick the exe for your architecture and run it directly, no Python needed.',
-      'これは <strong>IntTest</strong> のドキュメントトップです。',
-      'Dies ist die <strong>IntTest</strong>-Dokumentationsseite.',
-      'Это главная страница документации <strong>IntTest</strong>.',
-      'Esta es la página de documentación de <strong>IntTest</strong>.'
+      'これは <strong>IntTest</strong> のドキュメントトップです。v2.2.0 をリリース済み。お使いのアーキテクチャに合った exe を選んでそのまま実行でき、Python の導入は不要です。',
+      'Dies ist die <strong>IntTest</strong>-Dokumentationsseite. v2.2.0 ist veröffentlicht — wählen Sie die exe für Ihre Architektur und führen Sie sie direkt aus, Python ist nicht nötig.',
+      'Это главная страница документации <strong>IntTest</strong>. Выпущена версия v2.2.0 — выберите exe под вашу архитектуру и запустите напрямую, Python не нужен.',
+      'Esta es la página de documentación de <strong>IntTest</strong>. Se ha publicado v2.2.0: elija el exe para su arquitectura y ejecútelo directamente; no se necesita Python.'
     ],
     sc_banner: [
       '这是 <strong>SilentCloud</strong> 的文档首页。SilentCloud 是 Web 云服务，访问官网即可开通使用。',
       '這是 <strong>SilentCloud</strong> 的文件首頁。SilentCloud 是 Web 雲服務，造訪官網即可開通使用。',
       'This is the <strong>SilentCloud</strong> docs home. SilentCloud is a web service — visit the website to get started.',
-      'これは <strong>SilentCloud</strong> のドキュメントトップです。',
-      'Dies ist die <strong>SilentCloud</strong>-Dokumentationsseite.',
-      'Это главная страница документации <strong>SilentCloud</strong>.',
-      'Esta es la página de documentación de <strong>SilentCloud</strong>.'
+      'これは <strong>SilentCloud</strong> のドキュメントトップです。SilentCloud は Web クラウドサービスです。公式サイトからご利用を開始いただけます。',
+      'Dies ist die <strong>SilentCloud</strong>-Dokumentationsseite. SilentCloud ist ein Web-Service — auf der Website können Sie sofort loslegen.',
+      'Это главная страница документации <strong>SilentCloud</strong>. SilentCloud — это веб-сервис; начните работу на официальном сайте.',
+      'Esta es la página de documentación de <strong>SilentCloud</strong>. SilentCloud es un servicio web: empiece a usarlo desde la web oficial.'
     ],
     sw_banner: [
       '这是 <strong>SilentStudioWebSite</strong> 的文档首页。前往 GitHub 仓库获取源码、Star 与最新发布。',
       '這是 <strong>SilentStudioWebSite</strong> 的文件首頁。前往 GitHub 倉庫取得原始碼、Star 與最新發佈。',
       'This is the <strong>SilentStudioWebSite</strong> docs home. Visit the GitHub repo for source, stars and releases.',
-      'これは <strong>SilentStudioWebSite</strong> のドキュメントトップです。',
-      'Dies ist die <strong>SilentStudioWebSite</strong>-Dokumentationsseite.',
-      'Это главная страница документации <strong>SilentStudioWebSite</strong>.',
-      'Esta es la página de documentación de <strong>SilentStudioWebSite</strong>.'
+      'これは <strong>SilentStudioWebSite</strong> のドキュメントトップです。GitHub リポジトリでソースコード、Star、最新リリースをご確認いただけます。',
+      'Dies ist die <strong>SilentStudioWebSite</strong>-Dokumentationsseite. Im GitHub-Repository finden Sie Quellcode, Stars und die neuesten Releases.',
+      'Это главная страница документации <strong>SilentStudioWebSite</strong>. В репозитории GitHub вы найдёте исходный код, звёзды и последние релизы.',
+      'Esta es la página de documentación de <strong>SilentStudioWebSite</strong>. Visite el repositorio de GitHub para ver el código fuente, las estrellas y los últimos lanzamientos.'
     ],
     ge_banner: [
       '这是 <strong>SilentGameEngine</strong> 的文档首页。前往 GitHub 仓库获取源码、Star 与最新发布。',
       '這是 <strong>SilentGameEngine</strong> 的文件首頁。前往 GitHub 倉庫取得原始碼、Star 與最新發佈。',
       'This is the <strong>SilentGameEngine</strong> docs home. Visit the GitHub repo for source, stars and releases.',
-      'これは <strong>SilentGameEngine</strong> のドキュメントトップです。',
-      'Dies ist die <strong>SilentGameEngine</strong>-Dokumentationsseite.',
-      'Это главная страница документации <strong>SilentGameEngine</strong>.',
-      'Esta es la página de documentación de <strong>SilentGameEngine</strong>.'
+      'これは <strong>SilentGameEngine</strong> のドキュメントトップです。GitHub リポジトリでソースコード、Star、最新リリースをご確認いただけます。',
+      'Dies ist die <strong>SilentGameEngine</strong>-Dokumentationsseite. Im GitHub-Repository finden Sie Quellcode, Stars und die neuesten Releases.',
+      'Это главная страница документации <strong>SilentGameEngine</strong>. В репозитории GitHub вы найдёте исходный код, звёзды и последние релизы.',
+      'Esta es la página de documentación de <strong>SilentGameEngine</strong>. Visite el repositorio de GitHub para ver el código fuente, las estrellas y los últimos lanzamientos.'
     ],
 
     /* ---- 机器翻译提示横幅（微软风格） ---- */
@@ -125,55 +125,55 @@
       '安全防护软件。防护默认全开，隐藏技术细节，只展示结果。威胁扫描、行为监控、启发式分析与隔离区联动。',
       '安全防護軟體。防護預設全開，隱藏技術細節，只展示結果。威脅掃描、行為監控、啟發式分析與隔離區聯動。',
       'Security software. Protection on by default, technical details hidden, results only. Threat scanning, behavior monitoring, heuristic analysis and quarantine working together.',
-      'セキュリティソフト。保護はデフォルトで全開、技術的な詳細は隠し、結果だけを表示。',
-      'Sicherheitssoftware. Schutz standardmäßig voll aktiviert, technische Details ausgeblendet, nur Ergebnisse.',
-      'Программа безопасности. Защита включена по умолчанию, технические детали скрыты, только результаты.',
-      'Software de seguridad. Protección activada por defecto, detalles técnicos ocultos, solo resultados.'
+      'セキュリティソフトウェア。保護はデフォルトで全開、詳細は隠して結果だけを表示。脅威スキャン、挙動監視、ヒューリスティック分析、隔離が連携します。',
+      'Sicherheitssoftware. Schutz standardmäßig voll aktiviert, Details ausgeblendet, nur Ergebnisse. Bedrohungsscan, Verhaltensüberwachung, heuristische Analyse und Quarantäne greifen ineinander.',
+      'Программа безопасности. Защита включена по умолчанию, детали скрыты, только результаты. Сканирование угроз, мониторинг поведения, эвристический анализ и карантин действуют вместе.',
+      'Software de seguridad. Protección activada por defecto, detalles ocultos, solo resultados. Escaneo de amenazas, monitorización de comportamiento, análisis heurístico y cuarentena trabajan juntos.'
     ],
     sm_sub: [
       '黏菌启发的轻量级路径规划库。BFS 气味扩散 + 加权概率爬行，零依赖核心，Python 3.10+。',
       '黏菌啟發的輕量級路徑規劃庫。BFS 氣味擴散 + 加權機率爬行，零依賴核心，Python 3.10+。',
       'A lightweight slime-mold-inspired pathfinding library. BFS scent diffusion + weighted random crawl, zero-dependency core, Python 3.10+.',
-      '粘菌に着想を得た軽量パスファインディングライブラリ。BFS 匂い拡散＋重み付きランダム探索。',
-      'Eine leichte, vom Schleimpilz inspirierte Pfadfindungs-Bibliothek. BFS-Duftdiffusion + gewichtetes Zufallskriechen.',
-      'Лёгкая библиотека поиска пути, вдохновлённая слизевиком. BFS-диффузия запаха + взвешенное случайное движение.',
-      'Una biblioteca ligera de búsqueda de rutas inspirada en el moho mucilaginoso.'
+      '粘菌に着想を得た軽量のパスファインディングライブラリ。BFS 匂い拡散＋重み付きランダム探索。依存ゼロのコア、Python 3.10+。',
+      'Eine leichte, vom Schleimpilz inspirierte Pfadfindungs-Bibliothek. BFS-Duftdiffusion + gewichtetes Zufallskriechen; Kern ohne Abhängigkeiten, Python 3.10+.',
+      'Лёгкая библиотека поиска пути, вдохновлённая слизевиком. BFS-диффузия запаха + взвешенное случайное движение; ядро без зависимостей, Python 3.10+.',
+      'Una biblioteca ligera de búsqueda de rutas inspirada en el moho mucilaginoso. Difusión de olor BFS + rastreo aleatorio ponderado; núcleo sin dependencias, Python 3.10+.'
     ],
     it_sub: [
       '网络连通性与速度测试工具。测速、实时监控、Ping 与网络信息一站式搞定。',
       '網路連通性與速度測試工具。測速、即時監控、Ping 與網路資訊一站式搞定。',
       'A network connectivity and speed test tool. Speed test, live monitoring, Ping and network info all in one.',
-      'ネットワーク接続性・速度テストツール。速度測定、リアルタイム監視、Ping、ネットワーク情報を一括で。',
-      'Tool für Netzwerk-Konnektivität und Geschwindigkeitstests. Speedtest, Live-Überwachung, Ping und Netzinformationen.',
-      'Инструмент проверки сети и скорости. Тест скорости, мониторинг в реальном времени, Ping и информация о сети.',
-      'Herramienta de prueba de red y velocidad. Test de velocidad, monitorización en vivo, Ping e información de red.'
+      'ネットワーク接続性・速度テストツール。速度測定、リアルタイム監視、Ping、ネットワーク情報をまとめて処理。',
+      'Tool für Netzwerk-Konnektivität und Geschwindigkeitstests. Speedtest, Live-Überwachung, Ping und Netzinformationen — alles in einem.',
+      'Инструмент проверки подключения и скорости сети. Тест скорости, мониторинг в реальном времени, Ping и информация о сети — всё в одном.',
+      'Herramienta de conectividad y velocidad de red. Test de velocidad, monitorización en vivo, Ping e información de red, todo en uno.'
     ],
     sc_sub: [
       '基于 PostgreSQL 的轻量云平台。官网、服务托管、可视化工作流与 API 密钥管理，一站式的数字基础设施。',
       '基於 PostgreSQL 的輕量雲平台。官網、服務託管、可視化工作流與 API 金鑰管理，一站式的數位基礎設施。',
       'A lightweight cloud platform built on PostgreSQL. Website hosting, service hosting, visual workflows and API key management in one place.',
-      'PostgreSQL ベースの軽量クラウドプラットフォーム。',
-      'Leichte Cloud-Plattform auf Basis von PostgreSQL.',
-      'Лёгкая облачная платформа на базе PostgreSQL.',
-      'Plataforma cloud ligera basada en PostgreSQL.'
+      'PostgreSQL ベースの軽量クラウドプラットフォーム。Web サイト、サービスホスティング、ビジュアルワークフロー、API キー管理を一元的に提供するデジタル基盤。',
+      'Leichte Cloud-Plattform auf Basis von PostgreSQL. Website, Service-Hosting, visuelle Workflows und API-Schlüsselverwaltung — eine digitale Infrastruktur.',
+      'Лёгкая облачная платформа на базе PostgreSQL. Веб-сайт, хостинг сервисов, визуальные процессы и управление ключами API — единая цифровая инфраструктура.',
+      'Plataforma cloud ligera basada en PostgreSQL. Sitio web, alojamiento de servicios, flujos visuales y gestión de claves API: una única infraestructura digital.'
     ],
     sw_sub: [
       'SilentStudio 的核心产品。多语言官网 + 可视化工作流编辑器 + 3D 建模流，让「工作流」不止工作，也成为创作的画布。',
       'SilentStudio 的核心產品。多語言官網 + 可視化工作流編輯器 + 3D 建模流，讓「工作流」不止工作，也成為創作的畫布。',
       'The core product of SilentStudio. Multilingual website + visual workflow editor + 3D modeling flows, making workflows more than work.',
-      'SilentStudio の中核製品。多言語サイト＋ビジュアルワークフローエディタ＋3D モデリングフロー。',
-      'Das Kernprodukt von SilentStudio. Mehrsprachige Website + visueller Workflow-Editor + 3D-Modellierungs-Flows.',
-      'Ключевой продукт SilentStudio. Многоязычный сайт + визуальный редактор процессов + 3D-потоки.',
-      'El producto central de SilentStudio. Sitio multilingüe + editor de flujos visual + flujos 3D.'
+      'SilentStudio の中核製品。多言語サイト＋ビジュアルワークフローエディタ＋3D モデリングフロー。ワークフローを仕事に留めず、創作のキャンバスへ。',
+      'Das Kernprodukt von SilentStudio. Mehrsprachige Website + visueller Workflow-Editor + 3D-Modellierungs-Flows. Workflows sind mehr als Arbeit — eine Leinwand zum Gestalten.',
+      'Ключевой продукт SilentStudio. Многоязычный сайт + визуальный редактор процессов + 3D-потоки. Рабочие процессы — не только работа, но и холст для творчества.',
+      'El producto central de SilentStudio. Sitio multilingüe + editor de flujos visual + flujos 3D. Los flujos son más que trabajo: también un lienzo para crear.'
     ],
     ge_sub: [
       '跨语言游戏引擎：渲染、物理、音频与场景模块，一套代码多平台运行。',
       '跨語言遊戲引擎：渲染、物理、音訊與場景模組，一套程式碼多平台執行。',
       'A cross-language game engine: rendering, physics, audio and scene modules, one codebase for multiple platforms.',
-      'クロス言語ゲームエンジン。レンダリング、物理、オーディオ、シーンモジュール。',
-      'Cross-Language-Spieleengine: Rendering, Physik, Audio und Szenenmodule.',
-      'Кросс-язычный игровой движок: рендеринг, физика, аудио и модули сцен.',
-      'Motor de juego multilingüe: renderizado, física, audio y módulos de escena.'
+      'クロス言語ゲームエンジン。レンダリング、物理、オーディオ、シーンの各モジュールを備え、1 つのコードで多プラットフォーム対応。',
+      'Cross-Language-Spieleengine: Rendering, Physik, Audio und Szenenmodule — ein Code, viele Plattformen.',
+      'Кросс-язычный игровой движок: рендеринг, физика, аудио и модули сцен. Один код — несколько платформ.',
+      'Motor de juego multilingüe: módulos de renderizado, física, audio y escena. Un código, varias plataformas.'
     ],
 
     /* ---- 快速开始 hero ---- */
@@ -181,72 +181,312 @@
 
     /* ---- SilentSafe 功能卡 ---- */
     ss_f1_t: ['威胁扫描', '威脅掃描', 'Threat scan', '脅威スキャン', 'Bedrohungsscan', 'Сканирование угроз', 'Escaneo de amenazas'],
-    ss_f1_d: ['按需或定时扫描文件与进程，识别已知与未知威胁。', '按需或定時掃描檔案與程序，識別已知與未知威脅。', 'Scan files and processes on demand or on a schedule to detect known and unknown threats.'],
+    ss_f1_d: [
+      '按需或定时扫描文件与进程，识别已知与未知威胁。',
+      '按需或定時掃描檔案與程序，識別已知與未知威脅。',
+      'Scan files and processes on demand or on a schedule to detect known and unknown threats.',
+      '必要に応じてまたは定期的にファイルとプロセスをスキャンし、既知・未知の脅威を検出します。',
+      'Scannt Dateien und Prozesse bei Bedarf oder zeitgesteuert und erkennt dabei bekannte wie unbekannte Bedrohungen.',
+      'Сканирует файлы и процессы по запросу или по расписанию, выявляя известные и неизвестные угрозы.',
+      'Escanea archivos y procesos a demanda o según un programa para detectar amenazas conocidas y desconocidas.'
+    ],
     ss_f2_t: ['行为监控', '行為監控', 'Behavior monitoring', '挙動監視', 'Verhaltensüberwachung', 'Мониторинг поведения', 'Monitorización de comportamiento'],
-    ss_f2_d: ['实时监控进程行为，拦截异常动作。', '即時監控程序行為，攔截異常動作。', 'Monitor process behavior in real time and block abnormal actions.'],
+    ss_f2_d: [
+      '实时监控进程行为，拦截异常动作。',
+      '即時監控程序行為，攔截異常動作。',
+      'Monitor process behavior in real time and block abnormal actions.',
+      'プロセスの挙動をリアルタイムで監視し、異常な動作をブロックします。',
+      'Überwacht Prozessverhalten in Echtzeit und blockiert auffällige Aktionen.',
+      'Отслеживает поведение процессов в реальном времени и блокирует подозрительные действия.',
+      'Supervisa el comportamiento de los procesos en tiempo real y bloquea acciones anómalas.'
+    ],
     ss_f3_t: ['隔离区', '隔離區', 'Quarantine', '隔離', 'Quarantäne', 'Карантин', 'Cuarentena'],
-    ss_f3_d: ['可疑文件自动隔离，可安全恢复或彻底清除。', '可疑檔案自動隔離，可安全恢復或徹底清除。', 'Suspicious files are quarantined automatically and can be safely restored or removed.'],
+    ss_f3_d: [
+      '可疑文件自动隔离，可安全恢复或彻底清除。',
+      '可疑檔案自動隔離，可安全恢復或徹底清除。',
+      'Suspicious files are quarantined automatically and can be safely restored or removed.',
+      '疑わしいファイルは自動的に隔離され、安全に復元または完全削除できます。',
+      'Verdächtige Dateien werden automatisch isoliert und lassen sich sicher wiederherstellen oder endgültig entfernen.',
+      'Подозрительные файлы помещаются в карантин автоматически; их можно безопасно восстановить или удалить.',
+      'Los archivos sospechosos se ponen en cuarentena automáticamente y pueden restaurarse o eliminarse de forma segura.'
+    ],
     ss_f4_t: ['启发式分析', '啟發式分析', 'Heuristic analysis', 'ヒューリスティック分析', 'Heuristische Analyse', 'Эвристический анализ', 'Análisis heurístico'],
-    ss_f4_d: ['无需病毒库更新即可识别新型变种。', '無需病毒庫更新即可識別新型變種。', 'Identify new variants without waiting for signature updates.'],
+    ss_f4_d: [
+      '无需病毒库更新即可识别新型变种。',
+      '無需病毒庫更新即可識別新型變種。',
+      'Identify new variants without waiting for signature updates.',
+      'ウイルス定義の更新を待たずに新しい亜種を識別できます。',
+      'Erkennt neue Varianten, ohne auf Signatur-Updates zu warten.',
+      'Распознаёт новые варианты без ожидания обновления сигнатур.',
+      'Identifica nuevas variantes sin esperar a las actualizaciones de firmas.'
+    ],
 
     /* ---- SlimeMold 功能卡 ---- */
     sm_f1_t: ['气味场扩散', '氣味場擴散', 'Scent field', '匂い場の拡散', 'Duftfeld', 'Диффузия запаха', 'Campo de olor'],
-    sm_f1_d: ['从终点 BFS 扩散化学信号，给每格标上最短步数，并自动缓存复用。', '從終點 BFS 擴散化學訊號，給每格標上最短步數，並自動快取重用。', 'BFS diffusion from the goal labels every cell with its shortest distance, cached for reuse.'],
+    sm_f1_d: [
+      '从终点 BFS 扩散化学信号，给每格标上最短步数，并自动缓存复用。',
+      '從終點 BFS 擴散化學訊號，給每格標上最短步數，並自動快取重用。',
+      'BFS diffusion from the goal labels every cell with its shortest distance, cached for reuse.',
+      'ゴールから BFS で化学シグナルを拡散し、各セルに最短距離を記録、自動キャッシュして再利用します。',
+      'BFS-Diffusion vom Ziel aus kennzeichnet jede Zelle mit ihrer kürzesten Distanz, gecacht für die Wiederverwendung.',
+      'BFS-диффузия от цели помечает каждую клетку кратчайшим расстоянием и кэшируется для повторного использования.',
+      'Una difusión BFS desde la meta etiqueta cada celda con su distancia más corta, almacenada en caché.'
+    ],
     sm_f2_t: ['双策略爬行', '雙策略爬行', 'Two crawl strategies', '二つの探索戦略', 'Zwei Crawl-Strategien', 'Две стратегии', 'Dos estrategias'],
-    sm_f2_d: ['shortest 严格最短；optimal 加权概率探索，路径更多样、更贴近真实黏菌。', 'shortest 嚴格最短；optimal 加權機率探索，路徑更多樣、更貼近真實黏菌。', 'shortest for strict shortest paths; optimal for weighted random crawl with more diverse routes.'],
+    sm_f2_d: [
+      'shortest 严格最短；optimal 加权概率探索，路径更多样、更贴近真实黏菌。',
+      'shortest 嚴格最短；optimal 加權機率探索，路徑更多樣、更貼近真實黏菌。',
+      'shortest for strict shortest paths; optimal for weighted random crawl with more diverse routes.',
+      'shortest は厳密な最短経路、optimal は重み付き確率探索でより多様な経路を生成します。',
+      'shortest für strikt kürzeste Wege; optimal für gewichtetes Zufallskriechen mit vielfältigeren Routen.',
+      'shortest — строго кратчайшие пути; optimal — взвешенный случайный поиск с более разнообразными маршрутами.',
+      'shortest para rutas estrictamente cortas; optimal para un rastreo aleatorio ponderado con rutas más variadas.'
+    ],
     sm_f3_t: ['精确报错', '精確報錯', 'Precise errors', '正確なエラー', 'Präzise Fehler', 'Точные ошибки', 'Errores precisos'],
-    sm_f3_d: ['参数类型、越界、障碍物……每个错误都在算法执行前被精确拦截，信息可操作。', '參數型別、越界、障礙物……每個錯誤都在演算法執行前被精確攔截，資訊可操作。', 'Wrong types, out-of-bounds, blocked cells… every error is intercepted before the algorithm runs.'],
+    sm_f3_d: [
+      '参数类型、越界、障碍物……每个错误都在算法执行前被精确拦截，信息可操作。',
+      '參數型別、越界、障礙物……每個錯誤都在演算法執行前被精確攔截，資訊可操作。',
+      'Wrong types, out-of-bounds, blocked cells… every error is intercepted before the algorithm runs.',
+      '型の誤り、範囲外、障害物……すべてのエラーをアルゴリズム実行前に正確に検出し、具体的な情報を示します。',
+      'Falsche Typen, Bereiche, blockierte Zellen… jeder Fehler wird vor Algorithmusstart präzise abgefangen.',
+      'Неверные типы, выход за границы, препятствия… каждая ошибка перехватывается до выполнения алгоритма.',
+      'Tipos erróneos, fuera de rango, celdas bloqueadas… cada error se intercepta antes de ejecutar el algoritmo.'
+    ],
     sm_f4_t: ['可视化窗口', '可視化窗口', 'Visualizer', '可視化ウィンドウ', 'Visualisierung', 'Визуализация', 'Visualizador'],
-    sm_f4_d: ['内置 Qt 动画窗口，步进展示爬行过程，支持自定义样式与配色。', '內建 Qt 動畫視窗，步進展示爬行過程，支援自訂樣式與配色。', 'Built-in Qt animation window that steps through the crawl, with custom styles.'],
+    sm_f4_d: [
+      '内置 Qt 动画窗口，步进展示爬行过程，支持自定义样式与配色。',
+      '內建 Qt 動畫視窗，步進展示爬行過程，支援自訂樣式與配色。',
+      'Built-in Qt animation window that steps through the crawl, with custom styles.',
+      'Qt 製のアニメーションウィンドウを内蔵し、探索をステップ表示。スタイルと配色もカスタマイズ可能です。',
+      'Eingebautes Qt-Animationfenster, das den Crawl Schritt für Schritt zeigt, mit anpassbaren Stilen.',
+      'Встроенное анимационное окно на Qt, пошагово показывающее движение; настраиваемые стили и цвета.',
+      'Ventana de animación Qt integrada que muestra el avance paso a paso, con estilos personalizables.'
+    ],
 
     /* ---- IntTest 功能卡 ---- */
     it_f1_t: ['速度测试', '速度測試', 'Speed test', '速度テスト', 'Speedtest', 'Тест скорости', 'Test de velocidad'],
-    it_f1_d: ['6 路 HTTP Range 并发下载 + 4 路并发上传，15 秒实时测速并绘制趋势图。', '6 路 HTTP Range 並發下載 + 4 路並發上傳，15 秒即時測速並繪製趨勢圖。', '6-way HTTP Range parallel download + 4-way parallel upload, 15-second live speed test with trend chart.'],
+    it_f1_d: [
+      '6 路 HTTP Range 并发下载 + 4 路并发上传，15 秒实时测速并绘制趋势图。',
+      '6 路 HTTP Range 並發下載 + 4 路並發上傳，15 秒即時測速並繪製趨勢圖。',
+      '6-way HTTP Range parallel download + 4-way parallel upload, 15-second live speed test with trend chart.',
+      'HTTP Range による 6 並列ダウンロード＋4 並列アップロード、15 秒のリアルタイム速度測定とトレンドグラフ。',
+      '6-facher HTTP-Range-Parallel-Download + 4-facher Parallel-Upload, 15-Sekunden-Speedtest mit Trendgrafik.',
+      'Параллельная загрузка по HTTP Range (6 потоков) + загрузка на сервер (4 потока), 15-секундный тест скорости с графиком тренда.',
+      'Descarga paralela de 6 vías HTTP Range + subida paralela de 4 vías, test de velocidad en vivo de 15 segundos con gráfico de tendencia.'
+    ],
     it_f2_t: ['实时监控', '即時監控', 'Live monitor', 'リアルタイム監視', 'Live-Überwachung', 'Мониторинг', 'Monitorización en vivo'],
-    it_f2_d: ['当前网络接口上下行速率折线图，记录过去 60 秒变化与开机以来总流量。', '當前網路介面上下行速率折線圖，記錄過去 60 秒變化與開機以來總流量。', 'Line chart of current interface up/down rates, last 60 seconds plus total traffic since boot.'],
+    it_f2_d: [
+      '当前网络接口上下行速率折线图，记录过去 60 秒变化与开机以来总流量。',
+      '當前網路介面上下行速率折線圖，記錄過去 60 秒變化與開機以來總流量。',
+      'Line chart of current interface up/down rates, last 60 seconds plus total traffic since boot.',
+      '現在のネットワークインターフェースの上下行速度の折れ線グラフ。直近 60 秒と起動からの総トラフィックを記録。',
+      'Liniendiagramm der aktuellen Auf-/Abwärtsrate der Schnittstelle, letzte 60 Sekunden plus Gesamtverkehr seit Boot.',
+      'График скорости интерфейса приёма/отдачи: последние 60 секунд и общий трафик с момента запуска.',
+      'Gráfico de líneas de las tasas de subida/bajada actuales, últimos 60 segundos y tráfico total desde el arranque.'
+    ],
     it_f3_t: ['连通性测试', '連通性測試', 'Ping test', '接続性テスト', 'Ping-Test', 'Проверка связи', 'Prueba de conectividad'],
-    it_f3_d: ['对多目标 Ping，延迟颜色分级（<100ms 优秀 / <300ms 一般 / ≥300ms 差），支持自动刷新。', '對多目標 Ping，延遲顏色分級（<100ms 優秀 / <300ms 一般 / ≥300ms 差），支援自動重新整理。', 'Ping multiple targets with latency color grades and auto refresh.'],
+    it_f3_d: [
+      '对多目标 Ping，延迟颜色分级（<100ms 优秀 / <300ms 一般 / ≥300ms 差），支持自动刷新。',
+      '對多目標 Ping，延遲顏色分級（<100ms 優秀 / <300ms 一般 / ≥300ms 差），支援自動重新整理。',
+      'Ping multiple targets with latency color grades and auto refresh.',
+      '複数のターゲットに Ping を実行し、遅延を色で分類（<100ms 優秀 / <300ms 普通 / ≥300ms 不良）。自動更新対応。',
+      'Ping mehrerer Ziele mit farblicher Latenz-Einstufung und automatischer Aktualisierung.',
+      'Ping нескольких целей с цветовой градацией задержки (<100 мс отлично / <300 мс нормально / ≥300 мс плохо); автообновление.',
+      'Ping a múltiples objetivos con graduación de latencia por colores (<100ms excelente / <300ms normal / ≥300ms malo) y refresco automático.'
+    ],
     it_f4_t: ['网络信息', '網路資訊', 'Network info', 'ネットワーク情報', 'Netzwerkinformationen', 'Информация о сети', 'Información de red'],
-    it_f4_d: ['公网 IPv4/IPv6、ISP、地理位置与 ASN，DNS 解析与 HTTP 连通性检测。', '公網 IPv4/IPv6、ISP、地理位置與 ASN，DNS 解析與 HTTP 連通性檢測。', 'Public IPv4/IPv6, ISP, location and ASN, DNS resolution and HTTP connectivity checks.'],
+    it_f4_d: [
+      '公网 IPv4/IPv6、ISP、地理位置与 ASN，DNS 解析与 HTTP 连通性检测。',
+      '公網 IPv4/IPv6、ISP、地理位置與 ASN，DNS 解析與 HTTP 連通性檢測。',
+      'Public IPv4/IPv6, ISP, location and ASN, DNS resolution and HTTP connectivity checks.',
+      '公開 IPv4/IPv6、ISP、地理的位置と ASN。DNS 解決と HTTP 接続性テスト。',
+      'Öffentliche IPv4/IPv6, ISP, Standort und ASN; DNS-Auflösung und HTTP-Erreichbarkeit.',
+      'Публичные IPv4/IPv6, ISP, местоположение и ASN; проверка DNS и HTTP-соединения.',
+      'IPv4/IPv6 públicos, ISP, ubicación y ASN; comprobación de resolución DNS y conectividad HTTP.'
+    ],
 
     /* ---- SilentCloud 功能卡 ---- */
     sc_f1_t: ['多语言官网', '多語言官網', 'Multilingual site', '多言語サイト', 'Mehrsprachige Website', 'Многоязычный сайт', 'Sitio multilingüe'],
-    sc_f1_d: ['中 / 英 / 日三语站点，IP 自动识别语言。', '中 / 英 / 日三語站點，IP 自動識別語言。', 'Chinese / English / Japanese site with automatic language detection by IP.'],
+    sc_f1_d: [
+      '中 / 英 / 日三语站点，IP 自动识别语言。',
+      '中 / 英 / 日三語站點，IP 自動識別語言。',
+      'Chinese / English / Japanese site with automatic language detection by IP.',
+      '中・英・日の 3 言語サイト。IP から自動的に言語を判定します。',
+      'Chinesische/englische/japanische Website mit automatischer Spracherkennung per IP.',
+      'Сайт на китайском/английском/японском с автоопределением языка по IP.',
+      'Sitio en chino/inglés/japonés con detección automática de idioma por IP.'
+    ],
     sc_f2_t: ['工作流编辑器', '工作流編輯器', 'Workflow editor', 'ワークフローエディタ', 'Workflow-Editor', 'Редактор процессов', 'Editor de flujos'],
-    sc_f2_d: ['可视化节点编辑 + 编程模式 + 3D 建模流。', '可視化節點編輯 + 程式模式 + 3D 建模流。', 'Visual node editing, coding mode and 3D modeling flows.'],
+    sc_f2_d: [
+      '可视化节点编辑 + 编程模式 + 3D 建模流。',
+      '可視化節點編輯 + 程式模式 + 3D 建模流。',
+      'Visual node editing, coding mode and 3D modeling flows.',
+      'ビジュアルノード編集＋コーディングモード＋3D モデリングフロー。',
+      'Visuelle Knotenbearbeitung, Codemodus und 3D-Modellierungs-Flows.',
+      'Визуальное редактирование узлов, режим кода и 3D-потоки моделирования.',
+      'Edición visual de nodos, modo de código y flujos de modelado 3D.'
+    ],
     sc_f3_t: ['API 管理', 'API 管理', 'API management', 'API 管理', 'API-Verwaltung', 'Управление API', 'Gestión de API'],
-    sc_f3_d: ['服务 API 密钥一键生成与轮换。', '服務 API 金鑰一鍵生成與輪換。', 'One-click API key generation and rotation.'],
+    sc_f3_d: [
+      '服务 API 密钥一键生成与轮换。',
+      '服務 API 金鑰一鍵生成與輪換。',
+      'One-click API key generation and rotation.',
+      'サービス API キーをワンクリックで生成・ローテーション。',
+      'Ein-Klick-Erzeugung und -Rotation von Service-API-Schlüsseln.',
+      'Одним кликом — генерация и ротация ключей API сервисов.',
+      'Generación y rotación de claves API con un clic.'
+    ],
     sc_f4_t: ['服务托管', '服務託管', 'Service hosting', 'サービスホスティング', 'Service-Hosting', 'Хостинг сервисов', 'Alojamiento de servicios'],
-    sc_f4_d: ['API / WebSocket / Webhook 等十余种服务类型。', 'API / WebSocket / Webhook 等十餘種服務類型。', 'A dozen service types: API, WebSocket, Webhook and more.'],
+    sc_f4_d: [
+      'API / WebSocket / Webhook 等十余种服务类型。',
+      'API / WebSocket / Webhook 等十餘種服務類型。',
+      'A dozen service types: API, WebSocket, Webhook and more.',
+      'API、WebSocket、Webhook など 10 種類を超えるサービス型に対応。',
+      'Über ein Dutzend Servicetypen: API, WebSocket, Webhook und mehr.',
+      'Более десятка типов сервисов: API, WebSocket, Webhook и другие.',
+      'Una docena de tipos de servicios: API, WebSocket, Webhook y más.'
+    ],
 
     /* ---- 继续阅读卡 ---- */
     read_quick_t: ['快速开始', '快速開始', 'Quickstart', 'クイックスタート', 'Schnellstart', 'Быстрый старт', 'Inicio rápido'],
-    ss_read_d: ['几分钟内把 SilentSafe 跑起来。', '幾分鐘內把 SilentSafe 跑起來。', 'Get SilentSafe running in minutes.'],
-    sm_read_d: ['安装、30 秒上手与策略调优。', '安裝、30 秒上手與策略調優。', 'Install, 30-second quickstart and strategy tuning.'],
-    it_read_d: ['下载、运行与功能模块说明。', '下載、執行與功能模組說明。', 'Download, run and feature module guide.'],
-    sc_read_d: ['注册账号，几分钟内用上 SilentCloud。', '註冊帳號，幾分鐘內用上 SilentCloud。', 'Sign up and start using SilentCloud in minutes.'],
-    sw_read_d: ['启动后端并打开编辑器体验 3D 建模流。', '啟動後端並開啟編輯器體驗 3D 建模流。', 'Start the backend and open the editor to try 3D modeling flows.'],
-    ge_read_d: ['创建引擎实例、添加场景并启动主循环。', '建立引擎實例、新增場景並啟動主迴圈。', 'Create an engine instance, add a scene and start the main loop.'],
+    ss_read_d: [
+      '几分钟内把 SilentSafe 跑起来。',
+      '幾分鐘內把 SilentSafe 跑起來。',
+      'Get SilentSafe running in minutes.',
+      '数分で SilentSafe を起動できます。',
+      'Bringen Sie SilentSafe in wenigen Minuten zum Laufen.',
+      'Запустите SilentSafe за несколько минут.',
+      'Ponga SilentSafe en marcha en minutos.'
+    ],
+    sm_read_d: [
+      '安装、30 秒上手与策略调优。',
+      '安裝、30 秒上手與策略調優。',
+      'Install, 30-second quickstart and strategy tuning.',
+      'インストール、30 秒でスタート、戦略の調整。',
+      'Installation, 30-Sekunden-Quickstart und Strategie-Tuning.',
+      'Установка, быстрый старт за 30 секунд и настройка стратегии.',
+      'Instalación, inicio rápido en 30 segundos y ajuste de estrategia.'
+    ],
+    it_read_d: [
+      '下载、运行与功能模块说明。',
+      '下載、執行與功能模組說明。',
+      'Download, run and feature module guide.',
+      'ダウンロード、実行と機能モジュールの説明。',
+      'Download, Ausführung und Leitfaden zu den Funktionsmodulen.',
+      'Скачивание, запуск и описание функциональных модулей.',
+      'Guía de descarga, ejecución y módulos de funciones.'
+    ],
+    sc_read_d: [
+      '注册账号，几分钟内用上 SilentCloud。',
+      '註冊帳號，幾分鐘內用上 SilentCloud。',
+      'Sign up and start using SilentCloud in minutes.',
+      'アカウントを登録すれば、数分で SilentCloud を使い始められます。',
+      'Registrieren Sie sich und nutzen Sie SilentCloud in wenigen Minuten.',
+      'Зарегистрируйтесь и начните пользоваться SilentCloud за несколько минут.',
+      'Regístrese y empiece a usar SilentCloud en minutos.'
+    ],
+    sw_read_d: [
+      '启动后端并打开编辑器体验 3D 建模流。',
+      '啟動後端並開啟編輯器體驗 3D 建模流。',
+      'Start the backend and open the editor to try 3D modeling flows.',
+      'バックエンドを起動し、エディタで 3D モデリングフローを試します。',
+      'Backend starten und im Editor 3D-Modellierungs-Flows ausprobieren.',
+      'Запустите бэкенд и откройте редактор, чтобы попробовать 3D-потоки.',
+      'Inicie el backend y abra el editor para probar los flujos 3D.'
+    ],
+    ge_read_d: [
+      '创建引擎实例、添加场景并启动主循环。',
+      '建立引擎實例、新增場景並啟動主迴圈。',
+      'Create an engine instance, add a scene and start the main loop.',
+      'エンジンインスタンスを作成し、シーンを追加してメインループを起動します。',
+      'Erstellen Sie eine Engine-Instanz, fügen Sie eine Szene hinzu und starten Sie die Hauptschleife.',
+      'Создайте экземпляр движка, добавьте сцену и запустите главный цикл.',
+      'Cree una instancia del motor, añada una escena e inicie el bucle principal.'
+    ],
 
     /* ---- SilentStudioWebSite 功能卡 ---- */
     sw_f1_t: ['多语言', '多語言', 'Multilingual', '多言語', 'Mehrsprachig', 'Многоязычность', 'Multilingüe'],
-    sw_f1_d: ['中 / 英 / 日三语，自动语言识别。', '中 / 英 / 日三語，自動語言識別。', 'Chinese / English / Japanese with automatic language detection.'],
+    sw_f1_d: [
+      '中 / 英 / 日三语，自动语言识别。',
+      '中 / 英 / 日三語，自動語言識別。',
+      'Chinese / English / Japanese with automatic language detection.',
+      '中・英・日の 3 言語対応、自動言語判定。',
+      'Chinesisch/Englisch/Japanisch mit automatischer Spracherkennung.',
+      'Китайский/английский/японский с автоматическим определением языка.',
+      'Chino/inglés/japonés con detección automática de idioma.'
+    ],
     sw_f2_t: ['工作流编辑器', '工作流編輯器', 'Workflow editor', 'ワークフローエディタ', 'Workflow-Editor', 'Редактор процессов', 'Editor de flujos'],
-    sw_f2_d: ['节点式可视化编程，支持代码节点。', '節點式視覺化程式設計，支援程式碼節點。', 'Node-based visual programming with code nodes.'],
+    sw_f2_d: [
+      '节点式可视化编程，支持代码节点。',
+      '節點式視覺化程式設計，支援程式碼節點。',
+      'Node-based visual programming with code nodes.',
+      'ノードベースのビジュアルプログラミング。コードノードに対応。',
+      'Knotenbasierte visuelle Programmierung mit Code-Knoten.',
+      'Визуальное программирование на узлах с поддержкой узлов кода.',
+      'Programación visual basada en nodos, con nodos de código.'
+    ],
     sw_f3_t: ['3D 建模流', '3D 建模流', '3D modeling flows', '3D モデリングフロー', '3D-Modellierungs-Flows', '3D-потоки', 'Flujos 3D'],
-    sw_f3_d: ['三参数节点连接同一 3D 视窗，实时控制模型。', '三參數節點連接同一 3D 視窗，即時控制模型。', 'Three-parameter nodes drive one shared 3D viewport in real time.'],
+    sw_f3_d: [
+      '三参数节点连接同一 3D 视窗，实时控制模型。',
+      '三參數節點連接同一 3D 視窗，即時控制模型。',
+      'Three-parameter nodes drive one shared 3D viewport in real time.',
+      '3 パラメータノードが同じ 3D ビューポートに接続され、モデルをリアルタイムに制御します。',
+      'Drei-Parameter-Knoten steuern ein gemeinsames 3D-Viewport in Echtzeit.',
+      'Трёхпараметрические узлы связаны с общим 3D-вьюпортом и управляют моделью в реальном времени.',
+      'Los nodos de tres parámetros controlan una única ventana 3D en tiempo real.'
+    ],
     sw_f4_t: ['文件节点', '檔案節點', 'File nodes', 'ファイルノード', 'Dateiknoten', 'Файловые узлы', 'Nodos de archivo'],
-    sw_f4_d: ['上传 Word / PPT / Excel / 音视频 / 3D 模型，随工作流保存。', '上傳 Word / PPT / Excel / 音視訊 / 3D 模型，隨工作流儲存。', 'Upload Word/PPT/Excel/media/3D models and save them with the workflow.'],
+    sw_f4_d: [
+      '上传 Word / PPT / Excel / 音视频 / 3D 模型，随工作流保存。',
+      '上傳 Word / PPT / Excel / 音視訊 / 3D 模型，隨工作流儲存。',
+      'Upload Word/PPT/Excel/media/3D models and save them with the workflow.',
+      'Word / PPT / Excel / 音声動画 / 3D モデルをアップロードし、ワークフローと一緒に保存します。',
+      'Word/PPT/Excel/Medien/3D-Modelle hochladen und mit dem Workflow speichern.',
+      'Загружайте Word/PPT/Excel/аудио-видео/3D-модели и сохраняйте вместе с процессом.',
+      'Sube Word/PPT/Excel/archivos multimedia/modelos 3D y guárdalos con el flujo.'
+    ],
 
     /* ---- SilentGameEngine 功能卡 ---- */
     ge_f1_t: ['模块化架构', '模組化架構', 'Modular architecture', 'モジュラーアーキテクチャ', 'Modulare Architektur', 'Модульная архитектура', 'Arquitectura modular'],
-    ge_f1_d: ['渲染 / 物理 / 音频 / 场景独立模块，按需组合。', '渲染 / 物理 / 音訊 / 場景獨立模組，按需組合。', 'Independent rendering/physics/audio/scene modules, combined as needed.'],
+    ge_f1_d: [
+      '渲染 / 物理 / 音频 / 场景独立模块，按需组合。',
+      '渲染 / 物理 / 音訊 / 場景獨立模組，按需組合。',
+      'Independent rendering/physics/audio/scene modules, combined as needed.',
+      'レンダリング・物理・オーディオ・シーンを独立モジュール化し、必要に応じて組み合わせます。',
+      'Unabhängige Render-/Physik-/Audio-/Szenenmodule, bei Bedarf kombiniert.',
+      'Независимые модули рендеринга, физики, аудио и сцен; комбинируются по необходимости.',
+      'Módulos independientes de renderizado, física, audio y escena, combinados según necesidad.'
+    ],
     ge_f2_t: ['Rust 核心', 'Rust 核心', 'Rust core', 'Rust コア', 'Rust-Kern', 'Ядро Rust', 'Núcleo Rust'],
-    ge_f2_d: ['引擎核心以 Rust 实现，性能与安全兼得。', '引擎核心以 Rust 實現，效能與安全兼得。', 'Engine core written in Rust for performance and safety.'],
+    ge_f2_d: [
+      '引擎核心以 Rust 实现，性能与安全兼得。',
+      '引擎核心以 Rust 實現，效能與安全兼得。',
+      'Engine core written in Rust for performance and safety.',
+      'エンジンコアは Rust で実装され、性能と安全を両立しています。',
+      'Der Engine-Kern ist in Rust geschrieben — für Leistung und Sicherheit.',
+      'Ядро движка написано на Rust — производительность и безопасность одновременно.',
+      'Núcleo del motor escrito en Rust, para rendimiento y seguridad.'
+    ],
     ge_f3_t: ['ECS 体系', 'ECS 體系', 'ECS architecture', 'ECS アーキテクチャ', 'ECS-Architektur', 'Архитектура ECS', 'Arquitectura ECS'],
-    ge_f3_d: ['实体-组件-系统架构，构建复杂游戏逻辑。', '實體-元件-系統架構，建構複雜遊戲邏輯。', 'Entity-Component-System for complex game logic.'],
+    ge_f3_d: [
+      '实体-组件-系统架构，构建复杂游戏逻辑。',
+      '實體-元件-系統架構，建構複雜遊戲邏輯。',
+      'Entity-Component-System for complex game logic.',
+      'Entity-Component-System アーキテクチャで複雑なゲームロジックを構築します。',
+      'Entity-Component-System für komplexe Spiellogik.',
+      'Архитектура Entity-Component-System для сложной игровой логики.',
+      'Arquitectura Entity-Component-System para lógica compleja de juegos.'
+    ],
     ge_f4_t: ['编辑器集成', '編輯器整合', 'Editor integration', 'エディタ統合', 'Editor-Integration', 'Интеграция с редактором', 'Integración con editor'],
-    ge_f4_d: ['配套 SgeEditor，可视化搭建场景与属性。', '配套 SgeEditor，視覺化搭建場景與屬性。', 'Ships with SgeEditor for visual scene and property setup.']
+    ge_f4_d: [
+      '配套 SgeEditor，可视化搭建场景与属性。',
+      '配套 SgeEditor，視覺化搭建場景與屬性。',
+      'Ships with SgeEditor for visual scene and property setup.',
+      'SgeEditor が付属し、シーンとプロパティをビジュアルに構築できます。',
+      'Liefert SgeEditor mit für den visuellen Aufbau von Szenen und Eigenschaften.',
+      'Поставляется с SgeEditor для визуальной настройки сцен и свойств.',
+      'Incluye SgeEditor para configurar escenas y propiedades de forma visual.'
+    ]
   };
 
   function detectLang() {
